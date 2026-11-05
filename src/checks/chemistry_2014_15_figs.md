@@ -1,0 +1,8 @@
+# Figures — chemistry_2014_15 (theory); the practical (chemistry_2014_15_prac) has no figures
+- fig_q1c2_pt — octahedral [Pt(NH3)4Cl2]2+: trans has both Cl axial (opposite), cis has Cl axial + equatorial (adjacent, 90 deg); 6 bonds each, bracket and 2+ charge.
+- fig_q3a_graph — log10(Vinf - Vt) vs t from the question data (0,75,119,193 min; 1.058, 0.952, 0.900, 0.799); least-squares line (slope -1.332e-3, recomputed in the check) through all four points; slope triangle dy = -0.200 over 150 min; y-origin shifted and stated.
+- fig_q4b_cell — Daniell cell: Zn | ZnSO4 anode (-) left, Cu | CuSO4 cathode (+) right; electron flow Zn -> Cu in the external wire through V; salt bridge legs dip into both solutions; NO3- drifts to the Zn side, K+ to the Cu side (labels moved inside the bridge after first render overlapped the legs).
+- fig_q7b_vbt — Fe3+ 3d5 five unpaired; in [Fe(CN)6]3- 3d: two pairs + one single + two empty boxes taken by CN- pairs, 4s and three 4p filled by CN- pairs = 6 d2sp3 orbitals; 1 unpaired electron.
+- fig_q7c_linkage — two octahedra [Co(NH3)5(NO2)]2+ (N-bonded) and [Co(NH3)5(ONO)]2+ (O-bonded), five NH3 each, Cl2 outside the bracket; names nitrito-N / nitrito-O.
+- fig_q9a_scheme (question figure, redrawn) — HCOOH -LiAlH4-> [A] -P/I2-> [B] -KCN-> [C] -H3O+-> [D], D -NH3, Heat-> [E] (downward), E -Ni/H2-> [F] (leftward), matching the printed layout and reagents.
+- fig_q10a_scheme — A benzaldehyde (CHO), Cannizzaro to B benzyl alcohol (CH2OH) + C benzoic acid (COOH); B -> A by mild oxidation (arrow B -> A); A + PCl5 -> D benzal chloride (CHCl2); C + PCl5 -> E benzoyl chloride (COCl); Kekule rings correct.

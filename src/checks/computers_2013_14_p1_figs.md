@@ -1,0 +1,14 @@
+# Figures — computers_2013_14_p1 (rendered with preview.py and inspected)
+- fig_q2_xor: (P⊕Q)⊕R then NOT, and (P⊕Q) XNOR R; both XOR/XNOR gates take the right inputs; labels clear.
+- fig_q8_nand: NAND-only F = AB′+A′B+A′C′; A′,B′,C′ made by NANDs with tied inputs; gate 1 taps A and B′, gate 2 A′ and B, gate 3 A′ and C′ (dots at taps, crossings undotted); netlist simulated = AB′+A′(B+C′) over 8 rows.
+- fig_q10_bst: 50(30(20,40),70(60,80)); BST property checked in script.
+- fig_q13_kmap: Gray order rows/cols, 1s at 11–15; quad AB (row AB) and pair 11,15 (CD column) ringed; groups = terms checked.
+- fig_q13_circ: AND(A,B), AND(A,C,D) into OR; taps at the correct buses; netlist simulated.
+- fig_q14a_kmap / circ: groups 1,9 (vertical wrap), 6,7,14,15, 8,10 (horizontal wrap); circuit taps B′C′D, BC, AB′D′ verified visually and by simulation.
+- fig_q14b_kmap / circ: POS headings (A+B …), 0s at maxterms, groups 0,2 / 3,11 / 4,5,12,13; OR gates (A+B+D),(B+C′+D′),(B′+C) into AND; simulated.
+- fig_q15_mux: 8:1 MUX, I0..I7 = D′,D,D,D′,1,0,0,1, D′ from NOT on D, selects A B C; checked against the minterm list for all 16 rows.
+- fig_q16a_block: HA1(A,B)→s=A⊕B to HA2.a, C to HA2.b, HA2.s = SUM, HA1.c and HA2.c into OR = CARRY. (first version had clipped labels and constants over a bus — redrawn.)
+- fig_q16a_gates: rev_fig full adder (XOR,XOR / AND,AND,OR) — wiring checked; viewBox widened so CARRY is not clipped.
+- fig_q16b_not/and/or: NAND with tied inputs; NAND+NAND; two NAND inverters into NAND. Identities checked.
+- fig_q22_tree (question): R(A(C(–,D),B),3(5(8,–),6(–,9))) read off the 300-dpi page image; traversals computed from the same tuple. Edge 3–5 is visible at 300 dpi (5 is the left child of 3); the earlier "not visible" note was removed in review.
+- All K-maps (shared computers_a_lib.kmap): review moved the cell numbers to be drawn after the group rings, on a white patch, so no ring hides them.

@@ -1,0 +1,11 @@
+10 -> 20 -> 30 -> 40 -> null
+Enter the value to be deleted : 10 -> 20 -> 40 -> null
+10 -> 20 -> 30 -> 40 -> null
+Enter the value to be deleted : 20 -> 30 -> 40 -> null
+10 -> 20 -> 30 -> 40 -> null
+Enter the value to be deleted : 10 -> 20 -> 30 -> null
+10 -> 20 -> 30 -> 40 -> null
+Enter the value to be deleted : 99 not found
+10 -> 20 -> 30 -> 40 -> null
+10 -> null
+Enter the value to be deleted : List now empty: caller sets start = null

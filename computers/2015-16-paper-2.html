@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Science Pre-Board 2015-16 Practical</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/contrib/mhchem.min.js"></script>
+<script defer src="../assets/katex/contrib/auto-render.min.js"></script>
+<script defer src="../assets/site.js"></script>
+</head><body>
+<header class="top"><a class="crumb" href="../index.html">Pre-Board Revision</a> ›
+<a class="crumb" href="index.html">Computer Science</a>
+<h1>Computer Science · Pre-Board 2015-16 · Practical</h1>
+<p class="meta">Paper 2 (Practical) · Maximum marks 30 · Time 3 hours</p>
+<p class="meta">3 questions in the ISC 2027 syllabus, answered below ·
+0 outside it (listed at the end, unanswered)</p>
+<div class="tools"><button data-act="show">Show all answers</button>
+<button data-act="hide">Hide all answers</button>
+<span class="prog" data-key="pbrev-computers-2015-16-paper-2"></span></div></header>
+<main data-key="pbrev-computers-2015-16-paper-2">
+<details class="intro"><summary>Instructions as printed</summary><p>The total time to be spent on the Planning session and the Examination session is Three hours.<br>
+Planning session: 90 minutes<br>Examination session: 90 minutes<br>
+Candidates are to be permitted to proceed to the Examination session only after the 90 minutes of the planning
+session are over.</p>
+<p><i>(This paper consists of three problems from which candidates are required to attempt any one problem)</i></p>
+<ol><li>Write an algorithm for the selected problem. (Algorithm should be expressed clearly using any standard scheme
+such as pseudo code or in steps which are simple enough to be obviously computable.) [3]</li>
+<li>Write a program in JAVA language. The program should follow the algorithm and should be logically and
+syntactically correct. [5]</li>
+<li>Document the program using mnemonic names/ comments, identifying and clearly describing the choice of data types
+and meaning of variables. [2]</li>
+<li>Code/Type the program on the computer and get a printout (Hard Copy). Typically, this should be a program that
+compiles and runs correctly. [2]</li>
+<li>Test run the program on the computer using the given sample data and get a printout of the output in the format
+specified in the problem. [5]</li>
+<li>Viva-Voce on the Selected Problem. [3]</li>
+<li>Programming Assignment File. [10]</li></ol>
+<p>This question paper consists of four printed pages.</p>
+<p class="note">Each problem is worth the 20 marks of items 1–6; the remaining 10 are for the assignment file.</p></details>
+<h2 class="sec">Problems</h2><p class="secnote">This paper consists of three problems from which candidates are required to attempt any one problem.</p>
+<article class="q" id="q1">
+<div class="qhead"><span class="num">Q1</span><span class="topic">Arrays (double-dimensional)</span><span class="marks">[20]</span>
+<label class="done"><input type="checkbox" data-id="q1"> revised</label></div>
+<div class="qbody"><p><b>Question 1:</b> Write a program to accept the size (n) of a square matrix then create the matrix with values 1
+to n<sup>2</sup> in a circular fashion as shown below.</p>
+<p>Sample output : when n = 4</p><div class="tbl"><table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>12</td><td>13</td><td>16</td><td>5</td></tr><tr><td>11</td><td>14</td><td>15</td><td>6</td></tr><tr><td>10</td><td>9</td><td>8</td><td>7</td></tr></table></div><p>Sample output : when n=5</p><div class="tbl"><table><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>16</td><td>17</td><td>24</td><td>23</td><td>6</td></tr><tr><td>15</td><td>18</td><td>25</td><td>22</td><td>7</td></tr><tr><td>14</td><td>19</td><td>20</td><td>21</td><td>8</td></tr><tr><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td></tr></table></div><p>Sample output : when n=6</p><div class="tbl"><table><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td>20</td><td>21</td><td>32</td><td>31</td><td>30</td><td>7</td></tr><tr><td>19</td><td>22</td><td>33</td><td>34</td><td>29</td><td>8</td></tr><tr><td>18</td><td>23</td><td>36</td><td>35</td><td>28</td><td>9</td></tr><tr><td>17</td><td>24</td><td>25</td><td>26</td><td>27</td><td>10</td></tr><tr><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td></tr></table></div></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p class="note">Answer as the practical expects it: the algorithm, then the documented Java program,
+then the output for the paper's sample data and for further inputs — every output below is from an actual run of
+this program (JDK 11).</p><p><b>Reading the samples.</b> The outer ring is filled clockwise (1 → 12 for n = 4). The next ring
+starts at its top-left corner but goes <i>down</i> first — anticlockwise (13 at [1][1], 14 below it, 15, 16). For
+n = 6 the third ring (33–36) is clockwise again. So the rings alternate: even-numbered rings (0, 2, …) clockwise,
+odd-numbered rings anticlockwise, always starting at the ring's top-left corner. An ordinary one-way spiral would
+give the wrong matrix for every sample.</p>
+<p><b>Algorithm</b></p>
+<ol><li>Start. Input n; if n &lt; 1 print "INVALID SIZE" and stop. Create m[n][n]; k ← 1.</li>
+<li>For ring r = 0 to (n+1)/2 − 1: lo ← r, hi ← n−1−r.</li>
+<li>If lo = hi (centre cell of odd n): m[lo][lo] ← k; go to step 7.</li>
+<li>If r is even (clockwise): fill the top row m[lo][lo..hi] left to right, the right column m[lo+1..hi][hi]
+downwards, the bottom row m[hi][hi−1..lo] right to left, the left column m[hi−1..lo+1][lo] upwards, putting k
+and incrementing it each time.</li>
+<li>If r is odd (anticlockwise): fill the left column m[lo..hi][lo] downwards, the bottom row m[hi][lo+1..hi]
+left to right, the right column m[hi−1..lo][hi] upwards, the top row m[lo][hi−1..lo+1] right to left.</li>
+<li>Next r.</li><li>Print the matrix row by row. Stop.</li></ol>
+<p><b>Program</b></p><pre class="code">import java.util.Scanner;
+
+/* Fills an n x n matrix with 1 .. n*n ring by ring, from the outside in.
+ * As the paper's three samples show, the rings alternate in direction:
+ *   ring 0, 2, 4 ... clockwise      (start top-left, go RIGHT first)
+ *   ring 1, 3, 5 ... anticlockwise  (start top-left, go DOWN first)  */
+class CircularMatrix {
+    int n;          // order of the matrix
+    int m[][];      // the matrix
+
+    CircularMatrix(int size) {
+        n = size;
+        m = new int[n][n];
+    }
+
+    void fill() {
+        int k = 1;                              // next value to place
+        for (int r = 0; r &lt; (n + 1) / 2; r++) { // r = ring number
+            int lo = r, hi = n - 1 - r;         // first and last row/column of this ring
+            if (lo == hi) {                     // odd n: the single centre cell
+                m[lo][lo] = k++;
+                break;
+            }
+            if (r % 2 == 0) {                   // clockwise ring
+                for (int j = lo; j &lt;= hi; j++)     m[lo][j] = k++;   // top row, left to right
+                for (int i = lo + 1; i &lt;= hi; i++) m[i][hi] = k++;   // right column, down
+                for (int j = hi - 1; j &gt;= lo; j--) m[hi][j] = k++;   // bottom row, right to left
+                for (int i = hi - 1; i &gt; lo; i--)  m[i][lo] = k++;   // left column, up
+            } else {                            // anticlockwise ring
+                for (int i = lo; i &lt;= hi; i++)     m[i][lo] = k++;   // left column, down
+                for (int j = lo + 1; j &lt;= hi; j++) m[hi][j] = k++;   // bottom row, left to right
+                for (int i = hi - 1; i &gt;= lo; i--) m[i][hi] = k++;   // right column, up
+                for (int j = hi - 1; j &gt; lo; j--)  m[lo][j] = k++;   // top row, right to left
+            }
+        }
+    }
+
+    void display() {
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; n; j++)
+                System.out.print(String.format("%4d", m[i][j]));
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size n: ");
+        int size = sc.nextInt();
+        if (size &lt; 1) {
+            System.out.println("INVALID SIZE");
+            return;
+        }
+        CircularMatrix ob = new CircularMatrix(size);
+        ob.fill();
+        ob.display();
+    }
+}</pre><p><b>Output — the paper's samples</b></p><p><b>Input</b></p><pre class="code">4</pre><p><b>Output</b></p><pre class="code">Enter the size n: 
+   1   2   3   4
+  12  13  16   5
+  11  14  15   6
+  10   9   8   7</pre><p><b>Input</b></p><pre class="code">5</pre><p><b>Output</b></p><pre class="code">Enter the size n: 
+   1   2   3   4   5
+  16  17  24  23   6
+  15  18  25  22   7
+  14  19  20  21   8
+  13  12  11  10   9</pre><p><b>Input</b></p><pre class="code">6</pre><p><b>Output</b></p><pre class="code">Enter the size n: 
+   1   2   3   4   5   6
+  20  21  32  31  30   7
+  19  22  33  34  29   8
+  18  23  36  35  28   9
+  17  24  25  26  27  10
+  16  15  14  13  12  11</pre><p><b>Output — a further input</b> (n = 7: three alternating rings and a centre cell)</p><p><b>Input</b></p><pre class="code">7</pre><p><b>Output</b></p><pre class="code">Enter the size n: 
+   1   2   3   4   5   6   7
+  24  25  40  39  38  37   8
+  23  26  41  42  43  36   9
+  22  27  48  49  44  35  10
+  21  28  47  46  45  34  11
+  20  29  30  31  32  33  12
+  19  18  17  16  15  14  13</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Ring r occupies rows/columns r … n−1−r; there are ⌈n/2⌉ rings.</li><li>Fill each side once, stopping one short of the corner the next side starts from.</li><li>Check the direction against <i>every</i> sample before coding.</li></ul></aside></div>
+</article>
+<article class="q" id="q2">
+<div class="qhead"><span class="num">Q2</span><span class="topic">Arrays, Strings (date / calendar programs)</span><span class="marks">[20]</span>
+<label class="done"><input type="checkbox" data-id="q2"> revised</label></div>
+<div class="qbody"><p><b>Question 2:</b> 1<sup>st</sup> January 2015 was Thursday.<br>
+Design a program which inputs the name of a month of 2015 and print the calendar of the month.</p>
+<p>Sample input: January &nbsp; Sample output :</p><div class="tbl"><table><tr><th>Sun</th><th>Mon</th><th>Tues</th><th>Wed</th><th>Thrus</th><th>Fri</th><th>Sat</th></tr><tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr><tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr></table></div><p>Sample input: March &nbsp; Sample output :</p><div class="tbl"><table><tr><th>Sun</th><th>Mon</th><th>Tues</th><th>Wed</th><th>Thrus</th><th>Fri</th><th>Sat</th></tr><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr><tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr><tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr><tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr><tr><td>29</td><td>30</td><td>31</td><td>*</td><td>*</td><td>*</td><td>*</td></tr></table></div><p>Sample input: September &nbsp; Sample output :</p><div class="tbl"><table><tr><th>Sun</th><th>Mon</th><th>Tues</th><th>Wed</th><th>Thrus</th><th>Fri</th><th>Sat</th></tr><tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr><tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr><tr><td>27</td><td>28</td><td>29</td><td>30</td><td>*</td><td>*</td><td>*</td></tr></table></div></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p class="note">Answer as the practical expects it: the algorithm, then the documented Java program,
+then the output for the paper's sample data and for further inputs — every output below is from an actual run of
+this program (JDK 11).</p><p><b>Idea.</b> Number the weekdays Sunday = 0 … Saturday = 6; 1 January is Thursday = 4. The 1st of
+any month falls on (4 + number of days in all earlier months) mod 7 — e.g. March: (4 + 31 + 28) mod 7 = 63 mod 7 = 0,
+Sunday. 2015 is not a leap year, so February has 28 days. As in the samples, cells before the 1st are blank and
+cells after the last day up to Saturday hold '*'.</p>
+<p><b>Algorithm</b></p>
+<ol><li>Start. Store month names and days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}.</li>
+<li>Input the month name; find its index m (0–11) ignoring case. If not found, print "INVALID MONTH NAME" and stop.</li>
+<li>total ← sum of days[0..m−1]; start ← (4 + total) mod 7.</li>
+<li>Print the heading Sun … Sat. col ← 0.</li>
+<li>Print start blank cells, col ← start.</li>
+<li>For d = 1 to days[m]: print d in a cell; col ← col + 1; if col = 7, go to a new line and col ← 0.</li>
+<li>If col ≠ 0, print '*' cells until col = 7. Stop.</li></ol>
+<p><b>Program</b></p><pre class="code">import java.util.Scanner;
+
+/* Prints the calendar of any month of 2015, given that 1 January 2015 was a
+ * Thursday.  Day numbers: 0 = Sunday, 1 = Monday, ... 6 = Saturday.
+ * As in the paper's samples, cells before day 1 are left blank and the
+ * cells after the last day, up to Saturday, are filled with '*'.          */
+class Calendar2015 {
+    String names[] = {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY",
+                      "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"};
+    int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};   // 2015 is not a leap year
+    String head[] = {"Sun", "Mon", "Tues", "Wed", "Thrus", "Fri", "Sat"};  // as printed
+    int month;      // 0 .. 11, or -1 if the name is not a month
+
+    // finds the month number from its name (case ignored)
+    void setMonth(String s) {
+        month = -1;
+        for (int i = 0; i &lt; 12; i++)
+            if (names[i].equalsIgnoreCase(s.trim()))
+                month = i;
+    }
+
+    // weekday of the 1st of the month: Thursday (4) plus all the days before it, mod 7
+    int firstDay() {
+        int total = 0;
+        for (int i = 0; i &lt; month; i++)
+            total += days[i];
+        return (4 + total) % 7;
+    }
+
+    void print() {
+        if (month == -1) {
+            System.out.println("INVALID MONTH NAME");
+            return;
+        }
+        int start = firstDay();
+        for (int i = 0; i &lt; 7; i++)
+            System.out.print(String.format("%-7s", head[i]));
+        System.out.println();
+        int col = 0;
+        for (int i = 0; i &lt; start; i++) {          // blanks before the 1st
+            System.out.print(String.format("%-7s", ""));
+            col++;
+        }
+        for (int d = 1; d &lt;= days[month]; d++) {
+            System.out.print(String.format("%-7d", d));
+            col++;
+            if (col == 7) {                         // Saturday done: new line
+                System.out.println();
+                col = 0;
+            }
+        }
+        if (col != 0) {                             // fill the last week with '*'
+            while (col &lt; 7) {
+                System.out.print(String.format("%-7s", "*"));
+                col++;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name of a month of 2015:");
+        Calendar2015 ob = new Calendar2015();
+        ob.setMonth(sc.nextLine());
+        ob.print();
+    }
+}</pre><p><b>Output — the paper's samples</b></p><p><b>Input</b></p><pre class="code">January</pre><p><b>Output</b></p><pre class="code">Enter the name of a month of 2015:
+Sun    Mon    Tues   Wed    Thrus  Fri    Sat    
+                            1      2      3      
+4      5      6      7      8      9      10     
+11     12     13     14     15     16     17     
+18     19     20     21     22     23     24     
+25     26     27     28     29     30     31     </pre><p><b>Input</b></p><pre class="code">March</pre><p><b>Output</b></p><pre class="code">Enter the name of a month of 2015:
+Sun    Mon    Tues   Wed    Thrus  Fri    Sat    
+1      2      3      4      5      6      7      
+8      9      10     11     12     13     14     
+15     16     17     18     19     20     21     
+22     23     24     25     26     27     28     
+29     30     31     *      *      *      *      </pre><p><b>Input</b></p><pre class="code">September</pre><p><b>Output</b></p><pre class="code">Enter the name of a month of 2015:
+Sun    Mon    Tues   Wed    Thrus  Fri    Sat    
+              1      2      3      4      5      
+6      7      8      9      10     11     12     
+13     14     15     16     17     18     19     
+20     21     22     23     24     25     26     
+27     28     29     30     *      *      *      </pre><p><b>Output — further inputs</b> (February: starts on a Sunday and fills exactly four weeks; an invalid name)</p><p><b>Input</b></p><pre class="code">February</pre><p><b>Output</b></p><pre class="code">Enter the name of a month of 2015:
+Sun    Mon    Tues   Wed    Thrus  Fri    Sat    
+1      2      3      4      5      6      7      
+8      9      10     11     12     13     14     
+15     16     17     18     19     20     21     
+22     23     24     25     26     27     28     </pre><p><b>Input</b></p><pre class="code">Smarch</pre><p><b>Output</b></p><pre class="code">Enter the name of a month of 2015:
+INVALID MONTH NAME</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Day of week of the 1st = (day of week of 1 Jan + days before the month) mod 7.</li><li>Leap year: divisible by 400, or by 4 and not by 100.</li><li>Use a column counter to break lines after Saturday.</li></ul></aside></div>
+</article>
+<article class="q" id="q3">
+<div class="qhead"><span class="num">Q3</span><span class="topic">Arrays, Strings</span><span class="marks">[20]</span>
+<label class="done"><input type="checkbox" data-id="q3"> revised</label></div>
+<div class="qbody"><p><b>Question 3:</b> A new type of encryption system was made to keep the alphabetic sentence a bit more secure by
+merging the word of a sentence. The system is categorized in two categories:</p>
+<p><b>Category 1 : If the number of words in the sentence is of odd numbers.</b></p>
+<p>Sample input/output:<br>Original Sentence : THE DOG JUMPS OVER THE BLACK CAT.<br>
+Encrypted Sentence : TCHAET &nbsp; DBOLGA*C*K &nbsp; JTUHMEP*S* &nbsp; *REVO*</p>
+<p>The Encryption system will merge in the following way-</p><div class="tbl"><table><tr><th>Words</th><th></th><th>Merged</th><th></th></tr><tr><td>'THE' and 'CAT'</td><td>→</td><td>TCHAET</td><td>(If the words are of same length)</td></tr><tr><td>'DOG' and 'BLACK'</td><td>→</td><td>DBOLGA*C*K</td><td>(If the second word is lengthier than the first)</td></tr><tr><td>'JUMPS' and 'THE'</td><td>→</td><td>JTUHMEP*S*</td><td>(If the first word is lengthier than the Second)</td></tr><tr><td>'OVER'</td><td>→</td><td>*REVO*</td><td></td></tr></table></div><p>(the extra word which do not has a pair is reversed and then prefixed and suffixed with '*')</p>
+<p><b>Category 2 : If the number of words in the sentence is of even numbers.</b></p>
+<p>Sample input/output:<br>Original Sentence : ASHOK IS AN INDIAN<br>Encrypted Sentence : AISNHDOIKA*N &nbsp; IASN</p>
+<p>The Encryption system will merge in the following way-</p><div class="tbl"><table><tr><th>Words</th><th></th><th>Merged</th><th></th></tr><tr><td>'ASHOK' and 'INDIAN'</td><td>→</td><td>AISNHDOIKA*N</td><td>(If the second word is lengthier than the first)</td></tr><tr><td>'IS' and 'AN'</td><td>→</td><td>IASN</td><td>(If the words are of same length)</td></tr></table></div><p>Write a program</p><p>i) to accept an Encrypted word/ sentence and display the original word/sentence.<br>
+ii) to accept an the original word/sentence and display Encrypted word/ sentence.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p class="note">Answer as the practical expects it: the algorithm, then the documented Java program,
+then the output for the paper's sample data and for further inputs — every output below is from an actual run of
+this program (JDK 11).</p><p><b>Reading the samples.</b> Word 1 is paired with the last word, word 2 with the last-but-one, and
+so on. A pair is merged letter by letter — first word's letter, then second word's — and where the shorter word has
+run out its turn is filled with '*' (DOG + BLACK: D B O L G A * C * K). With an odd number of words the middle word is
+left over and written reversed between two '*'. The full stop is not part of the encrypted text.</p>
+<p><b>Decrypting</b> reverses this: a token that begins with '*' is the middle word (a merged token always begins
+with a letter of the first word); in every other token the characters at even positions (0, 2, 4, …) form the first
+word and those at odd positions the second, ignoring '*'. The k-th token gives word k and word n−1−k.</p>
+<p><b>Algorithm</b></p>
+<ol><li>Start. Input the choice (1 = decrypt, 2 = encrypt) and the sentence; convert to upper case; drop a final
+'.', '?' or '!'. Split into words w[0..n−1].</li>
+<li><b>Encrypt:</b> for i = 0 to n/2 − 1: t ← "" ; for j = 0 to max(len(w[i]), len(w[n−1−i])) − 1: append
+w[i][j] (or '*' if j ≥ its length), then w[n−1−i][j] (or '*'). Output t.</li>
+<li>If n is odd, output "*" + reverse(w[n/2]) + "*".</li>
+<li><b>Decrypt:</b> tokens t[0..p−1]. If the last token starts with '*', it is the middle word: mid ← reverse of it
+without the two stars, pairs ← p − 1, n ← 2·pairs + 1; else pairs ← p, n ← 2·pairs.</li>
+<li>For k = 0 to pairs − 1: a ← characters of t[k] at even positions, b ← those at odd positions, skipping '*';
+w[k] ← a, w[n−1−k] ← b.</li>
+<li>If n is odd, w[n/2] ← mid. Output w[0..n−1] separated by spaces. Stop.</li></ol>
+<p><b>Program</b></p><pre class="code">import java.util.Scanner;
+import java.util.StringTokenizer;
+
+/* Merge cipher.
+ * Encrypt: pair word 1 with the last word, word 2 with the last-but-one, ...
+ *   A pair is merged letter by letter, first word's letter first; where the
+ *   shorter word has run out its place is taken by '*'.
+ *   With an odd number of words the middle word has no partner: it is
+ *   reversed and written as *...*.
+ * Decrypt: a token beginning with '*' is the middle word; in every other token
+ *   the letters at even positions belong to the first word of the pair and
+ *   those at odd positions to the second ('*' fillers are dropped).          */
+class MergeCipher {
+
+    // splits a sentence into words, dropping the full stop / ? / ! at the end
+    String[] words(String s) {
+        s = s.trim();
+        char last = s.charAt(s.length() - 1);
+        if (last == '.' || last == '?' || last == '!')
+            s = s.substring(0, s.length() - 1);
+        StringTokenizer st = new StringTokenizer(s);
+        String w[] = new String[st.countTokens()];
+        for (int i = 0; i &lt; w.length; i++)
+            w[i] = st.nextToken();
+        return w;
+    }
+
+    // merges two words, padding the shorter one with '*'
+    String merge(String a, String b) {
+        String r = "";
+        int L = Math.max(a.length(), b.length());
+        for (int i = 0; i &lt; L; i++) {
+            r += (i &lt; a.length()) ? a.charAt(i) : '*';
+            r += (i &lt; b.length()) ? b.charAt(i) : '*';
+        }
+        return r;
+    }
+
+    String reverse(String a) {
+        String r = "";
+        for (int i = a.length() - 1; i &gt;= 0; i--)
+            r += a.charAt(i);
+        return r;
+    }
+
+    String encrypt(String sentence) {
+        String w[] = words(sentence);
+        int n = w.length;
+        String out = "";
+        for (int i = 0; i &lt; n / 2; i++)             // the pairs, outside in
+            out += merge(w[i], w[n - 1 - i]) + " ";
+        if (n % 2 == 1)                             // the unpaired middle word
+            out += "*" + reverse(w[n / 2]) + "*";
+        return out.trim();
+    }
+
+    String decrypt(String code) {
+        String t[] = words(code);
+        int pairs = t.length, mid = 0;
+        String middle = "";
+        if (t[t.length - 1].charAt(0) == '*') {     // last token is the middle word
+            pairs = t.length - 1;
+            mid = 1;
+            String m = t[t.length - 1];
+            middle = reverse(m.substring(1, m.length() - 1));
+        }
+        int n = 2 * pairs + mid;                    // number of words in the sentence
+        String w[] = new String[n];
+        for (int k = 0; k &lt; pairs; k++) {
+            String a = "", b = "";
+            for (int i = 0; i &lt; t[k].length(); i++) {
+                char ch = t[k].charAt(i);
+                if (ch == '*')
+                    continue;                       // filler, not a letter
+                if (i % 2 == 0) a += ch; else b += ch;
+            }
+            w[k] = a;                               // k-th word from the front
+            w[n - 1 - k] = b;                       // k-th word from the back
+        }
+        if (mid == 1)
+            w[n / 2] = middle;
+        String out = "";
+        for (int i = 0; i &lt; n; i++)
+            out += w[i] + (i &lt; n - 1 ? " " : "");
+        return out;
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        MergeCipher ob = new MergeCipher();
+        System.out.println("1. Encrypted to original   2. Original to encrypted");
+        int ch = Integer.parseInt(sc.nextLine().trim());
+        System.out.println("Enter the word / sentence:");
+        String s = sc.nextLine().toUpperCase();
+        if (s.trim().length() == 0) {
+            System.out.println("INVALID INPUT");
+            return;
+        }
+        if (ch == 1)
+            System.out.println("Original Sentence : " + ob.decrypt(s));
+        else if (ch == 2)
+            System.out.println("Encrypted Sentence : " + ob.encrypt(s));
+        else
+            System.out.println("INVALID CHOICE");
+    }
+}</pre><p><b>Output — the paper's samples</b> (both directions)</p><p><b>Input</b></p><pre class="code">2
+THE DOG JUMPS OVER THE BLACK CAT.</pre><p><b>Output</b></p><pre class="code">1. Encrypted to original   2. Original to encrypted
+Enter the word / sentence:
+Encrypted Sentence : TCHAET DBOLGA*C*K JTUHMEP*S* *REVO*</pre><p><b>Input</b></p><pre class="code">1
+TCHAET DBOLGA*C*K JTUHMEP*S* *REVO*</pre><p><b>Output</b></p><pre class="code">1. Encrypted to original   2. Original to encrypted
+Enter the word / sentence:
+Original Sentence : THE DOG JUMPS OVER THE BLACK CAT</pre><p><b>Input</b></p><pre class="code">2
+ASHOK IS AN INDIAN</pre><p><b>Output</b></p><pre class="code">1. Encrypted to original   2. Original to encrypted
+Enter the word / sentence:
+Encrypted Sentence : AISNHDOIKA*N IASN</pre><p><b>Input</b></p><pre class="code">1
+AISNHDOIKA*N IASN</pre><p><b>Output</b></p><pre class="code">1. Encrypted to original   2. Original to encrypted
+Enter the word / sentence:
+Original Sentence : ASHOK IS AN INDIAN</pre><p><b>Output — further inputs</b> (a sentence whose first word is much shorter than its partner, decrypted back; a single word)</p><p><b>Input</b></p><pre class="code">2
+WE LOVE JAVA PROGRAMMING.</pre><p><b>Output</b></p><pre class="code">1. Encrypted to original   2. Original to encrypted
+Enter the word / sentence:
+Encrypted Sentence : WPER*O*G*R*A*M*M*I*N*G LJOAVVEA</pre><p><b>Input</b></p><pre class="code">1
+WPER*O*G*R*A*M*M*I*N*G LJOAVVEA</pre><p><b>Output</b></p><pre class="code">1. Encrypted to original   2. Original to encrypted
+Enter the word / sentence:
+Original Sentence : WE LOVE JAVA PROGRAMMING</pre><p><b>Input</b></p><pre class="code">2
+COMPUTER</pre><p><b>Output</b></p><pre class="code">1. Encrypted to original   2. Original to encrypted
+Enter the word / sentence:
+Encrypted Sentence : *RETUPMOC*</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li><code>StringTokenizer</code> / <code>split</code> to get words; <code>charAt</code>, <code>length</code>.</li><li>Pair index i with n−1−i.</li><li>To undo an interleave, take even and odd positions separately.</li></ul></aside></div>
+</article>
+</main>
+</body></html>

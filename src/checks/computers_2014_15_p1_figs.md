@@ -1,0 +1,15 @@
+# Figures — computers_2014_15_p1 (rendered with preview.py and inspected)
+- fig_q1c_or: two NAND inverters (inputs tied) into a NAND = A+B; checked.
+- fig_q1e_kmap: 3-variable map X | YZ (Gray), 1s at 2,3,4,6,7; quad Y and wrapping pair 4,6 = XZ′.
+- fig_q4a_kmap / circ: quad CD (column) and quad 4,6,12,14 (wrap) = BD′; AND(C,D), AND(B,D′) into OR; simulated.
+- fig_q4b_kmap / circ: 0s at 0,8,10,12–15; groups 12–15 (A′+B′), 8,10,12,14 (A′+D), 0,8 (B+C+D, vertical wrap); OR gates into AND; simulated.
+- fig_q5_kmap / circ: variables G,T,A,B; 1s at 7,11,15; pairs TAB, GAB; output labelled S; simulated.
+- fig_q6_nand: D = X′Y + XY′ NAND-only, X′,Y′ from tied-input NANDs; gate taps checked; simulated (on-set {01,10}).
+- fig_q6c_fa: full adder 2 XOR, 2 AND, 1 OR; label not clipped.
+- fig_q7a_mux: 4:1 MUX gate level: S1, S0 with NOT gates, four 3-input ANDs taking (I0,S1′,S0′),(I1,S1′,S0),(I2,S1,S0′),(I3,S1,S0), 4-input OR → Y; equation checked for all 64 combinations. Review: OR fan-in re-laned (outer gates on the outer lane) — the first version had AND0 and AND1 output wires crossing and nearly touching beside the OR, reading like a short.
+- fig_q7c_given (question): redrawn from the 300-dpi page: AND(X,Y)=(1) with a junction dot, AND((1),Z)=(2), NOT → (3), AND((3),(1)) → F; the branch of (1) crosses the Z line without a dot as in the original. Simulated F = XYZ′.
+- fig_q7c_answer: 3-input AND with NOT on Z.
+- fig_q13a_list: ptr_start → 12 → 7 → 25 → 4 → null; item/ptr parts labelled (first version had the label under the arrow — redrawn).
+- fig_q13b_tree (question): A(B(D,E(H(–,K),–)),C(F,G(I,J(L,–)))) read off the page image (K right of H, L left of J); internal/leaf/preorder computed from the same tuple.
+- fig_q13b_right: subtree G(I, J(L,–)) — asserted equal to the right child of C in the tree tuple.
+- All K-maps (shared computers_a_lib.kmap): review moved the cell numbers to be drawn after the group rings, on a white patch, so no ring hides them.

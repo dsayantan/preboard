@@ -1,0 +1,9 @@
+Rear full
+10 20 30 
+popfront -> 10
+poprear  -> 30
+20 
+poprear  -> 20
+popfront -> -999
+Pipe is empty
+50 

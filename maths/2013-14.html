@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics Pre-Board 2013-14</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/contrib/mhchem.min.js"></script>
+<script defer src="../assets/katex/contrib/auto-render.min.js"></script>
+<script defer src="../assets/site.js"></script>
+</head><body>
+<header class="top"><a class="crumb" href="../index.html">Pre-Board Revision</a> ›
+<a class="crumb" href="index.html">Mathematics</a>
+<h1>Mathematics · Pre-Board 2013-14</h1>
+<p class="meta">Mathematics · Maximum marks 100 · Time 3 hours</p>
+<p class="meta">22 questions in the ISC 2027 syllabus, answered below ·
+16 outside it (listed at the end, unanswered)</p>
+<div class="tools"><button data-act="show">Show all answers</button>
+<button data-act="hide">Hide all answers</button>
+<span class="prog" data-key="pbrev-maths-2013-14"></span></div></header>
+<main data-key="pbrev-maths-2013-14">
+<details class="intro"><summary>Instructions as printed</summary><p><em>(Candidates are allowed additional 15 minutes for only reading the paper.
+They must NOT start writing during this time.)</em></p>
+<p><b>Section A</b> – Answer Question 1 (compulsory) and <b>five</b> other questions.<br>
+<b>Section B and Section C</b> – Answer <b>two</b> questions from <b>either</b> Section B <b>or</b> Section C.</p>
+<p>All working, including rough work, should be done on the same sheet as, and adjacent to, the rest of the answer.</p>
+<p>The intended marks for questions or parts of questions are given in brackets [ ].</p>
+<p>Mathematical tables and graph papers are provided. Slide rule may be used.</p></details>
+<h2 class="sec">Section A</h2>
+<article class="q" id="q1-i">
+<div class="qhead"><span class="num">Q1(i)</span><span class="topic">Matrices</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q1-i"> revised</label></div>
+<div class="qbody"><p>Express the matrix \(A=\begin{bmatrix}3&-4\\1&-1\end{bmatrix}\) as the sum of a symmetric and a skew-symmetric matrix.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Every square matrix can be written as \(A=P+Q\) with \(P=\tfrac12(A+A')\) symmetric and \(Q=\tfrac12(A-A')\) skew-symmetric.</p>
+<p>\(A'=\begin{bmatrix}3&1\\-4&-1\end{bmatrix}\).</p>
+<p>\[P=\tfrac12(A+A')=\tfrac12\begin{bmatrix}6&-3\\-3&-2\end{bmatrix}=\begin{bmatrix}3&-\tfrac32\\-\tfrac32&-1\end{bmatrix},\qquad P'=P\ \text{(symmetric)}\]</p>
+<p>\[Q=\tfrac12(A-A')=\tfrac12\begin{bmatrix}0&-5\\5&0\end{bmatrix}=\begin{bmatrix}0&-\tfrac52\\\tfrac52&0\end{bmatrix},\qquad Q'=-Q\ \text{(skew-symmetric)}\]</p>
+<p>Check: \(P+Q=\begin{bmatrix}3&-4\\1&-1\end{bmatrix}=A\).</p>
+<p><span class="box">\(A=\begin{bmatrix}3&-\tfrac32\\-\tfrac32&-1\end{bmatrix}+\begin{bmatrix}0&-\tfrac52\\\tfrac52&0\end{bmatrix}\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>\(A=\tfrac12(A+A')+\tfrac12(A-A')\).</li><li>Symmetric: \(P'=P\); skew-symmetric: \(Q'=-Q\) (diagonal entries 0).</li><li>Always verify the two parts add back to \(A\).</li></ul></aside></div>
+</article>
+<article class="q" id="q1-iii">
+<div class="qhead"><span class="num">Q1(iii)</span><span class="topic">Inverse Trigonometric Functions</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q1-iii"> revised</label></div>
+<div class="qbody"><p>Solve for \(x\): \(\tan^{-1}(2x)+\tan^{-1}(3x)=\dfrac{\pi}{4}\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Using \(\tan^{-1}a+\tan^{-1}b=\tan^{-1}\dfrac{a+b}{1-ab}\) (valid when \(ab<1\)):</p>
+<p>\[\tan^{-1}\frac{2x+3x}{1-6x^2}=\frac{\pi}{4}\ \Rightarrow\ \frac{5x}{1-6x^2}=1\ \Rightarrow\ 6x^2+5x-1=0\]</p>
+<p>\[(6x-1)(x+1)=0\ \Rightarrow\ x=\tfrac16\ \text{or}\ x=-1.\]</p>
+<p>Check: for \(x=-1\) the left side is \(\tan^{-1}(-2)+\tan^{-1}(-3)\), a sum of two negative angles, so it cannot equal \(\pi/4\); also \(ab=6>1\). Reject.</p>
+<p>For \(x=\tfrac16\): \(\tan^{-1}\tfrac13+\tan^{-1}\tfrac12=\tan^{-1}\dfrac{5/6}{5/6}=\tan^{-1}1=\tfrac{\pi}{4}\). ✓</p>
+<p><span class="box">\(x=\tfrac16\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>\(\tan^{-1}a+\tan^{-1}b=\tan^{-1}\frac{a+b}{1-ab}\) for \(ab<1\).</li><li>Always substitute back: a root can make the left side negative or need \(ab>1\).</li></ul></aside></div>
+</article>
+<article class="q" id="q1-v">
+<div class="qhead"><span class="num">Q1(v)</span><span class="topic">Integrals</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q1-v"> revised</label></div>
+<div class="qbody"><p>Evaluate: \(\displaystyle\int e^x\left(\frac{1+\sin x}{1+\cos x}\right)dx\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Use \(1+\cos x=2\cos^2\frac x2\) and \(\sin x=2\sin\frac x2\cos\frac x2\):</p>
+<p>\[\frac{1+\sin x}{1+\cos x}=\frac{1}{2\cos^2\frac x2}+\frac{2\sin\frac x2\cos\frac x2}{2\cos^2\frac x2}=\tfrac12\sec^2\tfrac x2+\tan\tfrac x2.\]</p>
+<p>So the integral has the form \(\int e^x\{f(x)+f'(x)\}\,dx\) with \(f(x)=\tan\frac x2\), \(f'(x)=\tfrac12\sec^2\frac x2\).</p>
+<p>\[\int e^x\{f(x)+f'(x)\}dx=e^x f(x)+C\]</p>
+<p><span class="box">\(\displaystyle\int e^x\frac{1+\sin x}{1+\cos x}\,dx=e^x\tan\frac x2+C\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>\(\int e^x\{f(x)+f'(x)\}dx=e^xf(x)+C\) (from \((e^xf)'\)).</li><li>Half-angle forms: \(1+\cos x=2\cos^2\frac x2\), \(\sin x=2\sin\frac x2\cos\frac x2\).</li></ul></aside></div>
+</article>
+<article class="q" id="q1-vi">
+<div class="qhead"><span class="num">Q1(vi)</span><span class="topic">Definite Integrals</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q1-vi"> revised</label></div>
+<div class="qbody"><p>If \(\displaystyle\int_0^K\frac{dx}{2+8x^2}=\frac{\pi}{16}\), then find K.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>\[\int_0^K\frac{dx}{2+8x^2}=\frac18\int_0^K\frac{dx}{x^2+\left(\frac12\right)^2}=\frac18\cdot\frac{1}{1/2}\Big[\tan^{-1}2x\Big]_0^K=\frac14\tan^{-1}2K.\]</p>
+<p>\[\frac14\tan^{-1}2K=\frac{\pi}{16}\ \Rightarrow\ \tan^{-1}2K=\frac{\pi}{4}\ \Rightarrow\ 2K=1.\]</p>
+<p><span class="box">\(K=\tfrac12\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>\(\int\frac{dx}{x^2+a^2}=\frac1a\tan^{-1}\frac xa+C\).</li><li>Take the coefficient of \(x^2\) out first.</li></ul></aside></div>
+</article>
+<article class="q" id="q1-ix">
+<div class="qhead"><span class="num">Q1(ix)</span><span class="topic">Differential Equations</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q1-ix"> revised</label></div>
+<div class="qbody"><p>Find the particular solution of \(y(1-x^2)\,dy+x(1-y^2)\,dx=0\) given that \(y=1\) when \(x=0\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Separating the variables</b> (for \(x^2\ne1,\ y^2\ne1\)):</p>
+<p>\[\frac{y\,dy}{1-y^2}=-\frac{x\,dx}{1-x^2}.\]</p>
+<p>Integrate: \(-\tfrac12\log|1-y^2|=\tfrac12\log|1-x^2|+c\), i.e.</p>
+<p>\[\log|1-y^2|+\log|1-x^2|=-2c\ \Rightarrow\ \boxed{(1-x^2)(1-y^2)=C}\quad\text{(general solution).}\]</p>
+<p><b>Particular solution.</b> Putting \(x=0,\ y=1\): \(C=(1)(0)=0\), so \((1-x^2)(1-y^2)=0\). Near \(x=0\) the factor \(1-x^2\ne0\), so \(1-y^2=0\), and the branch through \((0,1)\) is</p>
+<p><span class="box">\(y=1\)</span></p>
+<p>Check: with \(y=1\), \(dy=0\) and \(1-y^2=0\), so both terms of the equation vanish. ✓</p>
+<p class="note">[The given condition lies on the line \(y=1\), where the separation step divides by \(1-y^2=0\); the answer is therefore the constant solution. The question was very likely meant to read \(y(1+x^2)dy+x(1+y^2)dx=0\): then \(\frac{y\,dy}{1+y^2}=-\frac{x\,dx}{1+x^2}\) gives \((1+x^2)(1+y^2)=C\), and \(y=1\) at \(x=0\) gives the particular solution \((1+x^2)(1+y^2)=2\).]</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Variable separable: collect \(y\) with \(dy\), \(x\) with \(dx\), integrate both sides, one constant.</li><li>\(\int\frac{x\,dx}{1\pm x^2}=\pm\frac12\log|1\pm x^2|\).</li><li>Particular solution: substitute the condition to fix \(C\).</li></ul></aside></div>
+</article>
+<article class="q" id="q1-x">
+<div class="qhead"><span class="num">Q1(x)</span><span class="topic">Probability</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q1-x"> revised</label></div>
+<div class="qbody"><p>Bag P contains 5 red and 3 green balls and bag Q contains 3 red and 4 green balls. A ball is transferred from bag P to Q and then a ball is drawn from bag Q. What is the probability that the ball drawn is green?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Let \(E_1\): the transferred ball is red, \(E_2\): it is green; \(G\): the ball drawn from Q is green.</p>
+<figure class="afig wide" data-fig="fig_tree_transfer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 230" role="img"><defs></defs><circle cx="30" cy="115.0" r="4" stroke="#111" stroke-width="1.6" fill="#111"/><text x="30" y="105.0" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif"></text><line x1="30" y1="115.0" x2="210" y2="70.0" stroke="#111" stroke-width="1.4"/><text x="120.0" y="86.5" font-size="13" text-anchor="middle" fill="#1f5fb3" font-family="Times New Roman,serif">5/8</text><circle cx="210" cy="70.0" r="3.5" stroke="#111" stroke-width="1.6" fill="#111"/><text x="210" y="61.0" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">red moved</text><line x1="210" y1="70.0" x2="410" y2="45.0" stroke="#111" stroke-width="1.2"/><text x="310.0" y="52.5" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">4/8</text><text x="418" y="50.0" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">green from Q</text><line x1="210" y1="70.0" x2="410" y2="95.0" stroke="#111" stroke-width="1.2"/><text x="310.0" y="77.5" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">4/8</text><text x="418" y="100.0" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">red from Q</text><line x1="30" y1="115.0" x2="210" y2="170.0" stroke="#111" stroke-width="1.4"/><text x="120.0" y="136.5" font-size="13" text-anchor="middle" fill="#1f5fb3" font-family="Times New Roman,serif">3/8</text><circle cx="210" cy="170.0" r="3.5" stroke="#111" stroke-width="1.6" fill="#111"/><text x="210" y="190.0" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">green moved</text><line x1="210" y1="170.0" x2="410" y2="145.0" stroke="#111" stroke-width="1.2"/><text x="310.0" y="152.5" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">5/8</text><text x="418" y="150.0" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">green from Q</text><line x1="210" y1="170.0" x2="410" y2="195.0" stroke="#111" stroke-width="1.2"/><text x="310.0" y="177.5" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">3/8</text><text x="418" y="200.0" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">red from Q</text></svg><figcaption>First stage: the ball moved from P; second stage: the ball drawn from Q.</figcaption></figure>
+<p>\(P(E_1)=\tfrac58,\ P(E_2)=\tfrac38\). After transfer Q has 8 balls:</p>
+<p>\(P(G\mid E_1)=\tfrac48\) (3 red + 1 red, 4 green); \(P(G\mid E_2)=\tfrac58\) (3 red, 4 + 1 green).</p>
+<p>By the theorem of total probability,</p>
+<p>\[P(G)=\tfrac58\cdot\tfrac48+\tfrac38\cdot\tfrac58=\tfrac{20}{64}+\tfrac{15}{64}=\tfrac{35}{64}.\]</p>
+<p><span class="box">\(P(\text{green})=\dfrac{35}{64}\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Total probability: \(P(A)=\sum P(E_i)P(A\mid E_i)\) over a partition \(E_1,E_2,\dots\)</li><li>Recount the second bag after the transfer (it now holds 8 balls).</li></ul></aside></div>
+</article>
+<article class="q" id="q2-a">
+<div class="qhead"><span class="num">Q2(a)</span><span class="topic">Determinants</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q2-a"> revised</label></div>
+<div class="qbody"><p>Using properties of determinants, prove that:</p>
+<p>\[\begin{vmatrix}b+c&c+a&a+b\\c+a&a+b&b+c\\a+b&b+c&c+a\end{vmatrix}=-2(a^3+b^3+c^3-3abc)\]</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Let \(\Delta\) be the determinant. Apply \(C_1\to C_1+C_2+C_3\); every entry of \(C_1\) becomes \(2(a+b+c)\):</p>
+<p>\[\Delta=\begin{vmatrix}2(a+b+c)&c+a&a+b\\2(a+b+c)&a+b&b+c\\2(a+b+c)&b+c&c+a\end{vmatrix}=2(a+b+c)\begin{vmatrix}1&c+a&a+b\\1&a+b&b+c\\1&b+c&c+a\end{vmatrix}\]</p>
+<p>(taking the common factor \(2(a+b+c)\) out of \(C_1\)). Now \(R_2\to R_2-R_1,\ R_3\to R_3-R_1\):</p>
+<p>\[\Delta=2(a+b+c)\begin{vmatrix}1&c+a&a+b\\0&b-c&c-a\\0&b-a&c-b\end{vmatrix}\]</p>
+<p>Expanding along \(C_1\):</p>
+<p>\[\begin{aligned}\Delta&=2(a+b+c)\big[(b-c)(c-b)-(c-a)(b-a)\big]\\&=2(a+b+c)\big[-(b^2-2bc+c^2)-(bc-ab-ac+a^2)\big]\\&=-2(a+b+c)(a^2+b^2+c^2-ab-bc-ca).\end{aligned}\]</p>
+<p>Since \(a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\),</p>
+<p><span class="box">\(\Delta=-2(a^3+b^3+c^3-3abc)\)</span> &nbsp;Hence proved.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Adding all columns to one column does not change the determinant; a common factor of a row/column comes out.</li><li>\(R_i\to R_i-R_j\) creates zeros without changing the value.</li><li>\(a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\).</li></ul></aside></div>
+</article>
+<article class="q" id="q2-b">
+<div class="qhead"><span class="num">Q2(b)</span><span class="topic">Matrices and Determinants</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q2-b"> revised</label></div>
+<div class="qbody"><p>Find \(A^{-1}\) when \(A=\begin{bmatrix}4&2&3\\1&1&1\\3&1&-2\end{bmatrix}\). Hence solve the system of equations</p>
+<p>\(4x+2y+3z=2,\ x+y+z=1,\ 3x+y-2z=5\).</p>
+<p class="note">[Unclear in the original: the first row of \(A\) is cut off at the page break of the scan. It is read as \(4\ \ 2\ \ 3\), the coefficients of the first equation, which the 'hence' requires.]</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>\(|A|=4(-2-1)-2(-2-3)+3(1-3)=-12+10-6=-8\ne0\), so \(A^{-1}\) exists.</p>
+<p>Cofactors: \(A_{11}=-3,\ A_{12}=5,\ A_{13}=-2;\ A_{21}=7,\ A_{22}=-17,\ A_{23}=2;\ A_{31}=-1,\ A_{32}=-1,\ A_{33}=2.\)</p>
+<p>\[\operatorname{adj}A=\begin{bmatrix}-3&7&-1\\5&-17&-1\\-2&2&2\end{bmatrix},\qquad A^{-1}=\frac{\operatorname{adj}A}{|A|}=-\frac18\begin{bmatrix}-3&7&-1\\5&-17&-1\\-2&2&2\end{bmatrix}.\]</p>
+<p>The system is \(AX=B\) with \(X=\begin{bmatrix}x\\y\\z\end{bmatrix},\ B=\begin{bmatrix}2\\1\\5\end{bmatrix}\), so \(X=A^{-1}B\):</p>
+<p>\[X=-\frac18\begin{bmatrix}-6+7-5\\10-17-5\\-4+2+10\end{bmatrix}=-\frac18\begin{bmatrix}-4\\-12\\8\end{bmatrix}=\begin{bmatrix}\tfrac12\\\tfrac32\\-1\end{bmatrix}.\]</p>
+<p><span class="box">\(x=\tfrac12,\ y=\tfrac32,\ z=-1\)</span></p>
+<p>Check: \(4(\tfrac12)+2(\tfrac32)+3(-1)=2\) ✓, \(\tfrac12+\tfrac32-1=1\) ✓, \(\tfrac32+\tfrac32+2=5\) ✓.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>\(A^{-1}=\dfrac{\operatorname{adj}A}{|A|}\); adj A is the transpose of the cofactor matrix.</li><li>Cofactor \(A_{ij}=(-1)^{i+j}M_{ij}\).</li><li>\(AX=B\Rightarrow X=A^{-1}B\) when \(|A|\ne0\).</li></ul></aside></div>
+</article>
+<article class="q" id="q3-b">
+<div class="qhead"><span class="num">Q3(b)</span><span class="topic">Inverse Trigonometric Functions</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q3-b"> revised</label></div>
+<div class="qbody"><p>Prove that: \(\sin\!\left(2\tan^{-1}\dfrac35-\sin^{-1}\dfrac{7}{25}\right)=\dfrac{304}{425}\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Let \(\alpha=\tan^{-1}\frac35\) and \(\beta=\sin^{-1}\frac{7}{25}\) (both acute).</p>
+<p>With \(\tan\alpha=\frac35\):</p>
+<p>\[\sin2\alpha=\frac{2\tan\alpha}{1+\tan^2\alpha}=\frac{6/5}{34/25}=\frac{15}{17},\qquad \cos2\alpha=\frac{1-\tan^2\alpha}{1+\tan^2\alpha}=\frac{16/25}{34/25}=\frac{8}{17}.\]</p>
+<p>With \(\sin\beta=\frac7{25}\): \(\cos\beta=\sqrt{1-\frac{49}{625}}=\frac{24}{25}\).</p>
+<p>\[\sin(2\alpha-\beta)=\sin2\alpha\cos\beta-\cos2\alpha\sin\beta=\frac{15}{17}\cdot\frac{24}{25}-\frac{8}{17}\cdot\frac{7}{25}=\frac{360-56}{425}.\]</p>
+<p><span class="box">\(\sin\!\left(2\tan^{-1}\tfrac35-\sin^{-1}\tfrac7{25}\right)=\dfrac{304}{425}\)</span> &nbsp;Hence proved.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>\(\sin2\theta=\frac{2\tan\theta}{1+\tan^2\theta}\), \(\cos2\theta=\frac{1-\tan^2\theta}{1+\tan^2\theta}\).</li><li>\(\sin(A-B)=\sin A\cos B-\cos A\sin B\).</li><li>Name each inverse-trig term as an angle and read its other ratios off a right triangle.</li></ul></aside></div>
+</article>
+<article class="q" id="q5-a">
+<div class="qhead"><span class="num">Q5(a)</span><span class="topic">Differentiation (second order)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q5-a"> revised</label></div>
+<div class="qbody"><p>If \(x=\sin\phi,\ y=\sin\lambda\phi\), then prove that \((1-x^2)\dfrac{d^2y}{dx^2}-x\dfrac{dy}{dx}+\lambda^2y=0\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>\(\dfrac{dx}{d\phi}=\cos\phi,\quad\dfrac{dy}{d\phi}=\lambda\cos\lambda\phi\), so</p>
+<p>\[\frac{dy}{dx}=\frac{\lambda\cos\lambda\phi}{\cos\phi}.\]</p>
+<p>Since \(\cos\phi=\sqrt{1-x^2}\) and \(\cos\lambda\phi=\sqrt{1-y^2}\) (up to sign, which squaring removes):</p>
+<p>\[\sqrt{1-x^2}\,y_1=\lambda\cos\lambda\phi\ \Rightarrow\ (1-x^2)y_1^2=\lambda^2\cos^2\lambda\phi=\lambda^2(1-y^2).\]</p>
+<p>Differentiate both sides with respect to \(x\):</p>
+<p>\[(1-x^2)\,2y_1y_2-2x\,y_1^2=-2\lambda^2y\,y_1.\]</p>
+<p>Divide by \(2y_1\) (\(y_1\ne0\)):</p>
+<p><span class="box">\((1-x^2)\dfrac{d^2y}{dx^2}-x\dfrac{dy}{dx}+\lambda^2y=0\)</span> &nbsp;Hence proved.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Parametric: \(\frac{dy}{dx}=\frac{dy/d\phi}{dx/d\phi}\).</li><li>Square first to clear roots, then differentiate implicitly — much shorter than differentiating the quotient.</li><li>\(\frac{d}{dx}(y_1^2)=2y_1y_2\).</li></ul></aside></div>
+</article>
+<article class="q" id="q5-b">
+<div class="qhead"><span class="num">Q5(b)</span><span class="topic">Applications of Derivatives (maxima and minima)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q5-b"> revised</label></div>
+<div class="qbody"><p>A cone is inscribed in a sphere of radius \(r\). If the volume of the cone is maximum then find the height of the cone.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Let the cone have height \(h\) and base radius \(\rho\); its vertex V is on the sphere and its axis passes through the centre O.</p>
+<figure class="afig" data-fig="fig_cone_in_sphere"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" role="img"><defs></defs><circle cx="180" cy="160" r="130" stroke="#1f5fb3" stroke-width="1.6" fill="none"/><path d="M 180 30 L 57.4 203.3 L 302.6 203.3 Z" stroke="#111" stroke-width="1.8" fill="#e8f0fb"/><line x1="180" y1="30" x2="180" y2="203.33333333333334" stroke="#111" stroke-width="1.2" stroke-dasharray="4 3"/><circle cx="180" cy="160" r="3" stroke="#111" stroke-width="1.6" fill="#111"/><text x="188" y="156" font-size="14" text-anchor="start" fill="#111" font-family="Times New Roman,serif">O</text><line x1="180" y1="160" x2="302.56517540566824" y2="203.33333333333334" stroke="#c0392b" stroke-width="1.4"/><text x="251.28258770283412" y="179.66666666666669" font-size="16" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif" font-style="italic">r</text><text x="175" y="95.0" font-size="16" text-anchor="end" fill="#c0392b" font-family="Times New Roman,serif" font-style="italic">r</text><line x1="180" y1="30" x2="180" y2="160" stroke="#c0392b" stroke-width="1.4"/><text x="172" y="186.66666666666669" font-size="15" text-anchor="end" fill="#111" font-family="Times New Roman,serif" font-style="italic">h − r</text><text x="241.28258770283412" y="229.33333333333334" font-size="14" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic">ρ (base radius)</text><line x1="180" y1="203.33333333333334" x2="302.56517540566824" y2="203.33333333333334" stroke="#2b7a4b" stroke-width="1.8"/><text x="180" y="22" font-size="14" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">V</text><text x="176" y="220.33333333333334" font-size="13" text-anchor="end" fill="#111" font-family="Times New Roman,serif">M</text><line x1="31.434824594331772" y1="30" x2="31.434824594331772" y2="203.33333333333334" stroke="#111" stroke-width="1"/><line x1="26.434824594331772" y1="30" x2="36.43482459433177" y2="30" stroke="#111" stroke-width="1"/><line x1="26.434824594331772" y1="203.33333333333334" x2="36.43482459433177" y2="203.33333333333334" stroke="#111" stroke-width="1"/><text x="25.434824594331772" y="116.66666666666667" font-size="16" text-anchor="end" fill="#111" font-family="Times New Roman,serif" font-style="italic">h</text></svg><figcaption>Section through the axis, drawn to scale with h = 4r/3.</figcaption></figure>
+<p>In the right triangle formed by O, the base centre M and a point on the base rim: \(OM=h-r\), so</p>
+<p>\[\rho^2=r^2-(h-r)^2=2rh-h^2.\]</p>
+<p>\[V=\frac13\pi\rho^2h=\frac{\pi}{3}(2rh^2-h^3),\qquad 0&lt;h&lt;2r.\]</p>
+<p>\[\frac{dV}{dh}=\frac{\pi}{3}(4rh-3h^2)=0\ \Rightarrow\ h=\frac{4r}{3}\quad(h\ne0).\]</p>
+<p>\[\frac{d^2V}{dh^2}=\frac{\pi}{3}(4r-6h)\Big|_{h=4r/3}=-\frac{4\pi r}{3}&lt;0,\]</p>
+<p>so V is maximum there.</p>
+<p><span class="box">Height of the cone \(=\dfrac{4r}{3}\)</span> &nbsp;(maximum volume \(=\frac{32}{81}\pi r^3=\frac{8}{27}\times\) volume of the sphere).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Express the quantity in one variable using the geometry (Pythagoras in the axial section).</li><li>\(V_{\text{cone}}=\frac13\pi\rho^2h\).</li><li>Second-derivative test: \(f''&lt;0\) ⇒ maximum.</li></ul></aside></div>
+</article>
+<article class="q" id="q6-a">
+<div class="qhead"><span class="num">Q6(a)</span><span class="topic">Integrals (substitution, partial fractions)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q6-a"> revised</label></div>
+<div class="qbody"><p>Evaluate: \(\displaystyle\int\frac{\cos x}{(1+\sin x)(2+\sin x)}\,dx\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Put \(\sin x=t\), \(\cos x\,dx=dt\):</p>
+<p>\[I=\int\frac{dt}{(1+t)(2+t)}.\]</p>
+<p>Partial fractions: \(\dfrac{1}{(1+t)(2+t)}=\dfrac{A}{1+t}+\dfrac{B}{2+t}\); \(t=-1\Rightarrow A=1\); \(t=-2\Rightarrow B=-1\).</p>
+<p>\[I=\int\left(\frac{1}{1+t}-\frac{1}{2+t}\right)dt=\log|1+t|-\log|2+t|+C.\]</p>
+<p><span class="box">\(I=\log\left|\dfrac{1+\sin x}{2+\sin x}\right|+C\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Spot \(f'(x)\) beside \(f(x)\): here \(\cos x\) is \((\sin x)'\).</li><li>Distinct linear factors: \(\frac{1}{(t-a)(t-b)}=\frac{A}{t-a}+\frac{B}{t-b}\), cover-up rule.</li></ul></aside></div>
+</article>
+<article class="q" id="q6-b">
+<div class="qhead"><span class="num">Q6(b)</span><span class="topic">Application of Integrals (area)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q6-b"> revised</label></div>
+<div class="qbody"><p>Find the area of the region bounded by the curve \(y^2=4x\) and the straight line \(y=2x-4\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Points of intersection.</b> From the line, \(x=\frac{y+4}{2}\). Substituting in \(y^2=4x\): \(y^2=2y+8\Rightarrow y^2-2y-8=0\Rightarrow y=4\) or \(y=-2\). The points are \(A(4,4)\) and \(B(1,-2)\).</p>
+<figure class="afig" data-fig="fig_area_parabola_line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 380" role="img"><defs><marker id="m1314-area-ah-333" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs><path d="M 150.1,282.4 L 146.8,280.1 L 143.5,277.8 L 140.4,275.5 L 137.5,273.2 L 134.6,270.9 L 131.9,268.5 L 129.3,266.2 L 126.8,263.9 L 124.5,261.6 L 122.3,259.3 L 120.2,257.0 L 118.3,254.7 L 116.5,252.4 L 114.8,250.1 L 113.2,247.8 L 111.8,245.4 L 110.5,243.1 L 109.3,240.8 L 108.2,238.5 L 107.3,236.2 L 106.5,233.9 L 105.9,231.6 L 105.3,229.3 L 104.9,227.0 L 104.6,224.6 L 104.5,222.3 L 104.5,220.0 L 104.6,217.7 L 104.8,215.4 L 105.2,213.1 L 105.7,210.8 L 106.3,208.5 L 107.0,206.2 L 107.9,203.9 L 108.9,201.5 L 110.1,199.2 L 111.3,196.9 L 112.7,194.6 L 114.2,192.3 L 115.9,190.0 L 117.7,187.7 L 119.6,185.4 L 121.6,183.1 L 123.8,180.8 L 126.0,178.5 L 128.5,176.1 L 131.0,173.8 L 133.7,171.5 L 136.5,169.2 L 139.4,166.9 L 142.5,164.6 L 145.7,162.3 L 149.0,160.0 L 152.4,157.7 L 156.0,155.3 L 159.7,153.0 L 163.5,150.7 L 167.5,148.4 L 171.6,146.1 L 175.8,143.8 L 180.1,141.5 L 184.6,139.2 L 189.2,136.9 L 193.9,134.6 L 198.8,132.2 L 203.8,129.9 L 208.9,127.6 L 214.1,125.3 L 219.5,123.0 L 225.0,120.7 L 230.6,118.4 L 236.4,116.1 L 242.3,113.8 L 248.3,111.5 L 254.4,109.2 L 260.7,106.8 L 267.1,104.5 L 273.6,102.2 L 280.3,99.9 L 287.1,97.6 L 287.1,97.6 L 285.3,99.9 L 283.6,102.2 L 281.9,104.5 L 280.2,106.8 L 278.5,109.2 L 276.8,111.5 L 275.1,113.8 L 273.4,116.1 L 271.7,118.4 L 269.9,120.7 L 268.2,123.0 L 266.5,125.3 L 264.8,127.6 L 263.1,129.9 L 261.4,132.2 L 259.7,134.6 L 258.0,136.9 L 256.2,139.2 L 254.5,141.5 L 252.8,143.8 L 251.1,146.1 L 249.4,148.4 L 247.7,150.7 L 246.0,153.0 L 244.3,155.3 L 242.6,157.7 L 240.8,160.0 L 239.1,162.3 L 237.4,164.6 L 235.7,166.9 L 234.0,169.2 L 232.3,171.5 L 230.6,173.8 L 228.9,176.1 L 227.1,178.5 L 225.4,180.8 L 223.7,183.1 L 222.0,185.4 L 220.3,187.7 L 218.6,190.0 L 216.9,192.3 L 215.2,194.6 L 213.5,196.9 L 211.7,199.2 L 210.0,201.5 L 208.3,203.9 L 206.6,206.2 L 204.9,208.5 L 203.2,210.8 L 201.5,213.1 L 199.8,215.4 L 198.0,217.7 L 196.3,220.0 L 194.6,222.3 L 192.9,224.6 L 191.2,227.0 L 189.5,229.3 L 187.8,231.6 L 186.1,233.9 L 184.4,236.2 L 182.6,238.5 L 180.9,240.8 L 179.2,243.1 L 177.5,245.4 L 175.8,247.8 L 174.1,250.1 L 172.4,252.4 L 170.7,254.7 L 168.9,257.0 L 167.2,259.3 L 165.5,261.6 L 163.8,263.9 L 162.1,266.2 L 160.4,268.5 L 158.7,270.9 L 157.0,273.2 L 155.3,275.5 L 153.5,277.8 L 151.8,280.1 L 150.1,282.4 Z" stroke="none" stroke-width="0" fill="#9ec5f0"/><line x1="36.0" y1="220.8" x2="432.0" y2="220.8" stroke="#333" stroke-width="1.2" marker-end="url(#m1314-area-ah-333)"/><line x1="104.47058823529412" y1="344.0" x2="104.47058823529412" y2="28.0" stroke="#333" stroke-width="1.2" marker-end="url(#m1314-area-ah-333)"/><text x="430.0" y="238.8" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic">x</text><text x="92.47058823529412" y="34.0" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic">y</text><text x="95.47058823529412" y="235.8" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">O</text><line x1="150.11764705882354" y1="217.8" x2="150.11764705882354" y2="223.8" stroke="#333" stroke-width="1"/><text x="150.11764705882354" y="235.8" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">1</text><line x1="195.76470588235293" y1="217.8" x2="195.76470588235293" y2="223.8" stroke="#333" stroke-width="1"/><text x="195.76470588235293" y="235.8" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">2</text><line x1="241.41176470588235" y1="217.8" x2="241.41176470588235" y2="223.8" stroke="#333" stroke-width="1"/><text x="241.41176470588235" y="235.8" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">3</text><line x1="287.05882352941177" y1="217.8" x2="287.05882352941177" y2="223.8" stroke="#333" stroke-width="1"/><text x="287.05882352941177" y="235.8" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">4</text><line x1="332.70588235294116" y1="217.8" x2="332.70588235294116" y2="223.8" stroke="#333" stroke-width="1"/><text x="332.70588235294116" y="235.8" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">5</text><line x1="378.35294117647055" y1="217.8" x2="378.35294117647055" y2="223.8" stroke="#333" stroke-width="1"/><text x="378.35294117647055" y="235.8" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">6</text><line x1="101.47058823529412" y1="282.4" x2="107.47058823529412" y2="282.4" stroke="#333" stroke-width="1"/><text x="98.47058823529412" y="286.4" font-size="11" text-anchor="end" fill="#444" font-family="Times New Roman,serif">-2</text><line x1="101.47058823529412" y1="159.20000000000002" x2="107.47058823529412" y2="159.20000000000002" stroke="#333" stroke-width="1"/><text x="98.47058823529412" y="163.20000000000002" font-size="11" text-anchor="end" fill="#444" font-family="Times New Roman,serif">2</text><line x1="101.47058823529412" y1="97.6" x2="107.47058823529412" y2="97.6" stroke="#333" stroke-width="1"/><text x="98.47058823529412" y="101.6" font-size="11" text-anchor="end" fill="#444" font-family="Times New Roman,serif">4</text><path d="M 287.1,344.0 L 280.1,341.6 L 273.3,339.3 L 266.7,336.9 L 260.1,334.6 L 253.7,332.2 L 247.5,329.8 L 241.4,327.5 L 235.4,325.1 L 229.5,322.7 L 223.8,320.4 L 218.2,318.0 L 212.7,315.7 L 207.4,313.3 L 202.2,310.9 L 197.2,308.6 L 192.2,306.2 L 187.5,303.9 L 182.8,301.5 L 178.3,299.1 L 173.9,296.8 L 169.7,294.4 L 165.5,292.1 L 161.6,289.7 L 157.7,287.3 L 154.0,285.0 L 150.4,282.6 L 147.0,280.2 L 143.7,277.9 L 140.5,275.5 L 137.5,273.2 L 134.5,270.8 L 131.8,268.4 L 129.1,266.1 L 126.6,263.7 L 124.3,261.4 L 122.0,259.0 L 119.9,256.6 L 117.9,254.3 L 116.1,251.9 L 114.4,249.5 L 112.8,247.2 L 111.4,244.8 L 110.1,242.5 L 109.0,240.1 L 107.9,237.7 L 107.0,235.4 L 106.3,233.0 L 105.6,230.7 L 105.1,228.3 L 104.8,225.9 L 104.6,223.6 L 104.5,221.2 L 104.5,218.8 L 104.7,216.5 L 105.0,214.1 L 105.5,211.8 L 106.0,209.4 L 106.7,207.0 L 107.6,204.7 L 108.6,202.3 L 109.7,200.0 L 110.9,197.6 L 112.3,195.2 L 113.9,192.9 L 115.5,190.5 L 117.3,188.2 L 119.2,185.8 L 121.3,183.4 L 123.5,181.1 L 125.8,178.7 L 128.2,176.3 L 130.8,174.0 L 133.6,171.6 L 136.4,169.3 L 139.4,166.9 L 142.5,164.5 L 145.8,162.2 L 149.2,159.8 L 152.7,157.5 L 156.4,155.1 L 160.2,152.7 L 164.1,150.4 L 168.2,148.0 L 172.4,145.6 L 176.7,143.3 L 181.2,140.9 L 185.8,138.6 L 190.6,136.2 L 195.4,133.8 L 200.4,131.5 L 205.6,129.1 L 210.9,126.8 L 216.3,124.4 L 221.8,122.0 L 227.5,119.7 L 233.3,117.3 L 239.3,115.0 L 245.3,112.6 L 251.5,110.2 L 257.9,107.9 L 264.4,105.5 L 271.0,103.1 L 277.7,100.8 L 284.6,98.4 L 291.7,96.1 L 298.8,93.7 L 306.1,91.3 L 313.5,89.0 L 321.1,86.6 L 328.8,84.3 L 336.6,81.9 L 344.5,79.5 L 352.6,77.2 L 360.9,74.8 L 369.2,72.4 L 377.7,70.1 L 386.4,67.7 L 395.1,65.4 L 404.0,63.0 L 413.0,60.6" stroke="#1f5fb3" stroke-width="2" fill="none"/><path d="M 113.6,331.7 L 116.3,328.0 L 119.1,324.3 L 121.8,320.6 L 124.6,316.9 L 127.3,313.2 L 130.0,309.5 L 132.8,305.8 L 135.5,302.1 L 138.2,298.4 L 141.0,294.7 L 143.7,291.0 L 146.5,287.3 L 149.2,283.6 L 151.9,279.9 L 154.7,276.2 L 157.4,272.5 L 160.2,268.8 L 162.9,265.2 L 165.6,261.5 L 168.4,257.8 L 171.1,254.1 L 173.9,250.4 L 176.6,246.7 L 179.3,243.0 L 182.1,239.3 L 184.8,235.6 L 187.5,231.9 L 190.3,228.2 L 193.0,224.5 L 195.8,220.8 L 198.5,217.1 L 201.2,213.4 L 204.0,209.7 L 206.7,206.0 L 209.5,202.3 L 212.2,198.6 L 214.9,194.9 L 217.7,191.2 L 220.4,187.5 L 223.2,183.8 L 225.9,180.1 L 228.6,176.4 L 231.4,172.8 L 234.1,169.1 L 236.8,165.4 L 239.6,161.7 L 242.3,158.0 L 245.1,154.3 L 247.8,150.6 L 250.5,146.9 L 253.3,143.2 L 256.0,139.5 L 258.8,135.8 L 261.5,132.1 L 264.2,128.4 L 267.0,124.7 L 269.7,121.0 L 272.5,117.3 L 275.2,113.6 L 277.9,109.9 L 280.7,106.2 L 283.4,102.5 L 286.1,98.8 L 288.9,95.1 L 291.6,91.4 L 294.4,87.7 L 297.1,84.0 L 299.8,80.4 L 302.6,76.7 L 305.3,73.0 L 308.1,69.3 L 310.8,65.6 L 313.5,61.9 L 316.3,58.2 L 319.0,54.5 L 321.8,50.8 L 324.5,47.1 L 327.2,43.4 L 330.0,39.7 L 332.7,36.0" stroke="#c0392b" stroke-width="2" fill="none"/><circle cx="150.11764705882354" cy="282.4" r="3.2" stroke="#111" stroke-width="1.6" fill="#111"/><text x="158.11764705882354" y="296.4" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">B(1, −2)</text><circle cx="287.05882352941177" cy="97.6" r="3.2" stroke="#111" stroke-width="1.6" fill="#111"/><text x="297.05882352941177" y="101.6" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">A(4, 4)</text><text x="382.9176470588235" y="88.35999999999999" font-size="14" text-anchor="middle" fill="#1f5fb3" font-family="Times New Roman,serif" font-style="italic">y² = 4x</text><text x="305.3176470588236" y="54.47999999999996" font-size="14" text-anchor="end" fill="#c0392b" font-family="Times New Roman,serif" font-style="italic">y = 2x − 4</text><text x="204.89411764705883" y="171.52" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">Area</text></svg><figcaption>The region between y² = 4x and y = 2x − 4.</figcaption></figure>
+<p>Integrating with respect to \(y\) (the line is to the right of the parabola for \(-2&lt;y&lt;4\)):</p>
+<p>\[\text{Area}=\int_{-2}^{4}\left[\frac{y+4}{2}-\frac{y^2}{4}\right]dy=\left[\frac{y^2}{4}+2y-\frac{y^3}{12}\right]_{-2}^{4}\]</p>
+<p>\[=\left(4+8-\tfrac{16}{3}\right)-\left(1-4+\tfrac{2}{3}\right)=\tfrac{20}{3}+\tfrac{7}{3}=9.\]</p>
+<p><span class="box">Area \(=9\) square units</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Find the intersection points first; they are the limits.</li><li>When the region is bounded left/right, integrate in \(y\): \(\int(x_{\text{right}}-x_{\text{left}})\,dy\).</li><li>Area is always positive — sketch to see which curve is on the right.</li></ul></aside></div>
+</article>
+<article class="q" id="q8-a">
+<div class="qhead"><span class="num">Q8(a)</span><span class="topic">Probability</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q8-a"> revised</label></div>
+<div class="qbody"><p>An urn contains 9 balls, 2 of which are white, 3 blue and 4 black. 3 balls are drawn at random. What is the chance that:</p>
+<p>(i) Three balls will be of different colors?<br>(ii) 2 balls will be of same colors and third of different color?<br>(iii) 3 balls will be of same color?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Total number of ways of drawing 3 balls from 9: \(\binom93=84\).</p>
+<p><b>(i)</b> One of each colour: \(\binom21\binom31\binom41=2\cdot3\cdot4=24\).</p>
+<p>\[P=\frac{24}{84}=\frac27.\]</p>
+<p><b>(iii)</b> All three the same colour: only blue or black is possible (there are just 2 white): \(\binom33+\binom43=1+4=5\).</p>
+<p>\[P=\frac{5}{84}.\]</p>
+<p><b>(ii)</b> Exactly two of one colour and the third different:</p>
+<p>\(\binom22\cdot7+\binom32\cdot6+\binom42\cdot5=7+18+30=55\), so \(P=\dfrac{55}{84}\).</p>
+<p>(Check: the three cases are exhaustive, \(24+55+5=84\).)</p>
+<p><span class="box">(i) \(\tfrac27\) &nbsp; (ii) \(\tfrac{55}{84}\) &nbsp; (iii) \(\tfrac{5}{84}\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Classical probability with combinations: favourable \(\binom{}{}\) products over \(\binom{n}{r}\).</li><li>Mutually exclusive, exhaustive cases must add to the total — a free check.</li></ul></aside></div>
+</article>
+<article class="q" id="q8-b">
+<div class="qhead"><span class="num">Q8(b)</span><span class="topic">Probability (independent events)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q8-b"> revised</label></div>
+<div class="qbody"><p>A and B cut a pack of 52 playing cards alternately and every time the card is put back. The pack is shuffled after each cut. A starts the game and the one who cuts a heart first wins. Find the probability that B wins the game.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>On each cut, \(p=P(\text{heart})=\frac{13}{52}=\frac14\), \(q=\frac34\); cuts are independent (the card is replaced and the pack shuffled).</p>
+<p>B wins on the 2nd, 4th, 6th, … cut:</p>
+<p>\[P(B)=qp+q^3p+q^5p+\cdots=\frac{qp}{1-q^2}\quad\text{(infinite G.P., ratio }q^2&lt;1).\]</p>
+<p>\[P(B)=\frac{\frac34\cdot\frac14}{1-\frac9{16}}=\frac{3/16}{7/16}=\frac37.\]</p>
+<p><span class="box">\(P(\text{B wins})=\dfrac37\)</span> &nbsp;(and \(P(\text{A wins})=\frac47\)).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Independent trials: multiply probabilities along the sequence of failures then success.</li><li>Sum of infinite G.P.: \(\frac{a}{1-r}\), \(|r|&lt;1\).</li><li>First player: \(\frac{p}{1-q^2}\); second: \(\frac{qp}{1-q^2}\).</li></ul></aside></div>
+</article>
+<article class="q" id="q9-b">
+<div class="qhead"><span class="num">Q9(b)</span><span class="topic">Differential Equations (linear)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q9-b"> revised</label></div>
+<div class="qbody"><p>Solve the differential equation: \(\left(\dfrac{e^{-2\sqrt x}}{\sqrt x}-\dfrac{y}{\sqrt x}\right)\dfrac{dx}{dy}=1,\ (x\ne0)\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Rewrite: \(\dfrac{dy}{dx}=\dfrac{e^{-2\sqrt x}}{\sqrt x}-\dfrac{y}{\sqrt x}\), i.e.</p>
+<p>\[\frac{dy}{dx}+\frac{1}{\sqrt x}\,y=\frac{e^{-2\sqrt x}}{\sqrt x},\]</p>
+<p>a linear equation \(\frac{dy}{dx}+Py=Q\) with \(P=\frac1{\sqrt x}\), \(Q=\frac{e^{-2\sqrt x}}{\sqrt x}\).</p>
+<p>Integrating factor: \(\int P\,dx=\int x^{-1/2}dx=2\sqrt x\), so \(\text{I.F.}=e^{2\sqrt x}\).</p>
+<p>Solution: \(y\cdot\text{I.F.}=\int Q\cdot\text{I.F.}\,dx+C\):</p>
+<p>\[y\,e^{2\sqrt x}=\int\frac{e^{-2\sqrt x}}{\sqrt x}\,e^{2\sqrt x}dx=\int x^{-1/2}dx=2\sqrt x+C.\]</p>
+<p><span class="box">\(y\,e^{2\sqrt x}=2\sqrt x+C\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Linear form \(\frac{dy}{dx}+Py=Q\): I.F. \(=e^{\int P\,dx}\), solution \(y\cdot\text{I.F.}=\int Q\cdot\text{I.F.}\,dx+C\).</li><li>Turn \(\frac{dx}{dy}\) upside-down first to see which variable is dependent.</li></ul></aside></div>
+</article>
+<h2 class="sec">Section B</h2><p class="secnote">(Attempt any two question)</p>
+<article class="q" id="q11-a">
+<div class="qhead"><span class="num">Q11(a)</span><span class="topic">Three-dimensional Geometry (planes)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q11-a"> revised</label></div>
+<div class="qbody"><p>Find the vector equation of the plane containing the line \(\dfrac{x+2}{2}=\dfrac{y+3}{3}=\dfrac{z-4}{-2}\) and the point \((0,6,0)\).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The line passes through \(A(-2,-3,4)\) with direction \(\vec b=2\hat i+3\hat j-2\hat k\). The plane also contains \(P(0,6,0)\), so it contains \(\overrightarrow{AP}=2\hat i+9\hat j-4\hat k\).</p>
+<p>A normal to the plane is perpendicular to both:</p>
+<p>\[\vec n=\vec b\times\overrightarrow{AP}=\begin{vmatrix}\hat i&\hat j&\hat k\\2&3&-2\\2&9&-4\end{vmatrix}\]</p>
+<p>\[\vec n=(-12+18)\hat i-(-8+4)\hat j+(18-6)\hat k=6\hat i+4\hat j+12\hat k.\]</p>
+<p>Take \(\vec n=3\hat i+2\hat j+6\hat k\). The plane through \(P\): \(\vec r\cdot\vec n=\vec p\cdot\vec n=0+12+0=12\).</p>
+<p><span class="box">\(\vec r\cdot(3\hat i+2\hat j+6\hat k)=12\)</span> &nbsp;(Cartesian: \(3x+2y+6z=12\)).</p>
+<p>Check with A: \(-6-6+24=12\) ✓.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A plane through a line and a point: normal \(=\) line direction \(\times\) (vector from a point of the line to the given point).</li><li>Plane through \(\vec a\) with normal \(\vec n\): \(\vec r\cdot\vec n=\vec a\cdot\vec n\).</li></ul></aside></div>
+</article>
+<article class="q" id="q11-b">
+<div class="qhead"><span class="num">Q11(b)</span><span class="topic">Three-dimensional Geometry (lines)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q11-b"> revised</label></div>
+<div class="qbody"><p>Find the vector equation of the line passing through the point \((2,3,2)\) and parallel to the line \(\vec r=-2\hat i+3\hat j+\lambda(2\hat i-3\hat j+6\hat k)\) and find the distance between them.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Parallel lines have the same direction \(\vec b=2\hat i-3\hat j+6\hat k\). Required line:</p>
+<p><span class="box">\(\vec r=2\hat i+3\hat j+2\hat k+\mu(2\hat i-3\hat j+6\hat k)\)</span></p>
+<p><b>Distance between the parallel lines</b> \(\vec r=\vec a_1+\lambda\vec b\) and \(\vec r=\vec a_2+\mu\vec b\):</p>
+<p>\[d=\frac{|(\vec a_2-\vec a_1)\times\vec b|}{|\vec b|}\]</p>
+<p>Here \(\vec a_1=-2\hat i+3\hat j\), \(\vec a_2=2\hat i+3\hat j+2\hat k\), so \(\vec a_2-\vec a_1=4\hat i+0\hat j+2\hat k\).</p>
+<p>\[(\vec a_2-\vec a_1)\times\vec b=\begin{vmatrix}\hat i&\hat j&\hat k\\4&0&2\\2&-3&6\end{vmatrix}=(0+6)\hat i-(24-4)\hat j+(-12-0)\hat k\]</p>
+<p>\[=6\hat i-20\hat j-12\hat k.\]</p>
+<p>\(|6\hat i-20\hat j-12\hat k|=\sqrt{36+400+144}=\sqrt{580}=2\sqrt{145}\); \(|\vec b|=\sqrt{4+9+36}=7\).</p>
+<p><span class="box">\(d=\dfrac{2\sqrt{145}}{7}\approx3.44\) units</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Line through \(\vec a\) parallel to \(\vec b\): \(\vec r=\vec a+\lambda\vec b\).</li><li>Distance between parallel lines: \(\frac{|(\vec a_2-\vec a_1)\times\vec b|}{|\vec b|}\).</li></ul></aside></div>
+</article>
+<article class="q" id="q12-a">
+<div class="qhead"><span class="num">Q12(a)</span><span class="topic">Probability (Bayes&#x27; theorem)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q12-a"> revised</label></div>
+<div class="qbody"><p>In a bolt factory machines \(M_1,M_2\) and \(M_3\) manufacture respectively 25, 35, and 40 percent of the total of their output, out of which 5, 4 and 2 percent respectively are defective bolts. One bolt is drawn at random from the product and is found defective. What is the probability that it is manufactured in the machine \(M_2\)?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Let \(E_1,E_2,E_3\): the bolt is made by \(M_1,M_2,M_3\); \(D\): the bolt is defective.</p>
+<figure class="afig" data-fig="fig_tree_bolts"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" role="img"><defs></defs><circle cx="30" cy="150.0" r="4" stroke="#111" stroke-width="1.6" fill="#111"/><text x="30" y="140.0" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif"></text><line x1="30" y1="150.0" x2="210" y2="65.0" stroke="#111" stroke-width="1.4"/><text x="120.0" y="101.5" font-size="13" text-anchor="middle" fill="#1f5fb3" font-family="Times New Roman,serif">0.25</text><circle cx="210" cy="65.0" r="3.5" stroke="#111" stroke-width="1.6" fill="#111"/><text x="210" y="56.0" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">M₁</text><line x1="210" y1="65.0" x2="410" y2="42.5" stroke="#111" stroke-width="1.2"/><text x="310.0" y="48.75" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">0.05</text><text x="418" y="47.5" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">defective</text><line x1="210" y1="65.0" x2="410" y2="87.5" stroke="#111" stroke-width="1.2"/><text x="310.0" y="71.25" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">0.95</text><text x="418" y="92.5" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">good</text><line x1="30" y1="150.0" x2="210" y2="155.0" stroke="#111" stroke-width="1.4"/><text x="120.0" y="146.5" font-size="13" text-anchor="middle" fill="#1f5fb3" font-family="Times New Roman,serif">0.35</text><circle cx="210" cy="155.0" r="3.5" stroke="#111" stroke-width="1.6" fill="#111"/><text x="210" y="175.0" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">M₂</text><line x1="210" y1="155.0" x2="410" y2="132.5" stroke="#111" stroke-width="1.2"/><text x="310.0" y="138.75" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">0.04</text><text x="418" y="137.5" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">defective</text><line x1="210" y1="155.0" x2="410" y2="177.5" stroke="#111" stroke-width="1.2"/><text x="310.0" y="161.25" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">0.96</text><text x="418" y="182.5" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">good</text><line x1="30" y1="150.0" x2="210" y2="245.0" stroke="#111" stroke-width="1.4"/><text x="120.0" y="191.5" font-size="13" text-anchor="middle" fill="#1f5fb3" font-family="Times New Roman,serif">0.40</text><circle cx="210" cy="245.0" r="3.5" stroke="#111" stroke-width="1.6" fill="#111"/><text x="210" y="265.0" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">M₃</text><line x1="210" y1="245.0" x2="410" y2="222.5" stroke="#111" stroke-width="1.2"/><text x="310.0" y="228.75" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">0.02</text><text x="418" y="227.5" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">defective</text><line x1="210" y1="245.0" x2="410" y2="267.5" stroke="#111" stroke-width="1.2"/><text x="310.0" y="251.25" font-size="12" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">0.98</text><text x="418" y="272.5" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">good</text></svg><figcaption>Machine first, then defective or good.</figcaption></figure>
+<p>\(P(E_1)=0.25,\ P(E_2)=0.35,\ P(E_3)=0.40\); \(P(D|E_1)=0.05,\ P(D|E_2)=0.04,\ P(D|E_3)=0.02\).</p>
+<p>Total probability: \(P(D)=0.25(0.05)+0.35(0.04)+0.40(0.02)=0.0125+0.0140+0.0080=0.0345\).</p>
+<p>By Bayes' theorem,</p>
+<p>\[P(E_2\mid D)=\frac{P(E_2)P(D|E_2)}{\sum P(E_i)P(D|E_i)}=\frac{0.0140}{0.0345}=\frac{140}{345}=\frac{28}{69}.\]</p>
+<p><span class="box">\(P(M_2\mid\text{defective})=\dfrac{28}{69}\approx0.406\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Bayes: \(P(E_i|A)=\dfrac{P(E_i)P(A|E_i)}{\sum_j P(E_j)P(A|E_j)}\).</li><li>The denominator is the total probability of the observed event.</li></ul></aside></div>
+</article>
+<article class="q" id="q12-b">
+<div class="qhead"><span class="num">Q12(b)</span><span class="topic">Probability (random variable and its distribution)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q12-b"> revised</label></div>
+<div class="qbody"><p>Four defective oranges are accidently mixed with sixteen good ones. Three oranges are drawn from the mixed lot. Find the probability distribution of x, the number of defective oranges.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The lot has 20 oranges (4 defective, 16 good); 3 are drawn together (without replacement), so \(x\in\{0,1,2,3\}\) and \(\binom{20}{3}=1140\).</p>
+<p>\[P(x=k)=\frac{\binom4k\binom{16}{3-k}}{\binom{20}{3}}\]</p>
+<div class="tbl"><table><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><th>favourable</th><td>\(\binom{16}{3}=560\)</td><td>\(4\cdot\binom{16}{2}=480\)</td><td>\(\binom42\cdot16=96\)</td><td>\(\binom43=4\)</td></tr>
+<tr><th>\(P(x)\)</th><td>\(\frac{28}{57}\)</td><td>\(\frac{8}{19}\)</td><td>\(\frac{8}{95}\)</td><td>\(\frac{1}{285}\)</td></tr></table></div>
+<p>Check: \(560+480+96+4=1140\), so the probabilities add to 1. (Mean \(=\sum xP(x)=\frac{480+192+12}{1140}=0.6\).)</p>
+<p><span class="box">\(P(0)=\frac{28}{57},\ P(1)=\frac{8}{19},\ P(2)=\frac{8}{95},\ P(3)=\frac{1}{285}\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A probability distribution lists every value of the random variable with its probability; they must total 1.</li><li>Drawing without replacement: \(\binom{\text{def}}{k}\binom{\text{good}}{n-k}/\binom{N}{n}\).</li><li>Mean \(=\sum x_iP(x_i)\).</li></ul></aside></div>
+</article>
+<h2 class="sec">Section C</h2><p class="secnote">(Attempt any two question)</p>
+<article class="q" id="q14-a">
+<div class="qhead"><span class="num">Q14(a)</span><span class="topic">Linear Programming</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q14-a"> revised</label></div>
+<div class="qbody"><p>A company produces soft drinks that has a contract which requires that a minimum of 80 units of chemical A and 60 units of chemical B to go into each bottle of the drink. The chemicals are available in a prepared mixture from two different suppliers. Supplier S has a mix of 4 units of A and 2 units of B that cost Rs 10, and supplier T has a mix of 1 unit of A and 1 unit of B that cost Rs 4. How many mixes from S and T should the company purchase to honor contract requirement and yet minimize cost?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Formulation.</b> Let \(x\) mixes be bought from S and \(y\) from T.</p>
+<p>Minimise \(Z=10x+4y\) subject to</p>
+<p>\[4x+y\ge80\ \text{(chemical A)},\qquad 2x+y\ge60\ \text{(chemical B)},\qquad x\ge0,\ y\ge0.\]</p>
+<p><b>Graph.</b> \(4x+y=80\) meets the axes at \((20,0),(0,80)\); \(2x+y=60\) at \((30,0),(0,60)\). Both inequalities are \(\ge\), so the feasible region lies on the side away from the origin (O does not satisfy them). The lines meet where \(2x=20\): \(x=10,\ y=40\).</p>
+<figure class="afig" data-fig="fig_lpp_drinks"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 420" role="img"><defs><marker id="m1314-lpp-ah-333" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs><path d="M 78.2,42.4 L 78.2,100.4 L 148.6,229.3 L 289.2,358.2 L 429.9,358.2 L 429.9,42.4 Z" stroke="none" stroke-width="0" fill="#9ec5f0"/><line x1="36.0" y1="358.22222222222223" x2="452.0" y2="358.22222222222223" stroke="#333" stroke-width="1.2" marker-end="url(#m1314-lpp-ah-333)"/><line x1="78.20689655172413" y1="384.0" x2="78.20689655172413" y2="28.0" stroke="#333" stroke-width="1.2" marker-end="url(#m1314-lpp-ah-333)"/><text x="450.0" y="376.22222222222223" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic">x</text><text x="66.20689655172413" y="34.0" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic">y</text><text x="69.20689655172413" y="373.22222222222223" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">O</text><line x1="148.55172413793105" y1="355.22222222222223" x2="148.55172413793105" y2="361.22222222222223" stroke="#333" stroke-width="1"/><text x="148.55172413793105" y="373.22222222222223" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">10</text><line x1="218.89655172413794" y1="355.22222222222223" x2="218.89655172413794" y2="361.22222222222223" stroke="#333" stroke-width="1"/><text x="218.89655172413794" y="373.22222222222223" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">20</text><line x1="289.2413793103448" y1="355.22222222222223" x2="289.2413793103448" y2="361.22222222222223" stroke="#333" stroke-width="1"/><text x="289.2413793103448" y="373.22222222222223" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">30</text><line x1="359.58620689655174" y1="355.22222222222223" x2="359.58620689655174" y2="361.22222222222223" stroke="#333" stroke-width="1"/><text x="359.58620689655174" y="373.22222222222223" font-size="11" text-anchor="middle" fill="#444" font-family="Times New Roman,serif">40</text><line x1="75.20689655172413" y1="293.77777777777777" x2="81.20689655172413" y2="293.77777777777777" stroke="#333" stroke-width="1"/><text x="72.20689655172413" y="297.77777777777777" font-size="11" text-anchor="end" fill="#444" font-family="Times New Roman,serif">20</text><line x1="75.20689655172413" y1="229.33333333333334" x2="81.20689655172413" y2="229.33333333333334" stroke="#333" stroke-width="1"/><text x="72.20689655172413" y="233.33333333333334" font-size="11" text-anchor="end" fill="#444" font-family="Times New Roman,serif">40</text><line x1="75.20689655172413" y1="164.88888888888889" x2="81.20689655172413" y2="164.88888888888889" stroke="#333" stroke-width="1"/><text x="72.20689655172413" y="168.88888888888889" font-size="11" text-anchor="end" fill="#444" font-family="Times New Roman,serif">60</text><line x1="75.20689655172413" y1="100.44444444444446" x2="81.20689655172413" y2="100.44444444444446" stroke="#333" stroke-width="1"/><text x="72.20689655172413" y="104.44444444444446" font-size="11" text-anchor="end" fill="#444" font-family="Times New Roman,serif">80</text><path d="M 78.2,100.4 L 80.0,103.7 L 81.7,106.9 L 83.5,110.1 L 85.2,113.3 L 87.0,116.6 L 88.8,119.8 L 90.5,123.0 L 92.3,126.2 L 94.0,129.4 L 95.8,132.7 L 97.6,135.9 L 99.3,139.1 L 101.1,142.3 L 102.8,145.6 L 104.6,148.8 L 106.3,152.0 L 108.1,155.2 L 109.9,158.4 L 111.6,161.7 L 113.4,164.9 L 115.1,168.1 L 116.9,171.3 L 118.7,174.6 L 120.4,177.8 L 122.2,181.0 L 123.9,184.2 L 125.7,187.4 L 127.4,190.7 L 129.2,193.9 L 131.0,197.1 L 132.7,200.3 L 134.5,203.6 L 136.2,206.8 L 138.0,210.0 L 139.8,213.2 L 141.5,216.4 L 143.3,219.7 L 145.0,222.9 L 146.8,226.1 L 148.6,229.3 L 150.3,232.6 L 152.1,235.8 L 153.8,239.0 L 155.6,242.2 L 157.3,245.4 L 159.1,248.7 L 160.9,251.9 L 162.6,255.1 L 164.4,258.3 L 166.1,261.6 L 167.9,264.8 L 169.7,268.0 L 171.4,271.2 L 173.2,274.4 L 174.9,277.7 L 176.7,280.9 L 178.4,284.1 L 180.2,287.3 L 182.0,290.6 L 183.7,293.8 L 185.5,297.0 L 187.2,300.2 L 189.0,303.4 L 190.8,306.7 L 192.5,309.9 L 194.3,313.1 L 196.0,316.3 L 197.8,319.6 L 199.6,322.8 L 201.3,326.0 L 203.1,329.2 L 204.8,332.4 L 206.6,335.7 L 208.3,338.9 L 210.1,342.1 L 211.9,345.3 L 213.6,348.6 L 215.4,351.8 L 217.1,355.0 L 218.9,358.2" stroke="#c0392b" stroke-width="2" fill="none"/><path d="M 78.2,164.9 L 80.8,167.3 L 83.5,169.7 L 86.1,172.1 L 88.8,174.6 L 91.4,177.0 L 94.0,179.4 L 96.7,181.8 L 99.3,184.2 L 101.9,186.6 L 104.6,189.1 L 107.2,191.5 L 109.9,193.9 L 112.5,196.3 L 115.1,198.7 L 117.8,201.1 L 120.4,203.6 L 123.1,206.0 L 125.7,208.4 L 128.3,210.8 L 131.0,213.2 L 133.6,215.6 L 136.2,218.1 L 138.9,220.5 L 141.5,222.9 L 144.2,225.3 L 146.8,227.7 L 149.4,230.1 L 152.1,232.6 L 154.7,235.0 L 157.3,237.4 L 160.0,239.8 L 162.6,242.2 L 165.3,244.6 L 167.9,247.1 L 170.5,249.5 L 173.2,251.9 L 175.8,254.3 L 178.4,256.7 L 181.1,259.1 L 183.7,261.6 L 186.4,264.0 L 189.0,266.4 L 191.6,268.8 L 194.3,271.2 L 196.9,273.6 L 199.6,276.1 L 202.2,278.5 L 204.8,280.9 L 207.5,283.3 L 210.1,285.7 L 212.7,288.1 L 215.4,290.6 L 218.0,293.0 L 220.7,295.4 L 223.3,297.8 L 225.9,300.2 L 228.6,302.6 L 231.2,305.1 L 233.8,307.5 L 236.5,309.9 L 239.1,312.3 L 241.8,314.7 L 244.4,317.1 L 247.0,319.6 L 249.7,322.0 L 252.3,324.4 L 254.9,326.8 L 257.6,329.2 L 260.2,331.6 L 262.9,334.1 L 265.5,336.5 L 268.1,338.9 L 270.8,341.3 L 273.4,343.7 L 276.1,346.1 L 278.7,348.6 L 281.3,351.0 L 284.0,353.4 L 286.6,355.8 L 289.2,358.2" stroke="#2b7a4b" stroke-width="2" fill="none"/><path d="M 78.2,148.8 L 80.5,151.4 L 82.8,154.0 L 85.1,156.6 L 87.4,159.2 L 89.6,161.9 L 91.9,164.5 L 94.2,167.1 L 96.5,169.7 L 98.8,172.3 L 101.1,175.0 L 103.4,177.6 L 105.6,180.2 L 107.9,182.8 L 110.2,185.4 L 112.5,188.0 L 114.8,190.7 L 117.1,193.3 L 119.4,195.9 L 121.6,198.5 L 123.9,201.1 L 126.2,203.8 L 128.5,206.4 L 130.8,209.0 L 133.1,211.6 L 135.4,214.2 L 137.6,216.8 L 139.9,219.5 L 142.2,222.1 L 144.5,224.7 L 146.8,227.3 L 149.1,229.9 L 151.4,232.6 L 153.7,235.2 L 155.9,237.8 L 158.2,240.4 L 160.5,243.0 L 162.8,245.6 L 165.1,248.3 L 167.4,250.9 L 169.7,253.5 L 171.9,256.1 L 174.2,258.7 L 176.5,261.4 L 178.8,264.0 L 181.1,266.6 L 183.4,269.2 L 185.7,271.8 L 187.9,274.4 L 190.2,277.1 L 192.5,279.7 L 194.8,282.3 L 197.1,284.9 L 199.4,287.5 L 201.7,290.2 L 203.9,292.8 L 206.2,295.4 L 208.5,298.0 L 210.8,300.6 L 213.1,303.2 L 215.4,305.9 L 217.7,308.5 L 220.0,311.1 L 222.2,313.7 L 224.5,316.3 L 226.8,319.0 L 229.1,321.6 L 231.4,324.2 L 233.7,326.8 L 236.0,329.4 L 238.2,332.0 L 240.5,334.7 L 242.8,337.3 L 245.1,339.9 L 247.4,342.5 L 249.7,345.1 L 252.0,347.8 L 254.2,350.4 L 256.5,353.0 L 258.8,355.6 L 261.1,358.2" stroke="#888" stroke-width="1.4" fill="none" stroke-dasharray="5 4"/><circle cx="78.20689655172413" cy="100.44444444444446" r="3.2" stroke="#111" stroke-width="1.6" fill="#111"/><text x="86.20689655172413" y="94.44444444444446" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">A(0, 80)</text><circle cx="148.55172413793105" cy="229.33333333333334" r="3.2" stroke="#111" stroke-width="1.6" fill="#111"/><text x="158.55172413793105" y="233.33333333333334" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">B(10, 40)</text><circle cx="289.2413793103448" cy="358.22222222222223" r="3.2" stroke="#111" stroke-width="1.6" fill="#111"/><text x="295.2413793103448" y="348.22222222222223" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif">C(30, 0)</text><text x="155.58620689655172" y="271.22222222222223" font-size="13" text-anchor="end" fill="#c0392b" font-family="Times New Roman,serif" font-style="italic">4x + y = 80</text><text x="296.2758620689655" y="313.1111111111111" font-size="13" text-anchor="start" fill="#2b7a4b" font-family="Times New Roman,serif" font-style="italic">2x + y = 60</text><text x="317.3793103448276" y="132.66666666666666" font-size="14" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">feasible region</text><text x="317.3793103448276" y="158.44444444444446" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(unbounded)</text><text x="317.3793103448276" y="81.11111111111114" font-size="12" text-anchor="middle" fill="#555" font-family="Times New Roman,serif" font-style="italic">dashed: 10x + 4y = 260</text></svg><figcaption>Feasible region (shaded, unbounded) and the minimum-cost line through B.</figcaption></figure>
+<p>The feasible region is unbounded with corner points \(A(0,80),\ B(10,40),\ C(30,0)\).</p>
+<div class="tbl"><table><tr><th>Corner</th><th>\(Z=10x+4y\)</th></tr><tr><td>A(0, 80)</td><td>320</td></tr><tr><td>B(10, 40)</td><td><b>260</b></td></tr><tr><td>C(30, 0)</td><td>300</td></tr></table></div>
+<p>Since the region is unbounded, check the open half-plane \(10x+4y&lt;260\): it has no point in common with the feasible region (the dashed line touches the region only at B). So 260 is the minimum.</p>
+<p><span class="box">Buy 10 mixes from S and 40 from T; minimum cost Rs 260</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Formulate: decision variables, objective, constraints, non-negativity.</li><li>Corner-point method; for an unbounded region confirm the optimum by checking the half-plane \(Z&lt;Z_{\min}\) (or \(&gt;Z_{\max}\)).</li><li>'Minimum of … units' gives \(\ge\) constraints.</li></ul></aside></div>
+</article>
+<article class="q" id="q14-b">
+<div class="qhead"><span class="num">Q14(b)</span><span class="topic">Applications of Derivatives (maxima and minima)</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q14-b"> revised</label></div>
+<div class="qbody"><p>The cost function of a firm is \(c(x)=5x^2+28x+5\) where 'c' is the cost &amp; 'x' is the level of output. A tax at the rate of Rs 2 per unit output is imposed and the producer adds it to his cost. Find the minimum value of the average cost.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>With the tax of Rs 2 per unit added, the new total cost is</p>
+<p>\[C(x)=5x^2+28x+5+2x=5x^2+30x+5.\]</p>
+<p>Average cost: \[AC(x)=\frac{C(x)}{x}=5x+30+\frac{5}{x},\qquad x&gt;0.\]</p>
+<p>\[\frac{d(AC)}{dx}=5-\frac{5}{x^2}=0\ \Rightarrow\ x^2=1\ \Rightarrow\ x=1\quad(x&gt;0).\]</p>
+<p>\[\frac{d^2(AC)}{dx^2}=\frac{10}{x^3}=10&gt;0\ \text{at}\ x=1,\]</p>
+<p>so AC is minimum at \(x=1\): \(AC(1)=5+30+5=40\).</p>
+<p><span class="box">Minimum average cost \(=\) Rs 40 (at output \(x=1\) unit)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Average cost \(AC=\dfrac{C(x)}{x}\); a per-unit tax \(t\) adds \(tx\) to \(C(x)\).</li><li>Stationary point: \(\frac{d}{dx}(AC)=0\); second-derivative test \(&gt;0\Rightarrow\) minimum.</li><li>Only \(x&gt;0\) is meaningful for an output.</li></ul></aside></div>
+</article>
+<details class="excl"><summary>Not in the ISC 2027 syllabus (16)</summary>
+<div class="xq"><div class="qhead"><span class="num">Q1(ii)</span>
+<span class="marks">[3]</span></div><div class="qbody"><p>Determine K so that the straight line \(y=x+K\) may touch the ellipse \(2x^2+3y^2=1\).</p></div>
+<p class="why">Why left out: Conic sections (ellipse/hyperbola) — Class XI Coordinate Geometry in ISC 2027; not in the Class XII syllabus</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q1(iv)</span>
+<span class="marks">[3]</span></div><div class="qbody"><p>Evaluate: \(\displaystyle\lim_{x\to0}\frac{1-\cos x^2}{x^2\sin x^2}\).</p></div>
+<p class="why">Why left out: Evaluation of limits — Class XI Calculus in ISC 2027; the Class XII syllabus uses limits only inside continuity, not as a stand-alone question</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q1(vii)</span>
+<span class="marks">[3]</span></div><div class="qbody"><p>The equation of two regression lines in correlation analysis are \(2x+3y=10\) &amp; \(4x+y=5\). Find the correlation co-efficient.</p></div>
+<p class="why">Why left out: Correlation and regression — linear regression has been dropped; the ISC 2027 Class XII paper has no statistics unit</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q1(viii)</span>
+<span class="marks">[3]</span></div><div class="qbody"><p>Find the locus of a complex number \(Z=x+iy\) satisfying the relation \(\left|\dfrac{z-2i}{z+2i}\right|=\sqrt2\).</p></div>
+<p class="why">Why left out: Complex numbers — Class XI Algebra in ISC 2027; not in the Class XII syllabus</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q3(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>Construct a switching circuit representing the polynomial: \(P(P+Q)Q(Q+R')\).</p>
+<p>Use Boolean Algebra to simplify the expression and construct the simplified switching circuit.</p></div>
+<p class="why">Why left out: Boolean algebra and switching circuits — not in the ISC 2027 Mathematics syllabus</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q4(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>Using Rolle's theorem, find a point on the curve \(y=\sin x+\cos x-1,\ x\in\left[0,\dfrac{\pi}{2}\right]\) where the tangent is parallel to the x-axis.</p></div>
+<p class="why">Why left out: Rolle's theorem / mean value theorems — not listed in ISC 2027 Class XII Calculus</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q4(b)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>Find the equation of the hyperbola whose foci are \((4,1)\) and \((8,1)\) with eccentricity 2.</p></div>
+<p class="why">Why left out: Conic sections (ellipse/hyperbola) — Class XI Coordinate Geometry in ISC 2027; not in the Class XII syllabus</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q7(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>Ten candidates received percentage marks in two subjects as follows:</p>
+<div class="tbl"><table><tr><th>Candidate</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td></tr>
+<tr><th>Mathematics</th><td>80</td><td>88</td><td>76</td><td>74</td><td>68</td><td>65</td><td>40</td><td>43</td><td>40</td><td>80</td></tr>
+<tr><th>Statistics</th><td>72</td><td>84</td><td>90</td><td>66</td><td>54</td><td>50</td><td>54</td><td>38</td><td>30</td><td>43</td></tr></table></div>
+<p>Calculate Spearman's correlation coefficient and interpret your result.</p></div>
+<p class="why">Why left out: Correlation and regression — linear regression has been dropped; the ISC 2027 Class XII paper has no statistics unit</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q7(b)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>You are given the following data:</p>
+<div class="tbl"><table><tr><th></th><th>X</th><th>Y</th></tr><tr><td>MEAN</td><td>36</td><td>85</td></tr><tr><td>STANDARD DEVIATION</td><td>11</td><td>8</td></tr></table></div>
+<p>The Coefficient of correlation between X and Y is 0.66. Find the two regressions and the most likely value of Y when X = 10.</p></div>
+<p class="why">Why left out: Correlation and regression — linear regression has been dropped; the ISC 2027 Class XII paper has no statistics unit</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q9(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>Using De Moivre's Theorem find the least of n for which the expression \(\left(\dfrac{\sqrt3+3i}{2\sqrt3}\right)^{2n-1}\) is purely real.</p></div>
+<p class="why">Why left out: Complex numbers — Class XI Algebra in ISC 2027; not in the Class XII syllabus</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q10(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>If \(\vec a,\vec b,\vec c\) are three vectors, prove that \(\vec a\cdot\left[(\vec b+\vec c)\times(\vec a+2\vec b+3\vec c)\right]=\left[\vec a\ \vec b\ \vec c\right]\).</p></div>
+<p class="why">Why left out: Scalar triple product — ISC 2027 Vector Algebra lists only the dot and cross products (box product removed, as in the rationalised NCERT)</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q10(b)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>Using vectors prove that in any triangle ABC, \(a=b\cos C+c\cos B\).</p></div>
+<p class="why">Why left out: Proof of a geometrical theorem by vectors — ISC 2027 Vector Algebra: 'Proofs of geometrical theorems by using Vector algebra are excluded'</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q13(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>A bill for Rs 65000 drawn on January 18, 2013 at 7 months was discounted at a bank on March 21, 2013, @ of interest being 6% per annum. How much did the holder receive?</p></div>
+<p class="why">Why left out: Financial mathematics (bills of exchange, discounting, annuities) — old Section C commerce topic; the ISC 2027 Class XII syllabus (Relations & Functions, Algebra, Calculus, Vectors, 3-D, LPP, Probability) has no such unit</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q13(b)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>A man buys a machine on installment basis such that he pays Rs 5000 on signing of the contract and remaining in 4 equal installment of Rs 10000 the first being paid at the end of the first year and so far each year. If the rate of interest is 8% compounded annually find the cash down price of the machine.</p></div>
+<p class="why">Why left out: Financial mathematics (bills of exchange, discounting, annuities) — old Section C commerce topic; the ISC 2027 Class XII syllabus (Relations & Functions, Algebra, Calculus, Vectors, 3-D, LPP, Probability) has no such unit</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q15(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>Calculate the index number for 2010 with 2008 as the base year by the weighted aggregate method:</p>
+<div class="tbl"><table><tr><th>Commodity</th><th>Price in Rs in year 2008</th><th>Price in Rs in year 2010</th><th>Weight</th></tr>
+<tr><td>A</td><td>140</td><td>180</td><td>10</td></tr><tr><td>B</td><td>400</td><td>550</td><td>7</td></tr><tr><td>C</td><td>100</td><td>250</td><td>6</td></tr>
+<tr><td>D</td><td>125</td><td>150</td><td>8</td></tr><tr><td>E</td><td>200</td><td>300</td><td>4</td></tr></table></div></div>
+<p class="why">Why left out: Index numbers and moving averages (old Section C statistics) — the ISC 2027 Class XII syllabus has no statistics unit</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q15(b)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>The following table gives the number of failures of commercial industries in a country during the years 1990 to 2005:</p>
+<div class="tbl"><table><tr><th>Year</th><td>1990</td><td>1991</td><td>1992</td><td>1993</td><td>1994</td><td>1995</td><td>1996</td><td>1997</td><td>1998</td><td>1999</td><td>2000</td><td>2001</td><td>2002</td><td>2003</td><td>2004</td><td>2005</td></tr>
+<tr><th>No. of failures</th><td>23</td><td>26</td><td>28</td><td>32</td><td>20</td><td>12</td><td>12</td><td>10</td><td>9</td><td>13</td><td>11</td><td>14</td><td>12</td><td>9</td><td>3</td><td>1</td></tr></table></div>
+<p>Calculate 4-yearly moving averages and display these and the original figures on the same graph. [Use graph paper for these question].</p></div>
+<p class="why">Why left out: Index numbers and moving averages (old Section C statistics) — the ISC 2027 Class XII syllabus has no statistics unit</p></div>
+</details>
+</main>
+</body></html>

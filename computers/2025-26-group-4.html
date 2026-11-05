@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Science Pre-Board 2025-26</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/contrib/mhchem.min.js"></script>
+<script defer src="../assets/katex/contrib/auto-render.min.js"></script>
+<script defer src="../assets/site.js"></script>
+</head><body>
+<header class="top"><a class="crumb" href="../index.html">Pre-Board Revision</a> ›
+<a class="crumb" href="index.html">Computer Science</a>
+<h1>Computer Science · Pre-Board 2025-26</h1>
+<p class="meta">Paper 1 (Theory) — Group 4 · Maximum marks 70 · Time 3 hours</p>
+<p class="meta">36 questions in the ISC 2027 syllabus, answered below ·
+0 outside it (listed at the end, unanswered)</p>
+<div class="tools"><button data-act="show">Show all answers</button>
+<button data-act="hide">Hide all answers</button>
+<span class="prog" data-key="pbrev-computers-2025-26-group-4"></span></div></header>
+<main data-key="pbrev-computers-2025-26-group-4">
+<details class="intro"><summary>Instructions as printed</summary><p>Candidates are allowed <b>additional 15 minutes</b> for <b>only</b> reading the paper.</p>
+<p>Answer <b>all</b> questions in Part I (compulsory) and <b>six</b> questions from Part II, choosing <b>two</b>
+questions from Section-A, <b>two</b> from Section B, and <b>two</b> from Section C.</p>
+<p>All work, including rough work, should be done on the same sheet as <span class="note">[the line breaks off here in the original]</span></p>
+<p>The intended marks for questions or parts of questions are given in brackets [ ].</p>
+<p class="note">[As printed, Question 1 has no part (iii) — the numbering runs (i), (ii), (iv) … (x) — so
+Part I adds up to 19 marks, not the 20 in its heading. Question 11 prints “(i)” twice; the second
+(the binary tree) is shown here as 11(ii).]</p></details>
+<h2 class="sec">Part I – 20 Marks</h2><p class="secnote">Answer <b>all</b> questions. While answering questions in this Part, indicate briefly your working and reasoning, wherever required.</p>
+<article class="q" id="q1-i">
+<div class="qhead"><span class="num">Q1(i)</span><span class="topic">Objects — static methods and variables</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-i"> revised</label></div>
+<div class="qbody"><p>Which statements are valid for static member methods?</p>
+<p>I. Can access static &amp; non-static data members.<br>II. Can call non-static methods.<br>
+III. Cannot refer to this or super.</p>
+<p>(a) I &amp; II &nbsp; (b) II &amp; III &nbsp; (c) I &amp; III &nbsp; (d) Only III</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>A static method belongs to the class, not to any object, so it has no <code>this</code>; it cannot use
+instance (non-static) data members or call non-static methods directly (I and II are false), and it cannot
+refer to <code>this</code> or <code>super</code> (III is true).</p>
+<p><span class="box">(d) Only III</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>static = one copy per class, exists without any object.</li><li>A static method can directly use only static members; instance members need an object reference.</li><li><code>this</code>/<code>super</code> refer to the current object — none exists in a static context.</li></ul></aside></div>
+</article>
+<article class="q" id="q1-ii">
+<div class="qhead"><span class="num">Q1(ii)</span><span class="topic">Recursion</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-ii"> revised</label></div>
+<div class="qbody"><p>If binary search uses recursion instead of iteration, which of the following is valid?</p>
+<p>i. It will contain two base cases.<br>ii. It will contain two recursive cases.<br>
+iii. When executed will lead to StackOverflow error.</p>
+<p>(a) i &amp; ii &nbsp; (b) ii &amp; iii &nbsp; (c) i &amp; iii &nbsp; (d) Only iii</p>
+<p class="note">[The paper prints the mark [1] twice against this part; it is a single 1-mark question.]</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Recursive binary search stops in two cases — the range is empty (<code>low &gt; high</code>, not found)
+or <code>a[mid] == key</code> (found): <b>two base cases</b>. Otherwise it recurses either on the left half or
+on the right half: <b>two recursive cases</b>. The depth is only about \(\log_2 n\), so it does not overflow the
+stack (iii is false).</p>
+<p><span class="box">(a) i &amp; ii</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Base case: stops the recursion; recursive case: calls itself on a smaller problem.</li><li>Binary search halves the range each call — depth \(O(\log n)\).</li></ul></aside></div>
+</article>
+<article class="q" id="q1-iv">
+<div class="qhead"><span class="num">Q1(iv)</span><span class="topic">Inheritance, Interfaces and Polymorphism</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-iv"> revised</label></div>
+<div class="qbody"><pre class="code">interface A { void abc(); }
+interface B { void abc(); }
+class Check implements A, B { ... }</pre>
+<p>How many times abc() must be defined?</p>
+<p>(a) Twice &nbsp; (b) Once &nbsp; (c) Compile time error &nbsp; (d) Runtime error</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Both interfaces declare the same signature <code>void abc()</code>. Interface methods carry no body, so
+there is no conflict: one <code>public void abc() { … }</code> in <code>Check</code> implements the method of
+both A and B. (Defining it twice would itself be a compile error — a duplicate method.)</p>
+<p><span class="box">(b) Once</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A class can implement several interfaces.</li><li>Identical abstract signatures from two interfaces are satisfied by one method.</li><li>Implementing methods must be <code>public</code>.</li></ul></aside></div>
+</article>
+<article class="q" id="q1-v">
+<div class="qhead"><span class="num">Q1(v)</span><span class="topic">Complexity and Big O notation</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-v"> revised</label></div>
+<div class="qbody"><p>Find the time complexity of:</p>
+<pre class="code">for(i=0;i&lt;x;i++)
+   m *= Math.random();
+for(j=0;j&lt;y;j++)
+   n *= Math.random();</pre>
+<p>(a) O(x) &nbsp; (b) O(y) &nbsp; (c) O(x+y) &nbsp; (d) O(xy)</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The two loops are <b>sequential</b>, not nested: the first runs x times, the second y times, each body
+\(O(1)\). Total work \(\propto x + y\); neither term dominates since x and y are independent.</p>
+<p><span class="box">(c) O(x+y)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Sequential blocks: add the complexities; nested loops: multiply.</li><li>Keep every term that depends on a different input size.</li></ul></aside></div>
+</article>
+<article class="q" id="q1-vi">
+<div class="qhead"><span class="num">Q1(vi)</span><span class="topic">Strings</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-vi"> revised</label></div>
+<div class="qbody"><pre class="code">System.out.println("RocKet".substring(0,4).compareTo("Rock".replace('m','o')));</pre>
+<p>(a) 0 &nbsp; (b) -32 &nbsp; (c) +32 &nbsp; (d) Error</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><code>"RocKet".substring(0,4)</code> = <code>"RocK"</code> (indices 0–3).</p>
+<p><code>"Rock".replace('m','o')</code> = <code>"Rock"</code> (there is no 'm', so nothing changes).</p>
+<p><code>"RocK".compareTo("Rock")</code>: the first difference is at index 3, 'K' (75) vs 'k' (107), so the
+result is 75 − 107 = −32. (Checked by running it.)</p>
+<p><span class="box">(b) -32</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li><code>substring(a, b)</code> takes indices a to b − 1.</li><li><code>compareTo</code> returns the difference of the first unequal characters' codes (or of the lengths).</li><li>'A'–'Z' = 65–90, 'a'–'z' = 97–122; upper/lower differ by 32.</li></ul></aside></div>
+</article>
+<article class="q" id="q1-vii">
+<div class="qhead"><span class="num">Q1(vii)</span><span class="topic">Primitive values, Wrapper classes — Character</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-vii"> revised</label></div>
+<div class="qbody"><p>What gets printed?</p>
+<pre class="code">char[] set = {'*','D','5'};
+System.out.print(Character.isDigit(set[2])+" ");
+System.out.print(Character.isWhitespace(set[0])+" ");
+System.out.print(Character.isLetterOrDigit(set[1]));</pre>
+<p>(a) true false true &nbsp; (b) false false true &nbsp; (c) true true false &nbsp; (d) false true false</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><code>isDigit('5')</code> → true; <code>isWhitespace('*')</code> → false;
+<code>isLetterOrDigit('D')</code> → true. Output: <code>true false true</code> (checked by running it).</p>
+<p><span class="box">(a) true false true</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li><code>Character.isDigit</code>, <code>isLetter</code>, <code>isLetterOrDigit</code>, <code>isWhitespace</code>, <code>isUpperCase</code> all return boolean.</li><li>Whitespace = space, tab, newline etc.; '*' is a symbol.</li></ul></aside></div>
+</article>
+<article class="q" id="q1-viii">
+<div class="qhead"><span class="num">Q1(viii)</span><span class="topic">Propositional logic</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-viii"> revised</label></div>
+<div class="qbody"><p>The contrapositive of \(p' \Rightarrow q\) is:</p>
+<p>(a) \(q' \Rightarrow p\) &nbsp; (b) \(q \Rightarrow p'\) &nbsp; (c) \(p \Rightarrow q'\) &nbsp; (d) \(q \Rightarrow p\)</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Contrapositive of \(a \Rightarrow b\) is \(b' \Rightarrow a'\). With \(a = p'\), \(b = q\):
+\(q' \Rightarrow (p')' = q' \Rightarrow p\). (It is logically equivalent to the original — checked over all four rows.)</p>
+<p><span class="box">(a) \(q' \Rightarrow p\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Converse \(b\Rightarrow a\); inverse \(a'\Rightarrow b'\); contrapositive \(b'\Rightarrow a'\).</li><li>Only the contrapositive is equivalent to the original statement.</li><li>Involution: \((p')' = p\).</li></ul></aside></div>
+</article>
+<article class="q" id="q1-ix">
+<div class="qhead"><span class="num">Q1(ix)</span><span class="topic">Complexity and Big O notation; Recursion</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-ix"> revised</label></div>
+<div class="qbody"><p>What is the space complexity of the recursive Fibonacci function?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>For <code>fib(n) = fib(n−1) + fib(n−2)</code> the calls are made one branch at a time, so at most
+n frames are on the call stack together (the chain n, n−1, …, 1). The extra memory grows linearly with n.</p>
+<p><span class="box">O(n)</span> &nbsp; (its time complexity, by contrast, is \(O(2^n)\)).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Space of a recursive method = maximum depth of the call stack × space per frame.</li><li>Do not confuse with the number of calls (time).</li></ul></aside></div>
+</article>
+<article class="q" id="q1-x">
+<div class="qhead"><span class="num">Q1(x)</span><span class="topic">Objects — OOP principles</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q1-x"> revised</label></div>
+<div class="qbody"><p>Define abstraction in object-oriented programming.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Abstraction</b> is the act of representing only the <b>essential features</b> of an object while
+<b>hiding the background details</b> (the implementation). E.g. a user calls <code>list.add(x)</code> without
+knowing how the list stores x. In Java it is achieved through classes, abstract classes and interfaces.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Abstraction: show what, hide how.</li><li>Encapsulation: wrap data and methods together and restrict access.</li></ul></aside></div>
+</article>
+<article class="q" id="q2-i">
+<div class="qhead"><span class="num">Q2(i)</span><span class="topic">Data structures — infix to postfix conversion</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q2-i"> revised</label></div>
+<div class="qbody"><p>Convert the following <i>infix notation</i> to <i>postfix</i> form.</p>
+<p style="text-align:center"><b>((A - B) / (C * (D + E))) + F ^ (G - H)</b></p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Working bracket by bracket (innermost first):</p>
+<p><code>(A-B)</code> → <code>AB-</code>; <code>(D+E)</code> → <code>DE+</code>; <code>C*(D+E)</code> → <code>CDE+*</code>;
+<code>(A-B)/(C*(D+E))</code> → <code>AB-CDE+*/</code></p>
+<p><code>(G-H)</code> → <code>GH-</code>; <code>F^(G-H)</code> → <code>FGH-^</code> (^ binds tighter than +)</p>
+<p>Join with the last operator +:</p>
+<p><span class="box">A B − C D E + * / F G H − ^ +</span></p>
+<p>Stack trace (scan left to right):</p><div class="tbl"><table><tr><th>Symbol</th><th>Stack</th><th>Postfix</th></tr><tr><td>(</td><td>(</td><td></td></tr><tr><td>(</td><td>((</td><td></td></tr><tr><td>A</td><td>((</td><td>A</td></tr><tr><td>-</td><td>((-</td><td>A</td></tr><tr><td>B</td><td>((-</td><td>AB</td></tr><tr><td>)</td><td>(</td><td>AB-</td></tr><tr><td>/</td><td>(/</td><td>AB-</td></tr><tr><td>(</td><td>(/(</td><td>AB-</td></tr><tr><td>C</td><td>(/(</td><td>AB-C</td></tr><tr><td>*</td><td>(/(*</td><td>AB-C</td></tr><tr><td>(</td><td>(/(*(</td><td>AB-C</td></tr><tr><td>D</td><td>(/(*(</td><td>AB-CD</td></tr><tr><td>+</td><td>(/(*(+</td><td>AB-CD</td></tr><tr><td>E</td><td>(/(*(+</td><td>AB-CDE</td></tr><tr><td>)</td><td>(/(*</td><td>AB-CDE+</td></tr><tr><td>)</td><td>(/</td><td>AB-CDE+*</td></tr><tr><td>)</td><td>—</td><td>AB-CDE+*/</td></tr><tr><td>+</td><td>+</td><td>AB-CDE+*/</td></tr><tr><td>F</td><td>+</td><td>AB-CDE+*/F</td></tr><tr><td>^</td><td>+^</td><td>AB-CDE+*/F</td></tr><tr><td>(</td><td>+^(</td><td>AB-CDE+*/F</td></tr><tr><td>G</td><td>+^(</td><td>AB-CDE+*/FG</td></tr><tr><td>-</td><td>+^(-</td><td>AB-CDE+*/FG</td></tr><tr><td>H</td><td>+^(-</td><td>AB-CDE+*/FGH</td></tr><tr><td>)</td><td>+^</td><td>AB-CDE+*/FGH-</td></tr><tr><td>&mdash;</td><td>—</td><td>AB-CDE+*/FGH-^+</td></tr></table></div></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Precedence: ^ &gt; * / &gt; + −; ^ is right-associative.</li><li>Operands go straight to output; ')' pops to the matching '('.</li></ul></aside></div>
+</article>
+<article class="q" id="q2-ii">
+<div class="qhead"><span class="num">Q2(ii)</span><span class="topic">Arrays — address calculation</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q2-ii"> revised</label></div>
+<div class="qbody"><p>A matrix \(M[-7 \ldots 12,\ 3 \ldots 20]\) is stored in memory. Each element requires
+<b>6 bytes</b> of storage. If the base address of \(M[-7][3]\) is <b>2013</b>, find the memory address of
+\(M[5][10]\) when the matrix is stored <b>column-major</b>.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Rows \(L_r = -7\) to \(U_r = 12\): number of rows \(N_r = 12 - (-7) + 1 = 20\). Columns \(L_c = 3\) to 20.</p>
+<p>Column-major: \(\text{Address}(M[i][j]) = B + W\,[(j - L_c)\,N_r + (i - L_r)]\)</p>
+<p>\(= 2013 + 6\,[(10 - 3)\times 20 + (5 - (-7))]\)</p>
+<p>\(= 2013 + 6\,[140 + 12] = 2013 + 6 \times 152 = 2013 + 912\)</p>
+<p><span class="box">Address of M[5][10] = 2925</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Column-major: \(B + W[(j-L_c)N_r + (i-L_r)]\); row-major: \(B + W[(i-L_r)N_c + (j-L_c)]\).</li><li>Count with \(U - L + 1\) when the lower bound is negative.</li></ul></aside></div>
+</article>
+<article class="q" id="q2-iii-a">
+<div class="qhead"><span class="num">Q2(iii)(a)</span><span class="topic">Recursion</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q2-iii-a"> revised</label></div>
+<div class="qbody"><p>The following function findPos() is a part of a class. Assume arr[] is a sorted array of
+positive integers. Answer the questions given below <b>along with dry run / working</b>.</p><pre class="code">public int findPos(int arr[], int f, int l, int x)
+{
+  if (f &gt; l)
+     return -1;
+
+  int m = (2 * f + l) / 3;
+
+  if (arr[m] == x)
+     return m;
+  else if (arr[m] &gt; x)
+     return findPos(arr, f, m - 1, x);
+  else
+  {
+     int k = findPos(arr, m + 1, l, x);
+     if (k == -1)
+        return -1;
+     else
+        return k + 1;
+  }
+}</pre><p>(a) Trace the recursive calls and find the output when arr[] = {3, 7, 12, 18, 25, 31, 42, 53} and x = 31.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Indices: 0:3, 1:7, 2:12, 3:18, 4:25, 5:31, 6:42, 7:53.</p><div class="tbl"><table><tr><th>Call</th><th>f</th><th>l</th><th>m = (2f + l)/3</th><th>arr[m]</th><th>Action</th></tr><tr><td>findPos(arr,0,7,31)</td><td>0</td><td>7</td><td>7/3 = 2</td><td>12</td><td>12 &lt; 31 → k = findPos(arr,3,7,31)</td></tr><tr><td>findPos(arr,3,7,31)</td><td>3</td><td>7</td><td>13/3 = 4</td><td>25</td><td>25 &lt; 31 → k = findPos(arr,5,7,31)</td></tr><tr><td>findPos(arr,5,7,31)</td><td>5</td><td>7</td><td>17/3 = 5</td><td>31</td><td>found → return 5</td></tr></table></div><p>Unwinding: the second call receives k = 5 → returns 5 + 1 = <b>6</b>; the first call receives k = 6 →
+returns 6 + 1 = <b>7</b>.</p>
+<p><span class="box">Output: 7</span></p>
+<p class="note">31 is actually at index 5. The <code>k + 1</code> adds one for every move to the right part,
+so the method does not return the true index — confirmed by running it.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Dry-run recursion with a table of parameters per call, then unwind returns in reverse order.</li><li>Integer division truncates: 17/3 = 5.</li></ul></aside></div>
+</article>
+<article class="q" id="q2-iii-b">
+<div class="qhead"><span class="num">Q2(iii)(b)</span><span class="topic">Recursion; Searching</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q2-iii-b"> revised</label></div>
+<div class="qbody"><p>(Refer to findPos() in 2(iii).)</p><pre class="code">public int findPos(int arr[], int f, int l, int x)
+{
+  if (f &gt; l)
+     return -1;
+
+  int m = (2 * f + l) / 3;
+
+  if (arr[m] == x)
+     return m;
+  else if (arr[m] &gt; x)
+     return findPos(arr, f, m - 1, x);
+  else
+  {
+     int k = findPos(arr, m + 1, l, x);
+     if (k == -1)
+        return -1;
+     else
+        return k + 1;
+  }
+}</pre><p>(b) What additional concept (apart from recursion) is used in the above function logic?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><span class="box">Binary search (divide and conquer)</span> — searching a sorted array by comparing x with
+one element and discarding the part that cannot contain it. Here the split point is the one-third point
+\(m = (2f + l)/3\) instead of the middle, so it is a modified (ternary-split) binary search; naming binary search /
+divide and conquer on a sorted array is what earns the mark.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Binary search: compare with a middle element, discard the part that cannot hold the key (needs sorted data).</li><li>Divide and conquer: split, solve the part, combine.</li></ul></aside></div>
+</article>
+<article class="q" id="q2-iv-a">
+<div class="qhead"><span class="num">Q2(iv)(a)</span><span class="topic">Recursion</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q2-iv-a"> revised</label></div>
+<div class="qbody"><p>The following is a function of class <b>Tribonacci</b>. This recursive function calculates and
+returns the n<sup>th</sup> term of the <b>Tribonacci series</b>. The Tribonacci series is similar to the
+Fibonacci series, but each term is the <b>sum of the previous three terms</b>.
+<i>(Example: 0, 1, 1, 2, 4, 7, 13, 24, …)</i> Some statements or expressions are missing and are marked by
+<b>?1</b>, <b>?2</b>, and <b>?3</b>. Replace each with suitable code so that the function works correctly.</p><pre class="code">public int tribonacci(int n)
+{
+   if (?1)
+      return 0;
+   else if (?2)
+      return 1;
+   else
+      return tribonacci(n - 1) + tribonacci(n - 2) + ?3;
+}</pre><p>(a) What condition should replace <b>?1</b>?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The 0th term is 0: <span class="box">?1 : n == 0</span></p>
+<p class="note">If the terms are counted from n = 1 (first term 0), the answers shift by one: n == 1, then
+n == 2 || n == 3.</p><pre class="code">public int tribonacci(int n)
+{
+   if (n == 0)                       // ?1
+      return 0;
+   else if (n == 1 || n == 2)        // ?2
+      return 1;
+   else
+      return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);   // ?3
+}</pre><p>Run for n = 0 … 7 gives <code>0 1 1 2 4 7 13 24</code>, the given series.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A recursive method needs a base case for every starting term it cannot compute from earlier ones.</li>
+<li>Tribonacci: \(T_n = T_{n-1} + T_{n-2} + T_{n-3}\), with three seed terms 0, 1, 1.</li>
+<li>Test a filled-in method by tracing the first few terms against the given series.</li></ul></aside></div>
+</article>
+<article class="q" id="q2-iv-b">
+<div class="qhead"><span class="num">Q2(iv)(b)</span><span class="topic">Recursion</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q2-iv-b"> revised</label></div>
+<div class="qbody"><p>The following is a function of class <b>Tribonacci</b>. This recursive function calculates and
+returns the n<sup>th</sup> term of the <b>Tribonacci series</b>. The Tribonacci series is similar to the
+Fibonacci series, but each term is the <b>sum of the previous three terms</b>.
+<i>(Example: 0, 1, 1, 2, 4, 7, 13, 24, …)</i> Some statements or expressions are missing and are marked by
+<b>?1</b>, <b>?2</b>, and <b>?3</b>. Replace each with suitable code so that the function works correctly.</p><pre class="code">public int tribonacci(int n)
+{
+   if (?1)
+      return 0;
+   else if (?2)
+      return 1;
+   else
+      return tribonacci(n - 1) + tribonacci(n - 2) + ?3;
+}</pre><p>(b) What condition should replace <b>?2</b>?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The 1st and 2nd terms are both 1: <span class="box">?2 : n == 1 || n == 2</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A recursive method needs a base case for every starting term it cannot compute from earlier ones.</li>
+<li>Tribonacci: \(T_n = T_{n-1} + T_{n-2} + T_{n-3}\), with three seed terms 0, 1, 1.</li>
+<li>Test a filled-in method by tracing the first few terms against the given series.</li></ul></aside></div>
+</article>
+<article class="q" id="q2-iv-c">
+<div class="qhead"><span class="num">Q2(iv)(c)</span><span class="topic">Recursion</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q2-iv-c"> revised</label></div>
+<div class="qbody"><p>The following is a function of class <b>Tribonacci</b>. This recursive function calculates and
+returns the n<sup>th</sup> term of the <b>Tribonacci series</b>. The Tribonacci series is similar to the
+Fibonacci series, but each term is the <b>sum of the previous three terms</b>.
+<i>(Example: 0, 1, 1, 2, 4, 7, 13, 24, …)</i> Some statements or expressions are missing and are marked by
+<b>?1</b>, <b>?2</b>, and <b>?3</b>. Replace each with suitable code so that the function works correctly.</p><pre class="code">public int tribonacci(int n)
+{
+   if (?1)
+      return 0;
+   else if (?2)
+      return 1;
+   else
+      return tribonacci(n - 1) + tribonacci(n - 2) + ?3;
+}</pre><p>(c) What recursive call or expression should replace <b>?3</b>?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Each term is the sum of the previous <b>three</b>: <span class="box">?3 : tribonacci(n - 3)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A recursive method needs a base case for every starting term it cannot compute from earlier ones.</li>
+<li>Tribonacci: \(T_n = T_{n-1} + T_{n-2} + T_{n-3}\), with three seed terms 0, 1, 1.</li>
+<li>Test a filled-in method by tracing the first few terms against the given series.</li></ul></aside></div>
+</article>
+<h2 class="sec">Part II – 50 Marks · Section A</h2><p class="secnote">Answer <b>six</b> questions in Part II, choosing <b>two</b> questions from Section A, <b>two</b> from Section B and <b>two</b> from Section C. Section A: answer <b>any two</b> questions.</p>
+<article class="q" id="q3-i">
+<div class="qhead"><span class="num">Q3(i)</span><span class="topic">Boolean Algebra — truth tables, canonical POS</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q3-i"> revised</label></div>
+<div class="qbody"><p>A student from the Computer Science department is tasked with designing a <b>smart lighting control
+system</b> for a home. The system uses sensors to determine whether to automatically turn the lights on or off
+in a specific room.</p>
+<ul><li>If the motion is not detected in the room and the Ambient light is low<br><b>OR</b></li>
+<li>If the motion is detected in the room and the ambient light is low but the current time is not between
+6PM and 6AM.<br><b>OR</b></li>
+<li>If the motion is not detected in the room and the ambient light is not low but the manual switch override
+is turned on by the user</li></ul>
+<p>The inputs are:</p>
+<div class="tbl"><table><tr><th>INPUTS</th><th></th></tr>
+<tr><td>M</td><td>Motion is detected in the room</td></tr>
+<tr><td>L</td><td>Ambient light level is low</td></tr>
+<tr><td>T</td><td>Current time is between 6 PM and 6 AM</td></tr>
+<tr><td>S</td><td>Manual switch override is turned on by the user</td></tr></table></div>
+<p>(In all the above cases 1 indicates yes and 0 indicates no.)</p>
+<p>OUTPUT: X [1 indicates high power, 0 indicates low power for all cases]</p><p>Draw the truth table for the inputs and outputs given above and write the POS
+expression for X(M,L,T,S).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>From the three conditions: \(X = M'L + MLT' + M'L'S\), i.e. X = 1 in rows
+\(M'L\): 4, 5, 6, 7; \(MLT'\): 12, 13; \(M'L'S\): 1, 3. X = 0 in every other row.</p>
+<figure class="afig" data-fig="fig_q3_truth"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 414" role="img"><defs></defs><text x="33.0" y="45" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic" font-weight="bold">M</text><text x="79.0" y="45" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic" font-weight="bold">L</text><text x="125.0" y="45" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic" font-weight="bold">T</text><text x="171.0" y="45" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic" font-weight="bold">S</text><text x="217.0" y="45" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic" font-weight="bold">X</text><text x="315.0" y="45" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">Maxterm (X = 0)</text><rect x="10" y="52" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="67" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="67" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="67" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="67" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="67" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="67" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M+L+T+S)</text><text x="33.0" y="89" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="89" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="89" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="89" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="89" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><rect x="10" y="96" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="111" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="111" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="111" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="111" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="111" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="111" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M+L+T′+S)</text><text x="33.0" y="133" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="133" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="133" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="133" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="133" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><text x="33.0" y="155" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="155" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="155" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="155" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="155" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><text x="33.0" y="177" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="177" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="177" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="177" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="177" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><text x="33.0" y="199" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="199" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="199" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="199" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="199" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><text x="33.0" y="221" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="79.0" y="221" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="221" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="221" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="221" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><rect x="10" y="228" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="243" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="243" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="243" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="243" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="243" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="243" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M′+L+T+S)</text><rect x="10" y="250" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="265" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="265" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="265" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="265" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="265" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="265" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M′+L+T+S′)</text><rect x="10" y="272" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="287" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="287" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="287" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="287" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="287" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="287" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M′+L+T′+S)</text><rect x="10" y="294" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="309" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="309" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="125.0" y="309" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="309" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="309" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="309" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M′+L+T′+S′)</text><text x="33.0" y="331" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="331" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="331" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="331" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="331" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><text x="33.0" y="353" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="353" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="353" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="171.0" y="353" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="353" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">1</text><rect x="10" y="360" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="375" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="375" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="375" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="375" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">0</text><text x="217.0" y="375" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="375" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M′+L′+T′+S)</text><rect x="10" y="382" width="380" height="22" rx="0" stroke="none" stroke-width="0" fill="#fdecea"/><text x="33.0" y="397" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="79.0" y="397" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="125.0" y="397" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="171.0" y="397" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">1</text><text x="217.0" y="397" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-weight="bold">0</text><text x="315.0" y="397" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">(M′+L′+T′+S′)</text><line x1="10" y1="30" x2="390" y2="30" stroke="#111" stroke-width="1.4"/><line x1="10" y1="52" x2="390" y2="52" stroke="#111" stroke-width="1.4"/><line x1="10" y1="74" x2="390" y2="74" stroke="#111" stroke-width="0.8"/><line x1="10" y1="96" x2="390" y2="96" stroke="#111" stroke-width="0.8"/><line x1="10" y1="118" x2="390" y2="118" stroke="#111" stroke-width="0.8"/><line x1="10" y1="140" x2="390" y2="140" stroke="#111" stroke-width="0.8"/><line x1="10" y1="162" x2="390" y2="162" stroke="#111" stroke-width="0.8"/><line x1="10" y1="184" x2="390" y2="184" stroke="#111" stroke-width="0.8"/><line x1="10" y1="206" x2="390" y2="206" stroke="#111" stroke-width="0.8"/><line x1="10" y1="228" x2="390" y2="228" stroke="#111" stroke-width="0.8"/><line x1="10" y1="250" x2="390" y2="250" stroke="#111" stroke-width="0.8"/><line x1="10" y1="272" x2="390" y2="272" stroke="#111" stroke-width="0.8"/><line x1="10" y1="294" x2="390" y2="294" stroke="#111" stroke-width="0.8"/><line x1="10" y1="316" x2="390" y2="316" stroke="#111" stroke-width="0.8"/><line x1="10" y1="338" x2="390" y2="338" stroke="#111" stroke-width="0.8"/><line x1="10" y1="360" x2="390" y2="360" stroke="#111" stroke-width="0.8"/><line x1="10" y1="382" x2="390" y2="382" stroke="#111" stroke-width="0.8"/><line x1="10" y1="404" x2="390" y2="404" stroke="#111" stroke-width="1.4"/><line x1="10" y1="30" x2="10" y2="404" stroke="#111" stroke-width="0.8"/><line x1="56" y1="30" x2="56" y2="404" stroke="#111" stroke-width="0.8"/><line x1="102" y1="30" x2="102" y2="404" stroke="#111" stroke-width="0.8"/><line x1="148" y1="30" x2="148" y2="404" stroke="#111" stroke-width="0.8"/><line x1="194" y1="30" x2="194" y2="404" stroke="#111" stroke-width="0.8"/><line x1="240" y1="30" x2="240" y2="404" stroke="#111" stroke-width="0.8"/><line x1="390" y1="30" x2="390" y2="404" stroke="#111" stroke-width="0.8"/></svg><figcaption>Truth table; shaded rows (X = 0) give the maxterms</figcaption></figure>
+<p>POS (product of the maxterms of the rows where X = 0):</p>
+<p>\(X(M,L,T,S) = (M+L+T+S)(M+L+T'+S)(M'+L+T+S)(M'+L+T+S')(M'+L+T'+S)(M'+L+T'+S')(M'+L'+T'+S)(M'+L'+T'+S')\)</p>
+<p><span class="box">\(X(M,L,T,S) = \pi(0, 2, 8, 9, 10, 11, 14, 15)\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Translate each condition into a product term; X is their sum.</li><li>Maxterm: 0 bit → variable, 1 bit → complement; POS = product over rows with X = 0.</li></ul></aside></div>
+</article>
+<article class="q" id="q3-ii">
+<div class="qhead"><span class="num">Q3(ii)</span><span class="topic">Boolean Algebra — Karnaugh maps</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q3-ii"> revised</label></div>
+<div class="qbody"><p>Reduce the above expression X(M,L,T,S) by using 4-variable Karnaugh map, showing the various
+groups (i.e. octal, quads and pairs).</p>
+<p>Draw the logic gate diagram for the reduced expression. Assume that the variables and their complements are
+available as inputs.</p>
+<p class="note">[“The above expression” is the POS expression of 3(i): \(X = \pi(0, 2, 8, 9, 10, 11, 14, 15)\).]</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Place 0s in cells 0, 2, 8, 9, 10, 11, 14, 15 (rows M L in Gray order, columns T S in Gray order) and group
+the 0s:</p>
+<figure class="afig" data-fig="fig_q3_kmap"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:589px" viewBox="0 0 310 216" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M52 12L84 40" stroke="currentColor" stroke-width="1" fill="none"/><text x="80" y="18" font-size="8.5" text-anchor="end" fill="currentColor">TS</text><text x="54" y="36" font-size="8.5" text-anchor="start" fill="currentColor">ML</text><text x="110" y="33" font-size="9" text-anchor="middle" fill="currentColor">T+S</text><text x="162" y="33" font-size="9" text-anchor="middle" fill="currentColor">T+S&prime;</text><text x="214" y="33" font-size="9" text-anchor="middle" fill="currentColor">T&prime;+S&prime;</text><text x="266" y="33" font-size="9" text-anchor="middle" fill="currentColor">T&prime;+S</text><text x="72" y="63.5" font-size="9" text-anchor="end" fill="currentColor">M+L</text><text x="72" y="103.5" font-size="9" text-anchor="end" fill="currentColor">M+L&prime;</text><text x="72" y="143.5" font-size="9" text-anchor="end" fill="currentColor">M&prime;+L&prime;</text><text x="72" y="183.5" font-size="9" text-anchor="end" fill="currentColor">M&prime;+L</text><rect x="84" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">0</text><text x="110" y="64.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="136" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">1</text><text x="162" y="64.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="188" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">3</text><text x="214" y="64.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="240" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">2</text><text x="266" y="64.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="84" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">4</text><text x="110" y="104.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="136" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">5</text><text x="162" y="104.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="188" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">7</text><text x="214" y="104.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="240" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">6</text><text x="266" y="104.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="84" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">12</text><text x="110" y="144.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="136" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">13</text><text x="162" y="144.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="188" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">15</text><text x="214" y="144.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="240" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">14</text><text x="266" y="144.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="84" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">8</text><text x="110" y="184.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="136" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">9</text><text x="162" y="184.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="188" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">11</text><text x="214" y="184.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="240" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">10</text><text x="266" y="184.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="79" y="35" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="244.5" y="35" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="79" y="164.5" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="244.5" y="164.5" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="92.1" y="168.1" width="191.8" height="23.8" rx="9" stroke="currentColor" stroke-width="1.6" fill="none" stroke-dasharray="5 2.5"/><rect x="199.7" y="131.7" width="80.6" height="56.6" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/></svg><figcaption>K-map of the 0s (POS)</figcaption></figure>
+<div class="tbl"><table><tr><th>Group</th><th>Cells</th><th>Sum term</th></tr>
+<tr><td>Quad 1 (four corners)</td><td>0, 2, 8, 10</td><td>\(L + S\)</td></tr>
+<tr><td>Quad 2 (row M=1, L=0)</td><td>8, 9, 10, 11</td><td>\(M' + L\)</td></tr>
+<tr><td>Quad 3 (M=1, T=1)</td><td>10, 11, 14, 15</td><td>\(M' + T'\)</td></tr></table></div>
+<p>No octet is possible; all eight 0s are covered by the three quads.</p>
+<p><span class="box">\(X = (L + S)\cdot(M' + L)\cdot(M' + T')\)</span></p>
+<p>Logic gate diagram (three OR gates feeding one AND gate):</p>
+<figure class="afig" data-fig="fig_q3_circuit"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:427px" viewBox="0 0 213.75 109.75" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M76 8Q82 17.5 76 27Q90.4 27 97.9 17.5Q90.4 8 76 8Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M70 10.85L78.94 10.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M70 24.15L78.94 24.15" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M97.9 17.5L103.9 17.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M14 10.85L70 10.85" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="14.05" font-size="8.5" text-anchor="end" fill="currentColor">L</text><path d="M14 24.15L70 24.15" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="27.35" font-size="8.5" text-anchor="end" fill="currentColor">S</text><path d="M76 40Q82 49.5 76 59Q90.4 59 97.9 49.5Q90.4 40 76 40Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M70 42.85L78.94 42.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M70 56.15L78.94 56.15" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M97.9 49.5L103.9 49.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M14 42.85L70 42.85" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="46.05" font-size="8.5" text-anchor="end" fill="currentColor">M&prime;</text><path d="M14 56.15L70 56.15" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="59.35" font-size="8.5" text-anchor="end" fill="currentColor">L</text><path d="M76 72Q82 81.5 76 91Q90.4 91 97.9 81.5Q90.4 72 76 72Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M70 74.85L78.94 74.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M70 88.15L78.94 88.15" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M97.9 81.5L103.9 81.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M14 74.85L70 74.85" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="78.05" font-size="8.5" text-anchor="end" fill="currentColor">M&prime;</text><path d="M14 88.15L70 88.15" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="91.35" font-size="8.5" text-anchor="end" fill="currentColor">T&prime;</text><path d="M139.5 35.25L148.5 35.25A14.25 14.25 0 0 1 148.5 63.75L139.5 63.75Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M133.5 39.525L139.5 39.525" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M133.5 49.5L139.5 49.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M133.5 59.475L139.5 59.475" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M162.75 49.5L168.75 49.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M103.9 17.5L131.5 17.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M131.5 17.5L131.5 39.525" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M131.5 39.525L133.5 39.525" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M103.9 49.5L133.5 49.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M103.9 81.5L127 81.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M127 81.5L127 59.475" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M127 59.475L133.5 59.475" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="171.75" y="52.7" font-size="9.5" text-anchor="start" fill="currentColor" font-weight="700">X</text></svg><figcaption>X = (L+S)(M′+L)(M′+T′)</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>POS K-map: group the 0s; a variable constant at 0 in the group appears plain, at 1 complemented.</li><li>Corners are adjacent (wrap-around).</li><li>Use the largest groups and the fewest of them.</li></ul></aside></div>
+</article>
+<article class="q" id="q4-i-a">
+<div class="qhead"><span class="num">Q4(i)(a)</span><span class="topic">Boolean Algebra — Karnaugh maps</span><span class="marks">[4]</span>
+<label class="done"><input type="checkbox" data-id="q4-i-a"> revised</label></div>
+<div class="qbody"><p>Given \(F(A, B, C, D) = (A + B + C + D)\cdot(A + B + C + D')\cdot(A + B + C' + D')\cdot
+(A + B + C' + D)\cdot(A + B' + C + D')\cdot(A + B' + C' + D')\cdot(A' + B + C + D)\cdot(A' + B + C' + D)\).</p><p>(a) Reduce the above expression by using 4-variable Karnaugh map, showing the various groups.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Maxterms: \(A+B+C+D = M_0\), \(A+B+C+D' = M_1\), \(A+B+C'+D' = M_3\), \(A+B+C'+D = M_2\),
+\(A+B'+C+D' = M_5\), \(A+B'+C'+D' = M_7\), \(A'+B+C+D = M_8\), \(A'+B+C'+D = M_{10}\).</p>
+<p>\(F = \pi(0, 1, 2, 3, 5, 7, 8, 10)\)</p>
+<figure class="afig" data-fig="fig_q4i_kmap"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:589px" viewBox="0 0 310 216" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M52 12L84 40" stroke="currentColor" stroke-width="1" fill="none"/><text x="80" y="18" font-size="8.5" text-anchor="end" fill="currentColor">CD</text><text x="54" y="36" font-size="8.5" text-anchor="start" fill="currentColor">AB</text><text x="110" y="33" font-size="9" text-anchor="middle" fill="currentColor">C+D</text><text x="162" y="33" font-size="9" text-anchor="middle" fill="currentColor">C+D&prime;</text><text x="214" y="33" font-size="9" text-anchor="middle" fill="currentColor">C&prime;+D&prime;</text><text x="266" y="33" font-size="9" text-anchor="middle" fill="currentColor">C&prime;+D</text><text x="72" y="63.5" font-size="9" text-anchor="end" fill="currentColor">A+B</text><text x="72" y="103.5" font-size="9" text-anchor="end" fill="currentColor">A+B&prime;</text><text x="72" y="143.5" font-size="9" text-anchor="end" fill="currentColor">A&prime;+B&prime;</text><text x="72" y="183.5" font-size="9" text-anchor="end" fill="currentColor">A&prime;+B</text><rect x="84" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">0</text><text x="110" y="64.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="136" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">1</text><text x="162" y="64.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="188" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">3</text><text x="214" y="64.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="240" y="40" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="48" font-size="6.5" text-anchor="end" fill="currentColor">2</text><text x="266" y="64.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="84" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">4</text><text x="110" y="104.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="136" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">5</text><text x="162" y="104.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="188" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">7</text><text x="214" y="104.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="240" y="80" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="88" font-size="6.5" text-anchor="end" fill="currentColor">6</text><text x="266" y="104.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="84" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">12</text><text x="110" y="144.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="136" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">13</text><text x="162" y="144.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="188" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">15</text><text x="214" y="144.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="240" y="120" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="128" font-size="6.5" text-anchor="end" fill="currentColor">14</text><text x="266" y="144.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="84" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="133.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">8</text><text x="110" y="184.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="136" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="185.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">9</text><text x="162" y="184.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="188" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="237.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">11</text><text x="214" y="184.5" font-size="12" text-anchor="middle" fill="currentColor">1</text><rect x="240" y="160" width="52" height="40" rx="0" stroke="currentColor" stroke-width="1" fill="none"/><text x="289.5" y="168" font-size="6.5" text-anchor="end" fill="currentColor">10</text><text x="266" y="184.5" font-size="12" text-anchor="middle" fill="currentColor" font-weight="700">0</text><rect x="79" y="35" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="244.5" y="35" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="79" y="164.5" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="244.5" y="164.5" width="52.5" height="40.5" rx="9" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="144.1" y="48.1" width="87.8" height="63.8" rx="9" stroke="currentColor" stroke-width="1.6" fill="none" stroke-dasharray="5 2.5"/></svg><figcaption>K-map of F (0s grouped)</figcaption></figure>
+<div class="tbl"><table><tr><th>Group</th><th>Cells</th><th>Sum term</th></tr>
+<tr><td>Quad 1 (four corners)</td><td>0, 2, 8, 10</td><td>\(B + D\)</td></tr>
+<tr><td>Quad 2 (A = 0, D = 1)</td><td>1, 3, 5, 7</td><td>\(A + D'\)</td></tr></table></div>
+<p>The quad 0, 1, 2, 3 is <b>redundant</b>: its cells are already in the two quads above.</p>
+<p><span class="box">\(F = (B + D)\cdot(A + D')\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Each sum term with all four literals is one maxterm; write its number from the bits (plain = 0, complement = 1).</li><li>Drop any group whose cells are all covered by other groups.</li></ul></aside></div>
+</article>
+<article class="q" id="q4-i-b">
+<div class="qhead"><span class="num">Q4(i)(b)</span><span class="topic">Boolean Algebra — logic gates</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q4-i-b"> revised</label></div>
+<div class="qbody"><p>Given \(F(A, B, C, D) = (A + B + C + D)\cdot(A + B + C + D')\cdot(A + B + C' + D')\cdot
+(A + B + C' + D)\cdot(A + B' + C + D')\cdot(A + B' + C' + D')\cdot(A' + B + C + D)\cdot(A' + B + C' + D)\).</p><p>(b) Draw the logic gate diagram for the reduced expression. Assume that the variables and their
+complements are available as inputs.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Reduced expression from 4(i)(a): \(F = (B + D)(A + D')\) — two OR gates feeding a 2-input AND gate.</p><figure class="afig wide" data-fig="fig_q4i_circuit"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:409px" viewBox="0 0 204.5 73" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M76 8Q82 17.5 76 27Q90.4 27 97.9 17.5Q90.4 8 76 8Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M70 10.85L78.94 10.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M70 24.15L78.94 24.15" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M97.9 17.5L103.9 17.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M14 10.85L70 10.85" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="14.05" font-size="8.5" text-anchor="end" fill="currentColor">B</text><path d="M14 24.15L70 24.15" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="27.35" font-size="8.5" text-anchor="end" fill="currentColor">D</text><path d="M76 40Q82 49.5 76 59Q90.4 59 97.9 49.5Q90.4 40 76 40Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M70 42.85L78.94 42.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M70 56.15L78.94 56.15" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M97.9 49.5L103.9 49.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M14 42.85L70 42.85" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="46.05" font-size="8.5" text-anchor="end" fill="currentColor">A</text><path d="M14 56.15L70 56.15" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="59.35" font-size="8.5" text-anchor="end" fill="currentColor">D&prime;</text><path d="M135 24L144 24A9.5 9.5 0 0 1 144 43L135 43Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M129 26.85L135 26.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M129 40.15L135 40.15" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M153.5 33.5L159.5 33.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M103.9 17.5L127 17.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M127 17.5L127 26.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M127 26.85L129 26.85" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M103.9 49.5L122.5 49.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M122.5 49.5L122.5 40.15" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M122.5 40.15L129 40.15" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="162.5" y="36.7" font-size="9.5" text-anchor="start" fill="currentColor" font-weight="700">F</text></svg><figcaption>F = (B+D)(A+D′)</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>POS → OR gates for the sum terms, then one AND gate.</li></ul></aside></div>
+</article>
+<article class="q" id="q4-ii-a">
+<div class="qhead"><span class="num">Q4(ii)(a)</span><span class="topic">Boolean Algebra — logic circuits; Propositional logic</span><span class="marks">[4]</span>
+<label class="done"><input type="checkbox" data-id="q4-ii-a"> revised</label></div>
+<div class="qbody"><p>(a) From the logic circuit diagram given below, name the outputs (1), (2) and (3) and finally
+derive the Boolean expression (F) and simplify it. State whether it is a tautology, contradiction or
+contingency.</p><figure class="qfig" data-fig="fig_q4ii_circuit"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:630px" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M90 22.5Q96 32 90 41.5Q104.4 41.5 111.9 32Q104.4 22.5 90 22.5Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M84 25.35L92.94 25.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M84 38.65L92.94 38.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M111.9 32L117.9 32" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M90 86.5L99 86.5A9.5 9.5 0 0 1 99 105.5L90 105.5Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M84 89.35L90 89.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M84 102.65L90 102.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M108.5 96L114.5 96" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M160 54.5L169 54.5A9.5 9.5 0 0 1 169 73.5L160 73.5Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M154 57.35L160 57.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M154 70.65L160 70.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M178.5 64L184.5 64" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M220 74.5Q226 84 220 93.5Q234.4 93.5 241.9 84Q234.4 74.5 220 74.5Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M214 77.35L222.94 77.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M214 90.65L222.94 90.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M241.9 84L247.9 84" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="12" y="28.85" font-size="10" text-anchor="end" fill="currentColor" font-weight="700">X</text><path d="M16 25.35L84 25.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M60 25.35L60 89.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M60 89.35L84 89.35" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="60" cy="25.35" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="12" y="42.15" font-size="10" text-anchor="end" fill="currentColor" font-weight="700">Y</text><path d="M30 32.8L42.4 38.65L30 44.5Z" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="44.6" cy="38.65" r="2.2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M26 38.65L30 38.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M46.8 38.65L50.8 38.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 38.65L26 38.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M50.8 38.65L84 38.65" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="64" y="35.65" font-size="7.5" text-anchor="start" fill="currentColor">Y′</text><text x="12" y="106.15" font-size="10" text-anchor="end" fill="currentColor" font-weight="700">Z</text><path d="M16 102.65L84 102.65" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="24" cy="102.65" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M24 102.65L24 132" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M40 126.15L52.4 132L40 137.85Z" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="54.6" cy="132" r="2.2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M24 132L40 132" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M56.8 132L72.8 132" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="74.8" y="129" font-size="7.5" text-anchor="start" fill="currentColor">Z′</text><path d="M72.8 132L204 132" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M204 132L204 90.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M204 90.65L214 90.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M117.9 32L140 32" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M140 32L140 57.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M140 57.35L154 57.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M114.5 96L140 96" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M140 96L140 70.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M140 70.65L154 70.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184.5 64L200 64" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M200 64L200 77.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M200 77.35L214 77.35" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="119.9" y="27" font-size="8.5" text-anchor="start" fill="currentColor">(1)</text><text x="116.5" y="91" font-size="8.5" text-anchor="start" fill="currentColor">(2)</text><text x="185.5" y="59" font-size="8.5" text-anchor="start" fill="currentColor">(3)</text><path d="M247.9 84L259.9 84" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="261.9" y="87.5" font-size="9" text-anchor="start" fill="currentColor" font-weight="700">F(X,Y,Z)</text></svg></figure></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>(1) = OR of X and Y′: \(X + Y'\)<br>(2) = AND of X and Z: \(X\cdot Z\)<br>
+(3) = AND of (1) and (2): \((X + Y')\cdot XZ\)</p>
+<p>\(F = (X + Y')XZ + Z'\)</p>
+<p>\(= XXZ + XY'Z + Z'\) &nbsp; (distributive)</p>
+<p>\(= XZ + XY'Z + Z'\) &nbsp; (idempotence \(XX = X\))</p>
+<p>\(= XZ(1 + Y') + Z' = XZ + Z'\) &nbsp; (absorption)</p>
+<p>\(= (X + Z')(Z + Z') = X + Z'\) &nbsp; (distributive; \(Z + Z' = 1\))</p>
+<p><span class="box">\(F = X + Z'\)</span></p>
+<p>F is 0 when X = 0, Z = 1 and 1 otherwise — it is neither always 1 nor always 0, so F is a
+<span class="box">contingency</span>.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Write each gate's output from its inputs, left to right.</li><li>\(A + A'B = A + B\); \(A(1 + B) = A\).</li><li>Tautology: always 1; contradiction: always 0; contingency: both occur.</li></ul></aside></div>
+</article>
+<article class="q" id="q4-ii-b">
+<div class="qhead"><span class="num">Q4(ii)(b)</span><span class="topic">Boolean Algebra — duality</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q4-ii-b"> revised</label></div>
+<div class="qbody"><p>(b) Write the dual of the expression \((A'+1)\cdot B\)</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Dual: interchange + and ·, and 0 and 1 (variables and complements unchanged).</p>
+<p><span class="box">\((A'\cdot 0) + B\)</span> &nbsp; (which simplifies to B, as does the original).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Duality: + ↔ ·, 0 ↔ 1; do not complement the variables.</li></ul></aside></div>
+</article>
+<article class="q" id="q5-i">
+<div class="qhead"><span class="num">Q5(i)</span><span class="topic">Elementary digital electronics — decoders</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q5-i"> revised</label></div>
+<div class="qbody"><p>Draw the logic circuit to decode the following binary number (0001, 0101, 0111, 1000, 1010, 1100,
+1110, 1111) to its hexadecimal equivalents. Also state the Hexadecimal equivalents of the given binary numbers.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><div class="tbl"><table><tr><th>Binary ABCD</th><th>Minterm</th><th>Hex</th></tr>
+<tr><td>0001</td><td>\(A'B'C'D\)</td><td>1</td></tr><tr><td>0101</td><td>\(A'BC'D\)</td><td>5</td></tr>
+<tr><td>0111</td><td>\(A'BCD\)</td><td>7</td></tr><tr><td>1000</td><td>\(AB'C'D'\)</td><td>8</td></tr>
+<tr><td>1010</td><td>\(AB'CD'\)</td><td>A</td></tr><tr><td>1100</td><td>\(ABC'D'\)</td><td>C</td></tr>
+<tr><td>1110</td><td>\(ABCD'\)</td><td>E</td></tr><tr><td>1111</td><td>\(ABCD\)</td><td>F</td></tr></table></div>
+<p>Each output is a 4-input AND gate of its minterm: a 1 bit takes the variable, a 0 bit its complement (from
+the NOT gates). Exactly one output is high for each listed input.</p>
+<figure class="afig tall" data-fig="fig_q5i_decoder"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:428px" viewBox="0 0 268 464" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><text x="16" y="11" font-size="8.5" text-anchor="middle" fill="currentColor" font-weight="700">A</text><path d="M16 15L16 458" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M64 18.15L76.4 24L64 29.85Z" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="78.6" cy="24" r="2.2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M60 24L64 24" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M80.8 24L84.8 24" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 24L60 24" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="16" cy="24" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M84.8 24L94 24" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M94 24L94 458" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="96.5" y="21" font-size="7.5" text-anchor="start" fill="currentColor">A&prime;</text><text x="26" y="11" font-size="8.5" text-anchor="middle" fill="currentColor" font-weight="700">B</text><path d="M26 15L26 458" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M64 32.15L76.4 38L64 43.85Z" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="78.6" cy="38" r="2.2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M60 38L64 38" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M80.8 38L84.8 38" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M26 38L60 38" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="26" cy="38" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M84.8 38L106 38" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M106 38L106 458" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="108.5" y="35" font-size="7.5" text-anchor="start" fill="currentColor">B&prime;</text><text x="36" y="11" font-size="8.5" text-anchor="middle" fill="currentColor" font-weight="700">C</text><path d="M36 15L36 458" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M64 46.15L76.4 52L64 57.85Z" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="78.6" cy="52" r="2.2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M60 52L64 52" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M80.8 52L84.8 52" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M36 52L60 52" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="36" cy="52" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M84.8 52L118 52" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M118 52L118 458" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="120.5" y="49" font-size="7.5" text-anchor="start" fill="currentColor">C&prime;</text><text x="46" y="11" font-size="8.5" text-anchor="middle" fill="currentColor" font-weight="700">D</text><path d="M46 15L46 458" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M64 60.15L76.4 66L64 71.85Z" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="78.6" cy="66" r="2.2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M60 66L64 66" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M80.8 66L84.8 66" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M46 66L60 66" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="46" cy="66" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M84.8 66L130 66" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M130 66L130 458" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="132.5" y="63" font-size="7.5" text-anchor="start" fill="currentColor">D&prime;</text><path d="M156 80L165 80A19 19 0 0 1 165 118L156 118Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 85.7L156 85.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 94.5667L156 94.5667" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 103.433L156 103.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 112.3L156 112.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 99L190 99" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M94 85.7L150 85.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="94" cy="85.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M106 94.5667L150 94.5667" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="106" cy="94.5667" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M118 103.433L150 103.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="118" cy="103.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M46 112.3L150 112.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="46" cy="112.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="102.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">0001 = 1</text><path d="M156 128L165 128A19 19 0 0 1 165 166L156 166Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 133.7L156 133.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 142.567L156 142.567" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 151.433L156 151.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 160.3L156 160.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 147L190 147" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M94 133.7L150 133.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="94" cy="133.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M26 142.567L150 142.567" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="26" cy="142.567" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M118 151.433L150 151.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="118" cy="151.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M46 160.3L150 160.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="46" cy="160.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="150.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">0101 = 5</text><path d="M156 176L165 176A19 19 0 0 1 165 214L156 214Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 181.7L156 181.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 190.567L156 190.567" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 199.433L156 199.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 208.3L156 208.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 195L190 195" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M94 181.7L150 181.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="94" cy="181.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M26 190.567L150 190.567" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="26" cy="190.567" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M36 199.433L150 199.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="36" cy="199.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M46 208.3L150 208.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="46" cy="208.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="198.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">0111 = 7</text><path d="M156 224L165 224A19 19 0 0 1 165 262L156 262Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 229.7L156 229.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 238.567L156 238.567" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 247.433L156 247.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 256.3L156 256.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 243L190 243" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 229.7L150 229.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="16" cy="229.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M106 238.567L150 238.567" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="106" cy="238.567" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M118 247.433L150 247.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="118" cy="247.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M130 256.3L150 256.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="130" cy="256.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="246.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">1000 = 8</text><path d="M156 272L165 272A19 19 0 0 1 165 310L156 310Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 277.7L156 277.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 286.567L156 286.567" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 295.433L156 295.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 304.3L156 304.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 291L190 291" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 277.7L150 277.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="16" cy="277.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M106 286.567L150 286.567" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="106" cy="286.567" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M36 295.433L150 295.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="36" cy="295.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M130 304.3L150 304.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="130" cy="304.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="294.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">1010 = A</text><path d="M156 320L165 320A19 19 0 0 1 165 358L156 358Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 325.7L156 325.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 334.567L156 334.567" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 343.433L156 343.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 352.3L156 352.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 339L190 339" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 325.7L150 325.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="16" cy="325.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M26 334.567L150 334.567" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="26" cy="334.567" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M118 343.433L150 343.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="118" cy="343.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M130 352.3L150 352.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="130" cy="352.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="342.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">1100 = C</text><path d="M156 368L165 368A19 19 0 0 1 165 406L156 406Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 373.7L156 373.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 382.567L156 382.567" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 391.433L156 391.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 400.3L156 400.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 387L190 387" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 373.7L150 373.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="16" cy="373.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M26 382.567L150 382.567" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="26" cy="382.567" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M36 391.433L150 391.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="36" cy="391.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M130 400.3L150 400.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="130" cy="400.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="390.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">1110 = E</text><path d="M156 416L165 416A19 19 0 0 1 165 454L156 454Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M150 421.7L156 421.7" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 430.567L156 430.567" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 439.433L156 439.433" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M150 448.3L156 448.3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M184 435L190 435" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M16 421.7L150 421.7" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="16" cy="421.7" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M26 430.567L150 430.567" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="26" cy="430.567" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M36 439.433L150 439.433" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="36" cy="439.433" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><path d="M46 448.3L150 448.3" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="46" cy="448.3" r="1.6" stroke="currentColor" stroke-width="0" fill="currentColor"/><text x="193" y="438.2" font-size="8" text-anchor="start" fill="currentColor" font-weight="600">1111 = F</text></svg><figcaption>Decoder: A, B, C, D and their complements; one AND gate per code</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Decoder: n inputs, one AND gate per output, each gate = the minterm of its code.</li><li>Hex digits: 10–15 = A–F.</li></ul></aside></div>
+</article>
+<article class="q" id="q5-ii">
+<div class="qhead"><span class="num">Q5(ii)</span><span class="topic">Boolean Algebra — logic circuits; Propositional logic</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q5-ii"> revised</label></div>
+<div class="qbody"><p>In the given logic gate diagram, F4 is a contradiction. State true or false. Justify your answer
+using Truth table.</p><figure class="qfig wide" data-fig="fig_q5ii_circuit"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:440px" viewBox="0 0 220 100" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M140 30.5Q146 40 140 49.5Q154.4 49.5 161.9 40Q154.4 30.5 140 30.5Z" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="164.1" cy="40" r="2.2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M134 33.35L142.94 33.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M134 46.65L142.94 46.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M166.3 40L172.3 40" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M60 60.5L69 60.5A9.5 9.5 0 0 1 69 79.5L60 79.5Z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M54 63.35L60 63.35" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M54 76.65L60 76.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M78.5 70L84.5 70" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="14" y="29.35" font-size="10" text-anchor="start" fill="currentColor" font-weight="700">A′</text><path d="M14 33.35L134 33.35" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="10" y="66.85" font-size="10" text-anchor="end" fill="currentColor" font-weight="700">A</text><path d="M14 63.35L54 63.35" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="10" y="80.15" font-size="10" text-anchor="end" fill="currentColor" font-weight="700">B′</text><path d="M14 76.65L54 76.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M84.5 70L118 70" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M118 70L118 46.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M118 46.65L134 46.65" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M172.3 40L186.3 40" stroke="currentColor" stroke-width="1.2" fill="none"/><text x="176.3" y="34" font-size="10" text-anchor="start" fill="currentColor" font-weight="700">F4</text></svg></figure></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Output of the AND gate: \(A\cdot B'\). The NOR gate: \(F4 = (A' + AB')'\).</p><div class="tbl"><table><tr><th>A</th><th>B</th><th>A′</th><th>B′</th><th>A·B′</th><th>A′ + A·B′</th><th>F4 = (A′ + A·B′)′</th></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr></table></div><p>F4 = 1 when A = 1, B = 1, so it is not always 0. (Algebraically \(A' + AB' = A' + B'\), so
+\(F4 = (A' + B')' = AB\).)</p>
+<p><span class="box">False — F4 = AB is a contingency, not a contradiction.</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>NOR output = complement of the OR of its inputs.</li><li>Contradiction: 0 in every row of the truth table.</li><li>\(A' + AB' = A' + B'\) (redundant literal); De Morgan \((A'+B')' = AB\).</li></ul></aside></div>
+</article>
+<article class="q" id="q5-iii">
+<div class="qhead"><span class="num">Q5(iii)</span><span class="topic">Boolean Algebra — canonical and cardinal forms</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q5-iii"> revised</label></div>
+<div class="qbody"><p>Represent the given expression in canonical and cardinal POS form.</p>
+<p>\(H5 = p\cdot q\cdot r' + p'\cdot q\cdot r' + p\cdot q'\cdot r + p'\cdot q\cdot r\)</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Minterms present: \(pqr' = 110 = 6\), \(p'qr' = 010 = 2\), \(pq'r = 101 = 5\), \(p'qr = 011 = 3\):
+\(H5 = \Sigma(2, 3, 5, 6)\). The remaining rows 0, 1, 4, 7 are the maxterms.</p>
+<p>Canonical POS: <span class="box">\(H5 = (p + q + r)(p + q + r')(p' + q + r)(p' + q' + r')\)</span></p>
+<p>Cardinal POS: <span class="box">\(H5 = \pi(0, 1, 4, 7)\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>POS rows = rows missing from the SOP list.</li><li>Maxterm: 0 → plain variable, 1 → complemented.</li></ul></aside></div>
+</article>
+<h2 class="sec">Section B</h2><p class="secnote">Answer <b>any two</b> questions. Each program should be written in such a way that it clearly depicts the logic of the problem. This can be achieved by using mnemonic names and comments in the program. (Flowcharts and Algorithms are not required.) The programs must be written in Java.</p>
+<article class="q" id="q6">
+<div class="qhead"><span class="num">Q6</span><span class="topic">Strings; Arrays — sorting</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q6"> revised</label></div>
+<div class="qbody"><p>Two words are called anagram of each other if both the words contain the same letters but they
+are arranged in different order. Following are the three pairs of the words which are anagrams of each other.</p>
+<p style="text-align:center">cat, act &nbsp;&nbsp; heart, earth &nbsp;&nbsp; silent, listen</p>
+<p>Design the class Anagram to input two words in lower case and check if they are anagram of each other. The
+member functions and data members of the class are given below:</p>
+<div class="tbl"><table>
+<tr><td>Class Name</td><td>Anagram</td></tr>
+<tr><th colspan="2">Data members / instance variables</th></tr>
+<tr><td>s1, s2</td><td>stores the two words in lower case</td></tr>
+<tr><td>l1, l2</td><td>number of character in s1 and s2 respectively</td></tr>
+<tr><th colspan="2">Member functions</th></tr>
+<tr><td>Anagram(String s1, String s2)</td><td>parameterised constructor to assign the accepted values of s1 and s2 to data member</td></tr>
+<tr><td>void sort(char c[])</td><td>to sort the characters in array c[] in ascending order using any sorting technique</td></tr>
+<tr><td>boolean areAnagram(char[] str1, char[] str2)</td><td>to check if str1 and str2 are anagrams of each other and to return true or false accordingly</td></tr>
+<tr><td>void check()</td><td>to convert the two strings into two character arrays and to display the appropriate message as shown in the sample output by calling the method areAnagram(char[] str1, char[] str2)</td></tr>
+</table></div>
+<p>Specify the class Anagram giving details of the parameterised constructor, void sort(char c[]), boolean
+areAnagram(char[] str1, char[] str2) and void check(). Create one object in the main() method and call all the
+methods appropriately.</p>
+<p>Sample Input:<br>Enter first word -&gt; earth<br>Enter second word -&gt; heart</p>
+<p>Output:<br>earth and heart are anagram of each other</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Idea:</b> two words are anagrams exactly when their letters, sorted, give the same sequence. Equal
+lengths are checked first; then both arrays are sorted (bubble sort) and compared position by position.</p><pre class="code">import java.util.Scanner;
+
+public class Anagram
+{
+    String s1, s2;          // the two words in lower case
+    int l1, l2;             // number of characters in s1 and s2
+
+    // parameterised constructor
+    Anagram(String s1, String s2)
+    {
+        this.s1 = s1.toLowerCase();
+        this.s2 = s2.toLowerCase();
+        l1 = this.s1.length();
+        l2 = this.s2.length();
+    }
+
+    // sorts c[] in ascending order (bubble sort)
+    void sort(char c[])
+    {
+        for (int i = 0; i &lt; c.length - 1; i++)
+            for (int j = 0; j &lt; c.length - 1 - i; j++)
+                if (c[j] &gt; c[j + 1])
+                {
+                    char t = c[j];
+                    c[j] = c[j + 1];
+                    c[j + 1] = t;
+                }
+    }
+
+    // true if str1 and str2 hold the same letters
+    boolean areAnagram(char[] str1, char[] str2)
+    {
+        if (str1.length != str2.length)
+            return false;
+        sort(str1);
+        sort(str2);
+        for (int i = 0; i &lt; str1.length; i++)
+            if (str1[i] != str2[i])
+                return false;
+        return true;
+    }
+
+    void check()
+    {
+        char a[] = s1.toCharArray();
+        char b[] = s2.toCharArray();
+        if (areAnagram(a, b))
+            System.out.println(s1 + " and " + s2
+                               + " are anagram of each other");
+        else
+            System.out.println(s1 + " and " + s2
+                               + " are not anagram of each other");
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first word -&gt; ");
+        String w1 = sc.next();
+        System.out.print("Enter second word -&gt; ");
+        String w2 = sc.next();
+        Anagram ob = new Anagram(w1, w2);
+        ob.check();
+    }
+}</pre><p><b>Input</b></p><pre class="code">earth
+heart</pre><p><b>Output</b></p><pre class="code">Enter first word -&gt; Enter second word -&gt; earth and heart are anagram of each other</pre><p><b>Input</b></p><pre class="code">cat
+cut</pre><p><b>Output</b></p><pre class="code">Enter first word -&gt; Enter second word -&gt; cat and cut are not anagram of each other</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li><code>toCharArray()</code> converts a String to char[].</li><li>Bubble sort: compare neighbours, swap if out of order, n − 1 passes.</li><li>Anagram test: equal length and equal sorted letters.</li></ul></aside></div>
+</article>
+<article class="q" id="q7">
+<div class="qhead"><span class="num">Q7</span><span class="topic">Objects — passing objects to methods; Arrays</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q7"> revised</label></div>
+<div class="qbody"><p>A sports academy wants to conduct a friendly match between two teams with maximum fifteen players.
+A class Sports contains three data members, to store the name of the team with ‘n’ number of players and a
+one-dimensional array to store height of each player. Design a class Sports to compare average height of both
+the teams. The details of the members of the class are given below:</p>
+<div class="tbl"><table>
+<tr><td>Class Name</td><td>Sports</td></tr>
+<tr><th colspan="2">Data Members / Instance Variables</th></tr>
+<tr><td>height[]</td><td>to store the height of each player</td></tr>
+<tr><td>name</td><td>to store the name of the team</td></tr>
+<tr><td>n</td><td>to store total number of players</td></tr>
+<tr><th colspan="2">Member methods</th></tr>
+<tr><td>Sports()</td><td>default constructor</td></tr>
+<tr><td>Sports(int n, String name)</td><td>to initialize the number of players and name of the team</td></tr>
+<tr><td>void fillHeight()</td><td>to enter the height of all the players</td></tr>
+<tr><td>double averageHeight</td><td>to calculate average height of the team</td></tr>
+<tr><td>String compare(Sports s1, Sports s2)</td><td>to compare average height of both the teams and return the name of the team with the higher average height</td></tr>
+<tr><td>void display(String msg)</td><td>to display the name of the team with the higher average height stored in msg. If both the teams have the same average height, then msg should be “Both teams have the same average height.”</td></tr>
+</table></div>
+<p>Specify the class Sports giving the details of constructors, void fillHeight(), double averageHeight(),
+String compare(Sports, Sports), void display(String). Write the main() method to call methods defined in an
+appropriate manner.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Idea:</b> each team is one Sports object. <code>compare()</code> is called on a third object (made
+with the default constructor) and receives both teams; it returns the winning team's name, or the
+“same average” message, which <code>display()</code> then prints. The parameterised constructor caps n at 15.</p><pre class="code">import java.util.Scanner;
+
+public class Sports
+{
+    double height[];        // height of each player
+    String name;            // name of the team
+    int n;                  // number of players (at most 15)
+    static Scanner sc = new Scanner(System.in);
+
+    Sports()                // default constructor
+    {
+        n = 0;
+        name = "";
+        height = new double[15];
+    }
+
+    Sports(int n, String name)
+    {
+        if (n &lt; 1 || n &gt; 15)      // at most fifteen players
+            n = 15;
+        this.n = n;
+        this.name = name;
+        height = new double[n];
+    }
+
+    void fillHeight()
+    {
+        System.out.println("Enter the heights of the " + n
+                           + " players of " + name);
+        for (int i = 0; i &lt; n; i++)
+            height[i] = sc.nextDouble();
+    }
+
+    double averageHeight()
+    {
+        double sum = 0;
+        for (int i = 0; i &lt; n; i++)
+            sum += height[i];
+        return sum / n;
+    }
+
+    // name of the team with the higher average, or the "same" message
+    String compare(Sports s1, Sports s2)
+    {
+        double a1 = s1.averageHeight(), a2 = s2.averageHeight();
+        if (a1 &gt; a2)
+            return s1.name;
+        else if (a2 &gt; a1)
+            return s2.name;
+        else
+            return "Both teams have the same average height.";
+    }
+
+    void display(String msg)
+    {
+        if (msg.equals("Both teams have the same average height."))
+            System.out.println(msg);
+        else
+            System.out.println("Team with the higher average height : "
+                               + msg);
+    }
+
+    public static void main(String args[])
+    {
+        System.out.println("Team 1 - enter name and number of players :");
+        String t1 = sc.next();
+        int n1 = sc.nextInt();
+        System.out.println("Team 2 - enter name and number of players :");
+        String t2 = sc.next();
+        int n2 = sc.nextInt();
+        Sports a = new Sports(n1, t1);
+        Sports b = new Sports(n2, t2);
+        a.fillHeight();
+        b.fillHeight();
+        Sports ob = new Sports();
+        String msg = ob.compare(a, b);
+        ob.display(msg);
+    }
+}</pre><p><b>Input</b></p><pre class="code">Eagles 3
+Hawks 4
+170 175 180
+172 168 181 183</pre><p><b>Output</b></p><pre class="code">Team 1 - enter name and number of players :
+Team 2 - enter name and number of players :
+Enter the heights of the 3 players of Eagles
+Enter the heights of the 4 players of Hawks
+Team with the higher average height : Hawks</pre><p><b>Input</b></p><pre class="code">Eagles 2
+Hawks 2
+170 180
+175 175</pre><p><b>Output</b></p><pre class="code">Team 1 - enter name and number of players :
+Team 2 - enter name and number of players :
+Enter the heights of the 2 players of Eagles
+Enter the heights of the 2 players of Hawks
+Both teams have the same average height.</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Objects can be passed as arguments; the method reads their members through the reference.</li><li>Average = sum / count (use double).</li><li>Constructors: default (no arguments) and parameterised.</li></ul></aside></div>
+</article>
+<article class="q" id="q8">
+<div class="qhead"><span class="num">Q8</span><span class="topic">Arrays — double dimensional; Sorting (insertion)</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q8"> revised</label></div>
+<div class="qbody"><p>Given below is an example of a double dimensional array with unequal number of rows and columns.
+It must be arranged in such a way that the elements in the even rows are in ascending order and the elements in
+the odd rows are in descending order, using Insertion sort technique.</p>
+<p>Sample Input :<br>Row = 3<br>Column = 4</p>
+<p>Enter the array elements</p><pre class="code">1 2 3 4
+9 8 7 6
+4 5 6 7</pre>
+<p>Before sort :</p><pre class="code">1 2 3 4
+9 8 7 6
+4 5 6 7</pre>
+<p>After sort :</p><pre class="code">4 3 2 1
+6 7 8 9
+7 6 5 4</pre>
+<p>The members of the class are given below :</p>
+<div class="tbl"><table>
+<tr><td>Class name</td><td>Mix_sort</td></tr>
+<tr><th colspan="2">Data members / instance variables</th></tr>
+<tr><td>a[][]</td><td>to store integers in the double dimensional array</td></tr>
+<tr><td>m</td><td>to store the number of rows</td></tr>
+<tr><td>n</td><td>to store the number of columns</td></tr>
+<tr><th colspan="2">Methods / Member functions</th></tr>
+<tr><td>Mix_sort(int row, int col)</td><td>parameterised constructor to initialise m = row, n = col and allocate memory for a[][]</td></tr>
+<tr><td>void input()</td><td>to enter the integer elements in a[][]</td></tr>
+<tr><td>void ascEven(int x[])</td><td>arrange the elements of x[] in ascending order using Insertion sort technique</td></tr>
+<tr><td>void dscOdd(int x[])</td><td>arrange the elements of x[] in descending order using Insertion sort technique</td></tr>
+<tr><td>void arrange()</td><td>to arrange the rows in even position in Ascending order using ascEven(..) method and rows in odd position in descending order using dscOdd(..) method. Finally store the sorted elements into a[][]</td></tr>
+<tr><td>void display()</td><td>display the original a[][] and sorted a[][]</td></tr>
+</table></div>
+<p>Define the class <b>Mix_sort</b> with details of the constructor, void input(), void arrange(), void
+ascEven(int []), void dscOdd(int []) and void display(). Define a main() function to create an object and call
+the functions accordingly to enable the task.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Reading the sample:</b> the 1st and 3rd rows come out descending and the 2nd ascending, so “even” and
+“odd” are row <i>positions counted from 1</i> (index 0 is position 1, odd). The program follows the sample.
+An extra array <code>orig[][]</code> keeps the original matrix, because <code>display()</code> must print both.</p>
+<p><b>Insertion sort:</b> take each element in turn as the key and shift the larger (for ascending) or smaller
+(for descending) elements before it one place right, then drop the key into the gap.</p><pre class="code">import java.util.Scanner;
+
+public class Mix_sort
+{
+    int a[][];      // the matrix
+    int m, n;       // rows, columns
+    int orig[][];   // copy of the original, kept for display()
+    static Scanner sc = new Scanner(System.in);
+
+    Mix_sort(int row, int col)
+    {
+        m = row;
+        n = col;
+        a = new int[m][n];
+        orig = new int[m][n];
+    }
+
+    void input()
+    {
+        System.out.println("Enter the array elements");
+        for (int i = 0; i &lt; m; i++)
+            for (int j = 0; j &lt; n; j++)
+            {
+                a[i][j] = sc.nextInt();
+                orig[i][j] = a[i][j];
+            }
+    }
+
+    // insertion sort, ascending
+    void ascEven(int x[])
+    {
+        for (int i = 1; i &lt; x.length; i++)
+        {
+            int key = x[i];
+            int j = i - 1;
+            while (j &gt;= 0 &amp;&amp; x[j] &gt; key)     // shift larger elements right
+            {
+                x[j + 1] = x[j];
+                j--;
+            }
+            x[j + 1] = key;
+        }
+    }
+
+    // insertion sort, descending
+    void dscOdd(int x[])
+    {
+        for (int i = 1; i &lt; x.length; i++)
+        {
+            int key = x[i];
+            int j = i - 1;
+            while (j &gt;= 0 &amp;&amp; x[j] &lt; key)     // shift smaller elements right
+            {
+                x[j + 1] = x[j];
+                j--;
+            }
+            x[j + 1] = key;
+        }
+    }
+
+    // rows are numbered from 1 as in the sample: rows 1, 3, 5 ... (odd
+    // positions) descending, rows 2, 4, 6 ... (even positions) ascending
+    void arrange()
+    {
+        for (int i = 0; i &lt; m; i++)
+        {
+            int x[] = new int[n];
+            for (int j = 0; j &lt; n; j++)      // copy row i out
+                x[j] = a[i][j];
+            if ((i + 1) % 2 == 0)
+                ascEven(x);
+            else
+                dscOdd(x);
+            for (int j = 0; j &lt; n; j++)      // store the sorted row back
+                a[i][j] = x[j];
+        }
+    }
+
+    void display()
+    {
+        System.out.println("Before sort :");
+        for (int i = 0; i &lt; m; i++)
+        {
+            for (int j = 0; j &lt; n; j++)
+                System.out.print(orig[i][j] + " ");
+            System.out.println();
+        }
+        System.out.println("After sort :");
+        for (int i = 0; i &lt; m; i++)
+        {
+            for (int j = 0; j &lt; n; j++)
+                System.out.print(a[i][j] + " ");
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[])
+    {
+        System.out.print("Row = ");
+        int r = sc.nextInt();
+        System.out.print("Column = ");
+        int c = sc.nextInt();
+        Mix_sort ob = new Mix_sort(r, c);
+        ob.input();
+        ob.arrange();
+        ob.display();
+    }
+}</pre><p><b>Input</b></p><pre class="code">3
+4
+1 2 3 4
+9 8 7 6
+4 5 6 7</pre><p><b>Output</b></p><pre class="code">Row = Column = Enter the array elements
+Before sort :
+1 2 3 4 
+9 8 7 6 
+4 5 6 7 
+After sort :
+4 3 2 1 
+6 7 8 9 
+7 6 5 4 </pre><p>The output matches the sample in the question.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Insertion sort: <code>while (j &gt;= 0 &amp;&amp; x[j] &gt; key) { x[j+1] = x[j]; j--; } x[j+1] = key;</code> — flip &gt; to &lt; for descending.</li><li>Copy a row into a 1-D array, sort it, copy it back.</li></ul></aside></div>
+</article>
+<h2 class="sec">Section C</h2><p class="secnote">Answer <b>any two</b> questions. Each program should be written in such a way that it clearly depicts the logic of the problem stepwise. This can be achieved by using comments in the program and mnemonic names or pseudo codes for algorithms. The programs must be written in Java and the algorithms must be written in general / standard form, wherever required / specified. (Flowcharts are not required.)</p>
+<article class="q" id="q9-a">
+<div class="qhead"><span class="num">Q9(a)</span><span class="topic">Data structures — queue</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q9-a"> revised</label></div>
+<div class="qbody"><p>A class Repeat allows the user to insert integer elements from one end (rear) and delete elements
+from the other end (front) only. This forms a restricted linear data structure. The details of the class
+Repeat are given below:</p>
+<div class="tbl"><table>
+<tr><td>Class name</td><td>Repeat</td></tr>
+<tr><th colspan="2">Data members / instance variables</th></tr>
+<tr><td>st[]</td><td>an array to hold a maximum of 100 integer elements.</td></tr>
+<tr><td>cap</td><td>stores the capacity of the array.</td></tr>
+<tr><td>f</td><td>to point to the index of the front.</td></tr>
+<tr><td>r</td><td>to point to the index of the rear.</td></tr>
+<tr><th colspan="2">Member functions</th></tr>
+<tr><td>Repeat(int m)</td><td>constructor to initialize data members cap = m, f = 0, r = -1 and to create the integer array st[].</td></tr>
+<tr><td>void pushValue(int v)</td><td>to insert an element from the rear, if space is available; otherwise display the message “Overflow! Insertion not possible.”</td></tr>
+<tr><td>int popValue()</td><td>to remove and return an element from the front, if the structure is not empty; otherwise return -9999 and display “Underflow! Deletion not possible.”</td></tr>
+<tr><td>void disp()</td><td>to display the current elements in the queue from front to rear.</td></tr>
+</table></div><p>(a) Write the member functions void pushValue(int) and int popValue().</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Insert at the rear (r moves forward), delete from the front (f moves forward). The structure is
+empty when f &gt; r and full when r = cap − 1.</p><pre class="code">void pushValue(int v)
+{
+    if (r == cap - 1)                       // rear has reached the last cell
+        System.out.println("Overflow! Insertion not possible.");
+    else
+    {
+        r = r + 1;                          // move rear forward
+        st[r] = v;                          // insert at the rear
+    }
+}
+
+int popValue()
+{
+    if (f &gt; r)                              // no element between front and rear
+    {
+        System.out.println("Underflow! Deletion not possible.");
+        return -9999;
+    }
+    int v = st[f];                          // element at the front
+    f = f + 1;                              // move front forward
+    if (f &gt; r)                              // queue became empty: reset
+    {
+        f = 0;
+        r = -1;
+    }
+    return v;
+}</pre><figure class="afig wide" data-fig="fig_q9_queue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img"><defs><marker id="fig_q9_queue-ah-111" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs><rect x="60" y="50" width="60" height="40" rx="0" stroke="#111" stroke-width="1.6" fill="#eee"/><text x="90" y="76" font-size="15" text-anchor="middle" fill="#999" font-family="Times New Roman,serif">10</text><text x="90" y="108" font-size="11" text-anchor="middle" fill="#555" font-family="Times New Roman,serif">0</text><rect x="120" y="50" width="60" height="40" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><text x="150" y="76" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">20</text><text x="150" y="108" font-size="11" text-anchor="middle" fill="#555" font-family="Times New Roman,serif">1</text><rect x="180" y="50" width="60" height="40" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><text x="210" y="76" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">30</text><text x="210" y="108" font-size="11" text-anchor="middle" fill="#555" font-family="Times New Roman,serif">2</text><rect x="240" y="50" width="60" height="40" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><text x="270" y="76" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif"></text><text x="270" y="108" font-size="11" text-anchor="middle" fill="#555" font-family="Times New Roman,serif">3</text><rect x="300" y="50" width="60" height="40" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><text x="330" y="76" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif"></text><text x="330" y="108" font-size="11" text-anchor="middle" fill="#555" font-family="Times New Roman,serif">4</text><text x="52" y="76" font-size="14" text-anchor="end" fill="#111" font-family="Times New Roman,serif" font-style="italic">st</text><text x="210" y="24" font-size="12" text-anchor="start" fill="#111" font-family="Times New Roman,serif">f = 1 (front)</text><path d="M 208 20 L 150 20 L 150 48" stroke="#111" stroke-width="1.6" fill="none" marker-end="url(#fig_q9_queue-ah-111)"/><text x="210" y="146" font-size="12" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">r = 2 (rear)</text><line x1="210" y1="132" x2="210" y2="114" stroke="#111" stroke-width="1.6" marker-end="url(#fig_q9_queue-ah-111)"/><text x="90" y="146" font-size="11" text-anchor="middle" fill="#777" font-family="Times New Roman,serif">deleted</text><text x="368" y="76" font-size="12" text-anchor="start" fill="#2a6" font-family="Times New Roman,serif">← insert at rear</text><text x="58" y="24" font-size="12" text-anchor="start" fill="#c0392b" font-family="Times New Roman,serif">← delete at front</text></svg><figcaption>cap = 5 after pushValue(10), (20), (30) and one popValue(): f = 1, r = 2</figcaption></figure><p>Test run (cap = 3): push 10, 20, 30, push 40, then four pops and a push 50:</p><p><b>Output</b></p><pre class="code">10 20 30 
+Overflow! Insertion not possible.
+popped 10
+20 30 
+popped 20
+popped 30
+Underflow! Deletion not possible.
+popped -9999
+50 </pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Linear queue: insert at rear (<code>st[++r] = v</code>), delete at front (<code>st[f++]</code>).</li><li>Overflow: r == cap − 1; underflow: f &gt; r.</li></ul></aside></div>
+</article>
+<article class="q" id="q9-b">
+<div class="qhead"><span class="num">Q9(b)</span><span class="topic">Data structures — queue</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q9-b"> revised</label></div>
+<div class="qbody"><p>A class Repeat allows the user to insert integer elements from one end (rear) and delete elements
+from the other end (front) only. This forms a restricted linear data structure. The details of the class
+Repeat are given below:</p>
+<div class="tbl"><table>
+<tr><td>Class name</td><td>Repeat</td></tr>
+<tr><th colspan="2">Data members / instance variables</th></tr>
+<tr><td>st[]</td><td>an array to hold a maximum of 100 integer elements.</td></tr>
+<tr><td>cap</td><td>stores the capacity of the array.</td></tr>
+<tr><td>f</td><td>to point to the index of the front.</td></tr>
+<tr><td>r</td><td>to point to the index of the rear.</td></tr>
+<tr><th colspan="2">Member functions</th></tr>
+<tr><td>Repeat(int m)</td><td>constructor to initialize data members cap = m, f = 0, r = -1 and to create the integer array st[].</td></tr>
+<tr><td>void pushValue(int v)</td><td>to insert an element from the rear, if space is available; otherwise display the message “Overflow! Insertion not possible.”</td></tr>
+<tr><td>int popValue()</td><td>to remove and return an element from the front, if the structure is not empty; otherwise return -9999 and display “Underflow! Deletion not possible.”</td></tr>
+<tr><td>void disp()</td><td>to display the current elements in the queue from front to rear.</td></tr>
+</table></div><p>(b) What is the common name of the entity described above?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Insertion at one end (rear) and deletion at the other (front): <span class='box'>a Queue</span> (linear queue).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Stack: one end for both operations; queue: insert at rear, delete at front; dequeue: both ends.</li></ul></aside></div>
+</article>
+<article class="q" id="q9-c">
+<div class="qhead"><span class="num">Q9(c)</span><span class="topic">Data structures — queue</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q9-c"> revised</label></div>
+<div class="qbody"><p>A class Repeat allows the user to insert integer elements from one end (rear) and delete elements
+from the other end (front) only. This forms a restricted linear data structure. The details of the class
+Repeat are given below:</p>
+<div class="tbl"><table>
+<tr><td>Class name</td><td>Repeat</td></tr>
+<tr><th colspan="2">Data members / instance variables</th></tr>
+<tr><td>st[]</td><td>an array to hold a maximum of 100 integer elements.</td></tr>
+<tr><td>cap</td><td>stores the capacity of the array.</td></tr>
+<tr><td>f</td><td>to point to the index of the front.</td></tr>
+<tr><td>r</td><td>to point to the index of the rear.</td></tr>
+<tr><th colspan="2">Member functions</th></tr>
+<tr><td>Repeat(int m)</td><td>constructor to initialize data members cap = m, f = 0, r = -1 and to create the integer array st[].</td></tr>
+<tr><td>void pushValue(int v)</td><td>to insert an element from the rear, if space is available; otherwise display the message “Overflow! Insertion not possible.”</td></tr>
+<tr><td>int popValue()</td><td>to remove and return an element from the front, if the structure is not empty; otherwise return -9999 and display “Underflow! Deletion not possible.”</td></tr>
+<tr><td>void disp()</td><td>to display the current elements in the queue from front to rear.</td></tr>
+</table></div><p>(c) On what principle does this entity work?</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><span class='box'>FIFO — First In, First Out</span>: the element inserted first is the first to be removed.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Queue: FIFO; stack: LIFO.</li></ul></aside></div>
+</article>
+<article class="q" id="q10">
+<div class="qhead"><span class="num">Q10</span><span class="topic">Inheritance, Interfaces and Polymorphism</span><span class="marks">[5]</span>
+<label class="done"><input type="checkbox" data-id="q10"> revised</label></div>
+<div class="qbody"><p>A super class Circle has been defined to calculate the area of a circle. Define a subclass Volume to
+calculate the volume of a cylinder. The details of the members of both the classes are given below:</p>
+<div class="tbl"><table>
+<tr><td>Class name</td><td>Circle</td></tr>
+<tr><th colspan="2">Data members/instance variables</th></tr>
+<tr><td>radius</td><td>to store the radius in decimals</td></tr>
+<tr><td>area</td><td>to store the area of a circle</td></tr>
+<tr><th colspan="2">Methods / Member functions</th></tr>
+<tr><td>Circle( ... )</td><td>parameterized constructor to assign values to the data members</td></tr>
+<tr><td>void cal_area()</td><td>calculates the area of a circle (πr<sup>2</sup>)</td></tr>
+<tr><td>void display( )</td><td>to display the area of the circle</td></tr>
+<tr><td>Class name</td><td>Volume</td></tr>
+<tr><th colspan="2">Data members/instance variables</th></tr>
+<tr><td>height</td><td>to store the height of the cylinder in decimals</td></tr>
+<tr><td>volume</td><td>to store the volume of the cylinder in decimals</td></tr>
+<tr><th colspan="2">Methods / Member functions</th></tr>
+<tr><td>Volume( ... )</td><td>parameterized constructor to assign values to the data members of both the classes</td></tr>
+<tr><td>double calculate()</td><td>to calculate and return the volume of the cylinder using the formula (πr<sup>2</sup>h) where, r is the radius and h is the height</td></tr>
+<tr><td>void display( )</td><td>to display the area of a circle and volume of a cylinder.</td></tr>
+</table></div>
+<p>Assume that the super class Circle has been defined. Using the concept of inheritance, specify the class Volume
+giving the details of the <b>constructor(...), double calculate() and void display().</b></p>
+<p>The super class, main function and algorithm need NOT be written</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The super class, as assumed (shown only so the answer can be read; <i>not part of the answer</i>):</p>
+<pre class="code" style="border-style:dashed">class Circle
+{
+    double radius, area;
+    Circle(double r)  { radius = r; area = 0.0; }
+    void cal_area()   { area = Math.PI * radius * radius; }
+    void display()    { System.out.println("Area of the circle = " + area); }
+}</pre>
+<p><b>Answer:</b></p><pre class="code">class Volume extends Circle
+{
+    double height;                  // height of the cylinder
+    double volume;                  // volume of the cylinder
+
+    Volume(double r, double h)
+    {
+        super(r);                   // assigns radius in Circle
+        height = h;
+        volume = 0.0;
+    }
+
+    double calculate()
+    {
+        volume = Math.PI * radius * radius * height;     // V = pi r^2 h
+        return volume;
+    }
+
+    void display()
+    {
+        cal_area();                 // compute the inherited area first
+        super.display();            // prints the area of the circle
+        System.out.println("Volume of the cylinder = " + calculate());
+    }
+}</pre><p><code>display()</code> overrides the super-class method, so the super-class version is reached with
+<code>super.display()</code>; <code>cal_area()</code> is called first, otherwise the area would print as 0.0.
+Run with r = 7, h = 10:</p><p><b>Output</b></p><pre class="code">Area of the circle = 153.93804002589985
+Volume of the cylinder = 1539.3804002589986</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li><code>super(…)</code> must be the first statement of the subclass constructor.</li><li>An overriding method calls the parent version with <code>super.method()</code>.</li><li>Cylinder volume \(= \pi r^2 h\) = base area × height.</li></ul></aside></div>
+</article>
+<article class="q" id="q11-i">
+<div class="qhead"><span class="num">Q11(i)</span><span class="topic">Data structures — linked list</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q11-i"> revised</label></div>
+<div class="qbody"><p>A linked list is formed from the objects of the class</p>
+<pre class="code">class Node
+{
+   int info;
+   Node link;
+}</pre>
+<p>Write an <b>algorithm or a method</b> to <b>delete a node</b> from the linked list. The method declaration is
+given below:</p><p><b>void deleteNode(Node start)</b></p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The node to delete is taken to be the one whose <code>info</code> equals a value read from the user.</p>
+<p><b>Algorithm</b></p>
+<ol><li>Read val. If start = null, print “List is empty” and stop.</li>
+<li>If start.info = val: if start.link = null (the only node) the list becomes empty — the caller sets
+start = null; otherwise copy start.link's info into start and set start.link = start.link.link
+(start itself cannot be re-pointed inside the method, as Java passes the reference by value). Stop.</li>
+<li>Set prev = start, ptr = start.link.</li>
+<li>While ptr ≠ null and ptr.info ≠ val: prev = ptr, ptr = ptr.link.</li>
+<li>If ptr = null, print “not found”; else set prev.link = ptr.link. Stop.</li></ol>
+<figure class="afig wide" data-fig="fig_q11i_delete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 170" role="img"><defs><marker id="fig_q11i_delete-ah-111" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker><marker id="fig_q11i_delete-ah-999" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#999"/></marker><marker id="fig_q11i_delete-ah-c0392b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs><rect x="40" y="70" width="50" height="34" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><rect x="90" y="70" width="26" height="34" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><text x="65" y="92" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">10</text><line x1="103" y1="87" x2="158" y2="87" stroke="#111" stroke-width="1.6" marker-end="url(#fig_q11i_delete-ah-111)"/><rect x="160" y="70" width="50" height="34" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><rect x="210" y="70" width="26" height="34" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><text x="185" y="92" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">20</text><line x1="223" y1="87" x2="278" y2="87" stroke="#999" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fig_q11i_delete-ah-999)"/><rect x="280" y="70" width="50" height="34" rx="0" stroke="#999" stroke-width="1.6" fill="#f3f3f3"/><rect x="330" y="70" width="26" height="34" rx="0" stroke="#999" stroke-width="1.6" fill="none"/><text x="305" y="92" font-size="15" text-anchor="middle" fill="#999" font-family="Times New Roman,serif">30</text><line x1="343" y1="87" x2="398" y2="87" stroke="#999" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#fig_q11i_delete-ah-999)"/><rect x="400" y="70" width="50" height="34" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><rect x="450" y="70" width="26" height="34" rx="0" stroke="#111" stroke-width="1.6" fill="none"/><text x="425" y="92" font-size="15" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">40</text><text x="463" y="92" font-size="14" text-anchor="middle" fill="#111" font-family="Times New Roman,serif">∅</text><text x="26" y="38" font-size="13" text-anchor="start" fill="#111" font-family="Times New Roman,serif" font-style="italic">start</text><line x1="40" y1="42" x2="52" y2="68" stroke="#111" stroke-width="1.6" marker-end="url(#fig_q11i_delete-ah-111)"/><text x="185" y="140" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic">prev</text><line x1="185" y1="126" x2="185" y2="107" stroke="#111" stroke-width="1.6" marker-end="url(#fig_q11i_delete-ah-111)"/><text x="305" y="140" font-size="13" text-anchor="middle" fill="#111" font-family="Times New Roman,serif" font-style="italic">ptr</text><line x1="305" y1="126" x2="305" y2="107" stroke="#111" stroke-width="1.6" marker-end="url(#fig_q11i_delete-ah-111)"/><path d="M 223 70 C 260 10, 360 10, 420 67" stroke="#c0392b" stroke-width="2" fill="none" marker-end="url(#fig_q11i_delete-ah-c0392b)"/><text x="318" y="20" font-size="13" text-anchor="middle" fill="#c0392b" font-family="Times New Roman,serif">prev.link = ptr.link</text></svg><figcaption>Deleting a middle node: prev.link = ptr.link</figcaption></figure>
+<p><b>Method</b></p><pre class="code">void deleteNode(Node start)
+{
+    System.out.print("Enter the value to be deleted : ");
+    int val = sc.nextInt();
+    if (start == null)                          // empty list
+    {
+        System.out.println("List is empty");
+        return;
+    }
+    if (start.info == val)                      // the first node is to go
+    {
+        if (start.link == null)                 // it is the only node
+        {
+            System.out.println("List now empty: caller sets start = null");
+            return;
+        }
+        // start cannot be re-pointed from here (Java passes the reference
+        // by value), so copy the second node into the first and unlink it
+        start.info = start.link.info;
+        start.link = start.link.link;
+        return;
+    }
+    Node prev = start, ptr = start.link;    // ptr is one node ahead
+    while (ptr != null &amp;&amp; ptr.info != val)
+    {
+        prev = ptr;
+        ptr = ptr.link;
+    }
+    if (ptr == null)
+        System.out.println(val + " not found");
+    else
+        prev.link = ptr.link;               // bypass the node
+}</pre><p class="note">In algorithm form ISC answers often write “start = start.link” for the first node; that is the
+right idea and earns the step, but inside a <code>void</code> method taking <code>start</code> as a parameter it would
+change only the local copy, which is why the method above copies the second node forward instead.</p>
+<p>Run on 10 → 20 → 30 → 40 deleting 30, 10, 40 and 99 in turn (each on a fresh list), then on a one-node list:</p><p><b>Input</b></p><pre class="code">30
+10
+40
+99
+10</pre><p><b>Output</b></p><pre class="code">10 -&gt; 20 -&gt; 30 -&gt; 40 -&gt; null
+Enter the value to be deleted : 10 -&gt; 20 -&gt; 40 -&gt; null
+10 -&gt; 20 -&gt; 30 -&gt; 40 -&gt; null
+Enter the value to be deleted : 20 -&gt; 30 -&gt; 40 -&gt; null
+10 -&gt; 20 -&gt; 30 -&gt; 40 -&gt; null
+Enter the value to be deleted : 10 -&gt; 20 -&gt; 30 -&gt; null
+10 -&gt; 20 -&gt; 30 -&gt; 40 -&gt; null
+Enter the value to be deleted : 99 not found
+10 -&gt; 20 -&gt; 30 -&gt; 40 -&gt; null
+10 -&gt; null
+Enter the value to be deleted : List now empty: caller sets start = null</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>To delete, keep a pointer to the node <i>before</i> the one removed and bypass it.</li><li>Handle the empty list and the first node separately.</li><li>Traversal: <code>ptr = ptr.link</code> until null.</li></ul></aside></div>
+</article>
+<article class="q" id="q11-ii-a">
+<div class="qhead"><span class="num">Q11(ii)(a)</span><span class="topic">Data structures — binary trees</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q11-ii-a"> revised</label></div>
+<div class="qbody"><p>Answer the following questions from the diagram of a Binary Tree given below:</p><p>(a) Name the root of the left sub tree and its siblings</p><p class='note'>[The paper numbers this part “(i)” a second time; it is 11(ii).]</p><figure class="qfig" data-fig="fig_q11_tree"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:676px" viewBox="0 0 338 176" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M57 109L25 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M57 109L89 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M121 67L57 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M121 67L153 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M153 109L185 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M217 25L121 67" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M217 25L281 67" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M281 67L249 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M281 67L313 109" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="25" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="25" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">H</text><circle cx="57" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="57" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">D</text><circle cx="89" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="89" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">I</text><circle cx="121" cy="67" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="121" y="70.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">B</text><circle cx="153" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="153" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">E</text><circle cx="185" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="185" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">J</text><circle cx="217" cy="25" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="217" y="28.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">A</text><circle cx="249" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="249" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">F</text><circle cx="281" cy="67" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="281" y="70.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">C</text><circle cx="313" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="313" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">G</text></svg><figcaption>The binary tree as printed (redrawn)</figcaption></figure></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>The left sub-tree of A is rooted at <span class="box">B</span>; its sibling (the other child of A) is
+<span class="box">C</span>.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Root of a sub-tree = the child of the root on that side; siblings share a parent.</li>
+<li>Size = number of nodes; depth/height = number of edges on the longest root-to-leaf path (levels − 1).</li>
+<li>In-order: Left, Root, Right — applied recursively.</li></ul></aside></div>
+</article>
+<article class="q" id="q11-ii-b">
+<div class="qhead"><span class="num">Q11(ii)(b)</span><span class="topic">Data structures — binary trees</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q11-ii-b"> revised</label></div>
+<div class="qbody"><p>Answer the following questions from the diagram of a Binary Tree given below:</p><p>(b) State the size and depth of the right sub tree.</p><figure class="qfig" data-fig="fig_q11_tree"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:676px" viewBox="0 0 338 176" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M57 109L25 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M57 109L89 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M121 67L57 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M121 67L153 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M153 109L185 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M217 25L121 67" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M217 25L281 67" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M281 67L249 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M281 67L313 109" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="25" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="25" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">H</text><circle cx="57" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="57" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">D</text><circle cx="89" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="89" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">I</text><circle cx="121" cy="67" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="121" y="70.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">B</text><circle cx="153" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="153" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">E</text><circle cx="185" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="185" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">J</text><circle cx="217" cy="25" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="217" y="28.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">A</text><circle cx="249" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="249" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">F</text><circle cx="281" cy="67" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="281" y="70.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">C</text><circle cx="313" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="313" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">G</text></svg><figcaption>The binary tree as printed (redrawn)</figcaption></figure></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Right sub-tree = C with children F and G.</p>
+<p><span class="box">Size = 3</span> (nodes C, F, G); <span class="box">Depth = 1</span> (one edge from C to a
+leaf, the sub-tree's root C taken at level 0 — the convention of CISCE's own key for this question type in the
+2025 specimen paper; counted in levels from 1 it would be 2).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Root of a sub-tree = the child of the root on that side; siblings share a parent.</li>
+<li>Size = number of nodes; depth/height = number of edges on the longest root-to-leaf path (levels − 1).</li>
+<li>In-order: Left, Root, Right — applied recursively.</li></ul></aside></div>
+</article>
+<article class="q" id="q11-ii-c">
+<div class="qhead"><span class="num">Q11(ii)(c)</span><span class="topic">Data structures — binary trees</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q11-ii-c"> revised</label></div>
+<div class="qbody"><p>Answer the following questions from the diagram of a Binary Tree given below:</p><p>(c) Write the in-order traversal of the above tree structure</p><figure class="qfig" data-fig="fig_q11_tree"><svg style="color:#111;font-family:'Times New Roman',serif;max-width:676px" viewBox="0 0 338 176" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M57 109L25 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M57 109L89 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M121 67L57 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M121 67L153 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M153 109L185 151" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M217 25L121 67" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M217 25L281 67" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M281 67L249 109" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M281 67L313 109" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="25" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="25" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">H</text><circle cx="57" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="57" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">D</text><circle cx="89" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="89" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">I</text><circle cx="121" cy="67" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="121" y="70.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">B</text><circle cx="153" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="153" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">E</text><circle cx="185" cy="151" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="185" y="154.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">J</text><circle cx="217" cy="25" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="217" y="28.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">A</text><circle cx="249" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="249" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">F</text><circle cx="281" cy="67" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="281" y="70.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">C</text><circle cx="313" cy="109" r="11" stroke="currentColor" stroke-width="1.4" fill="#fff"/><text x="313" y="112.2" font-size="9.5" text-anchor="middle" fill="currentColor" font-weight="700">G</text></svg><figcaption>The binary tree as printed (redrawn)</figcaption></figure></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>In-order (Left, Root, Right): left sub-tree of A → H D I B E J (E has only a right child J, so E
+comes before J), then A, then the right sub-tree F C G.</p>
+<p><span class="box">H, D, I, B, E, J, A, F, C, G</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Root of a sub-tree = the child of the root on that side; siblings share a parent.</li>
+<li>Size = number of nodes; depth/height = number of edges on the longest root-to-leaf path (levels − 1).</li>
+<li>In-order: Left, Root, Right — applied recursively.</li></ul></aside></div>
+</article>
+</main>
+</body></html>

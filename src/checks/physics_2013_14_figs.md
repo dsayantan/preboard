@@ -1,0 +1,16 @@
+# physics_2013_14_figs — what was checked (rendered with preview.py and looked at)
+- fig_q1b4_ac: one sine cycle starting at 0 rising, peaks ±5√2 marked with dashed lines, axes I (A) / t (second) as printed.
+- fig_q2b_caps: C1 8 µF, C2 16 µF, C3 24 µF in series on the top wire, 110 V cell on the bottom — matches the printed values.
+- fig_q6c_lens_mirror: biconvex lens (µ = 3/2) whose lower face touches the plane mirror at the centre; liquid (µ = 4/3) fills the plano-concave gap at the edges; arrow points into the liquid.
+- fig_q10b_transistor: (review fix) p-n-p as printed — emitter arrow pointing IN; collector cell long (+) plate at the bottom (N side), base cell + on the O side; input A–B, load P–M–N (question excluded, redrawn for the digital copy).
+- fig_q10c_gates: NAND driving a NAND with both inputs tied, as printed (excluded question).
+- fig_a1b3_radial: concave N/S pole pieces round a soft-iron cylinder; field lines radial, from N into the core and out of the core to S; coil sides in the gap.
+- fig_a1b15_visual_angle: (review fix) both α and β arcs now drawn at the eye (β had been drawn out near the star); α (moon) visibly larger than β (star).
+- fig_a2a_dipole_equatorial: −q left, +q right, p to the right; E+ along B→P (away from +q), E− along P→A (towards −q), equal length; resultant horizontal and antiparallel to p; θ marked at both charges between axis and line to P.
+- fig_a6c_liquid_lens: (review fix) the decomposition's 'plano-concave liquid lens' had been drawn plano-CONVEX; now flat base, concave top, thin at the centre. object on the axis above the lens, rays leave the lens system parallel to the axis, hit the mirror normally and retrace (green) — object coincides with image.
+- fig_a8a_selector: B into page (crosses), v right, E down; force on electron: electric up (opposite E), magnetic down — verified by cross product in the check script.
+- fig_a8c_levels: −13.6, −3.4, −1.51 eV, 0; arrow from n = 2 to n = 1 labelled 10.2 eV, 121 nm.
+- fig_a10a_bands: insulator — full VB, empty CB, wide gap (> 3 eV); semiconductor — narrow gap ≈ 1 eV with a few electrons in CB.
+- fig_pr_bench: O at 0 cm, L at 70.0 cm, I beyond, I′ dashed, eye on the right; u and v arrows — matches printed Figure 1.
+- fig_pr_bridge: resistance box between M and D, 50 cm wire R between D and N, galvanometer from D to jockey J at C on AB, key K and cell E across A–B — matches printed Figure 2.
+- fig_pr_graph1 / fig_pr_graph2: points are exactly the tabulated sample values (asserted in the practical check); best-fit line from numpy polyfit; slope-triangle corners lie on the line, are not plotted points and span > 50 % of the line; labels clear of points.

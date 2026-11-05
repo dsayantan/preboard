@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Science Pre-Board 2013-14</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/contrib/mhchem.min.js"></script>
+<script defer src="../assets/katex/contrib/auto-render.min.js"></script>
+<script defer src="../assets/site.js"></script>
+</head><body>
+<header class="top"><a class="crumb" href="../index.html">Pre-Board Revision</a> ›
+<a class="crumb" href="index.html">Computer Science</a>
+<h1>Computer Science · Pre-Board 2013-14</h1>
+<p class="meta">Paper 1 (Theory) · Maximum marks 100 · Time 3 hours</p>
+<p class="meta">26 questions in the ISC 2027 syllabus, answered below ·
+3 outside it (listed at the end, unanswered)</p>
+<div class="tools"><button data-act="show">Show all answers</button>
+<button data-act="hide">Hide all answers</button>
+<span class="prog" data-key="pbrev-computers-2013-14-paper-1"></span></div></header>
+<main data-key="pbrev-computers-2013-14-paper-1">
+<details class="intro"><summary>Instructions as printed</summary><p><i>(Candidates are allowed additional 15 minutes for only reading the paper. They must not
+start writing during this time.)</i></p>
+<p>Answer <b>all</b> questions in Part I (compulsory) and seven questions from Part II, choosing three
+questions from Sec A, two questions from Sec B and two questions from Sec C. All working, including
+rough work, should be done on the same sheet as the rest of the answer. The intended marks of the
+questions or parts of questions are given in brackets ( ). <b>Full marks is 100.</b></p></details>
+<h2 class="sec">Part I</h2><p class="secnote">(Compulsory)</p>
+<article class="q" id="q1">
+<div class="qhead"><span class="num">Q1</span><span class="topic">Boolean Algebra</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q1"> revised</label></div>
+<div class="qbody"><p>State Idempotent law of Boolean Algebra and prove using truth table.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Idempotent law:</b> a variable ORed or ANDed with itself gives the variable itself:</p>
+<p style="text-align:center">(a) \(A + A = A\) &nbsp;&nbsp;&nbsp; (b) \(A \cdot A = A\)</p>
+<p><b>Proof by truth table</b></p><table class="tt"><tr><th>A</th><th>A + A</th><th>A&middot;A</th></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table><p>The columns \(A+A\) and \(A\cdot A\) are identical to the column \(A\) in every row, hence
+<span class="box">\(A+A=A\) and \(A\cdot A=A\)</span>.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Idempotence: \(A+A=A\), \(A\cdot A=A\).</li><li>A law is proved by a truth table when the two sides have identical columns for every input combination.</li></ul></aside></div>
+</article>
+<article class="q" id="q2">
+<div class="qhead"><span class="num">Q2</span><span class="topic">Computer Hardware (logic gates)</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q2"> revised</label></div>
+<div class="qbody"><p>Draw truth tables to verify the following:</p>
+<p style="text-align:center">( P XOR Q XOR R )&prime; = P XOR Q XNOR R</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Read the right-hand side left to right as \((P\oplus Q)\odot R\) (XNOR = complement of XOR).</p><table class="tt"><tr><th>P</th><th>Q</th><th>R</th><th>P&oplus;Q</th><th>P&oplus;Q&oplus;R</th><th>(P&oplus;Q&oplus;R)&prime;</th><th>(P&oplus;Q) XNOR R</th></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td><td><b>1</b></td></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td><b>0</b></td><td><b>0</b></td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td><b>0</b></td><td><b>0</b></td></tr><tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td><b>1</b></td><td><b>1</b></td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td><b>0</b></td><td><b>0</b></td></tr><tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td><b>1</b></td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td><b>0</b></td><td><b>0</b></td></tr></table><p>The last two columns are identical in all 8 rows, so
+<span class="box">(P XOR Q XOR R)&prime; = P XOR Q XNOR R</span> is verified. (Reason: \(X \odot R = (X\oplus R)'\)
+with \(X = P\oplus Q\).)</p>
+<p>The two sides as circuits (not required, but they show why the identity holds):</p><figure class="afig" data-fig="fig_q2_xor"><svg style="max-width:560px" font-family="Times New Roman,serif" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M50 20.5Q56 30 50 39.5Q64.4 39.5 71.9 30Q64.4 20.5 50 20.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M46.6 20.5Q52.6 30 46.6 39.5" stroke="#111" stroke-width="1.3" fill="none"/><path d="M40.6 23.35L49.54 23.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M40.6 36.65L49.54 36.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M71.9 30L77.9 30" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 23.35L40.6 23.35" stroke="#111" stroke-width="1.2" fill="none"/><text x="14" y="26.55" font-size="9" text-anchor="end" fill="#111" font-weight="700">P</text><path d="M18 36.65L40.6 36.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="14" y="39.85" font-size="9" text-anchor="end" fill="#111" font-weight="700">Q</text><path d="M120 30.5Q126 40 120 49.5Q134.4 49.5 141.9 40Q134.4 30.5 120 30.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M116.6 30.5Q122.6 40 116.6 49.5" stroke="#111" stroke-width="1.3" fill="none"/><path d="M110.6 33.35L119.54 33.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M110.6 46.65L119.54 46.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M141.9 40L147.9 40" stroke="#111" stroke-width="1.2" fill="none"/><path d="M77.9 30L100 30" stroke="#111" stroke-width="1.2" fill="none"/><path d="M100 30L100 33.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M100 33.35L110.6 33.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 46.65L110.6 46.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="14" y="49.85" font-size="9" text-anchor="end" fill="#111" font-weight="700">R</text><path d="M155.9 34.15L168.3 40L155.9 45.85Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="170.5" cy="40" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M147.9 40L155.9 40" stroke="#111" stroke-width="1.2" fill="none"/><path d="M172.7 40L180.7 40" stroke="#111" stroke-width="1.2" fill="none"/><text x="184.7" y="43.5" font-size="9.5" text-anchor="start" fill="#111" font-weight="700">(P⊕Q⊕R)′</text><text x="150" y="70" font-size="8.5" text-anchor="middle" fill="#111">(a) XOR, XOR, then NOT</text><path d="M50 92.5Q56 102 50 111.5Q64.4 111.5 71.9 102Q64.4 92.5 50 92.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M46.6 92.5Q52.6 102 46.6 111.5" stroke="#111" stroke-width="1.3" fill="none"/><path d="M40.6 95.35L49.54 95.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M40.6 108.65L49.54 108.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M71.9 102L77.9 102" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 95.35L40.6 95.35" stroke="#111" stroke-width="1.2" fill="none"/><text x="14" y="98.55" font-size="9" text-anchor="end" fill="#111" font-weight="700">P</text><path d="M18 108.65L40.6 108.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="14" y="111.85" font-size="9" text-anchor="end" fill="#111" font-weight="700">Q</text><path d="M120 102.5Q126 112 120 121.5Q134.4 121.5 141.9 112Q134.4 102.5 120 102.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M116.6 102.5Q122.6 112 116.6 121.5" stroke="#111" stroke-width="1.3" fill="none"/><circle cx="144.1" cy="112" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M110.6 105.35L119.54 105.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M110.6 118.65L119.54 118.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M146.3 112L152.3 112" stroke="#111" stroke-width="1.2" fill="none"/><path d="M77.9 102L100 102" stroke="#111" stroke-width="1.2" fill="none"/><path d="M100 102L100 105.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M100 105.35L110.6 105.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 118.65L110.6 118.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="14" y="121.85" font-size="9" text-anchor="end" fill="#111" font-weight="700">R</text><text x="156.3" y="115.5" font-size="9.5" text-anchor="start" fill="#111" font-weight="700">P⊕Q ⊙ R</text><text x="150" y="142" font-size="8.5" text-anchor="middle" fill="#111">(b) XOR, then XNOR</text></svg><figcaption>Both circuits give the same output for every input.</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>XOR is 1 when an odd number of inputs are 1.</li><li>XNOR \(= (A\oplus B)'\): 1 when the inputs are equal.</li><li>XOR is associative, so \(P\oplus Q\oplus R\) needs no brackets.</li></ul></aside></div>
+</article>
+<article class="q" id="q3">
+<div class="qhead"><span class="num">Q3</span><span class="topic">Boolean Algebra</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q3"> revised</label></div>
+<div class="qbody"><p>Simplify algebraically \(\;\overline{[(\bar p+q)\cdot(\bar q+r)]}+(\bar p+r)\)</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>\[
+\begin{aligned}
+F &= \overline{(\bar p+q)(\bar q+r)}+\bar p+r\\
+  &= \overline{(\bar p+q)}+\overline{(\bar q+r)}+\bar p+r &&\text{(De Morgan)}\\
+  &= p\bar q+q\bar r+\bar p+r &&\text{(De Morgan, involution)}\\
+  &= (\bar p+p\bar q)+(r+q\bar r)&&\text{(regrouping)}\\
+  &= (\bar p+\bar q)+(r+q) &&(x'+xy = x'+y,\; x+x'y=x+y)\\
+  &= \bar p+(\bar q+q)+r = \bar p+1+r &&(\bar q+q=1)\\
+  &= 1
+\end{aligned}\]</p>
+<p><span class="box">\(F = 1\)</span> &mdash; the expression is a tautology (true for every p, q, r).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>De Morgan: \((xy)'=x'+y'\), \((x+y)'=x'y'\).</li><li>Redundant literal: \(x'+xy=x'+y\).</li><li>Complement law \(x+x'=1\); \(1+x=1\).</li></ul></aside></div>
+</article>
+<article class="q" id="q4">
+<div class="qhead"><span class="num">Q4</span><span class="topic">Data Structures (infix, prefix and postfix)</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q4"> revised</label></div>
+<div class="qbody"><p>Convert the following infix expression to its postfix form</p>
+<pre class="code">(A-B) * (C/D)+E</pre></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Brackets first, then * before +, working left to right:</p>
+<p><code>(A-B)*(C/D)+E &rarr; [AB-]*(C/D)+E &rarr; [AB-]*[CD/]+E &rarr; [AB-CD/*]+E &rarr; AB-CD/*E+</code></p><table><tr><th>Symbol</th><th>Stack</th><th>Postfix</th></tr><tr><td>(</td><td>(</td><td></td></tr><tr><td>A</td><td>(</td><td>A</td></tr><tr><td>-</td><td>( -</td><td>A</td></tr><tr><td>B</td><td>( -</td><td>AB</td></tr><tr><td>)</td><td></td><td>AB-</td></tr><tr><td>*</td><td>*</td><td>AB-</td></tr><tr><td>(</td><td>* (</td><td>AB-</td></tr><tr><td>C</td><td>* (</td><td>AB-C</td></tr><tr><td>/</td><td>* ( /</td><td>AB-C</td></tr><tr><td>D</td><td>* ( /</td><td>AB-CD</td></tr><tr><td>)</td><td>*</td><td>AB-CD/</td></tr><tr><td>+</td><td>+</td><td>AB-CD/*</td></tr><tr><td>E</td><td>+</td><td>AB-CD/*E</td></tr><tr><td>end</td><td></td><td>AB-CD/*E+</td></tr></table><p>Postfix: <span class="box">A B &minus; C D / * E +</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Operand → output; '(' → push; ')' → pop to the matching '('.</li><li>An operator pops every operator of higher or equal precedence (left-associative) before it is pushed.</li><li>* and / bind tighter than + and −.</li></ul></aside></div>
+</article>
+<article class="q" id="q5">
+<div class="qhead"><span class="num">Q5</span><span class="topic">Boolean Algebra</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q5"> revised</label></div>
+<div class="qbody"><p>Given F(P,Q,R) = (P+Q) . (Q+R). Convert it to its canonical POS form using Boolean Algebra.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Each sum term must contain all three variables; supply the missing one with \(XX'=0\):</p>
+<p>\[\begin{aligned}
+P+Q &= P+Q+RR' = (P+Q+R)(P+Q+R')\\
+Q+R &= Q+R+PP' = (P+Q+R)(P'+Q+R)
+\end{aligned}\]</p>
+<p>\(F=(P+Q+R)(P+Q+R')(P+Q+R)(P'+Q+R)\). Removing the repeated factor (idempotence, \(X\cdot X=X\)):</p>
+<p><span class="box">\(F(P,Q,R)=(P+Q+R)\,(P+Q+R')\,(P'+Q+R) = \prod(0,1,4)\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Canonical POS: every maxterm contains every variable once.</li><li>Missing variable X: add \(XX'\) and use \(A+BC=(A+B)(A+C)\).</li><li>Maxterm: variable 0 → uncomplemented, 1 → complemented.</li></ul></aside></div>
+</article>
+<article class="q" id="q6">
+<div class="qhead"><span class="num">Q6</span><span class="topic">Arrays (address calculation)</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q6"> revised</label></div>
+<div class="qbody"><p>A two dimentional array defined as DATA [30][40] requires 4 bytes of storage space for each element.
+If the array is stored in Row-major-Order, determine the address of DATA[10][10], given the base address as 1234.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Taking the Java/C convention of the declaration, indices start at 0 (so the base address 1234 is the
+address of DATA[0][0]); number of columns \(N=40\), \(W=4\).</p>
+<p>\[\text{Address}(\text{DATA}[I][J]) = B + W\,[\,N(I-L_r)+(J-L_c)\,]\]</p>
+<p>\[= 1234 + 4\,[\,40(10-0)+(10-0)\,] = 1234 + 4\times 410 = 1234+1640\]</p>
+<p><span class="box">Address of DATA[10][10] = 2874</span></p>
+<p class="note">If the rows and columns were numbered from 1 instead, the same formula gives
+\(1234+4[40(9)+9] = 2710\). State the lower bounds you assume.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Row-major: \(B + W[N(I-L_r)+(J-L_c)]\), N = number of columns.</li><li>Column-major: \(B + W[(I-L_r)+M(J-L_c)]\), M = number of rows.</li><li>Base address = address of the first element.</li></ul></aside></div>
+</article>
+<article class="q" id="q7">
+<div class="qhead"><span class="num">Q7</span><span class="topic">Boolean Algebra</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q7"> revised</label></div>
+<div class="qbody"><p>Find the Complement of A&prime;B&prime; + A&prime; + A.B</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Simplify first: \(A'B'+A'=A'\) (absorption), so \(F=A'+AB=A'+B\) (redundant literal).</p>
+<p>\[F' = (A'+B)' = A''\cdot B' = A\,B'\]</p>
+<p>Check by De Morgan directly: \((A'B'+A'+AB)'=(A+B)\cdot A\cdot(A'+B') = A(A'+B') = AA'+AB' = AB'\).</p>
+<p><span class="box">Complement = \(A\cdot B'\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>De Morgan: complement each literal and swap + and \(\cdot\).</li><li>Absorption \(X+XY=X\); \(X'+XY=X'+Y\).</li></ul></aside></div>
+</article>
+<article class="q" id="q8">
+<div class="qhead"><span class="num">Q8</span><span class="topic">Computer Hardware (NAND as universal gate)</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q8"> revised</label></div>
+<div class="qbody"><p>Draw circuit of the following expression using NAND gates only.</p>
+<p style="text-align:center">AB&prime; + [A&prime;( B + C&prime; )]</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Expand into sum-of-products: \(F = AB' + A'B + A'C'\).</p>
+<p>A two-level AND-OR circuit becomes NAND-NAND: \(F = \overline{\overline{AB'}\cdot\overline{A'B}\cdot\overline{A'C'}}\)
+(double complement and De Morgan). The complements \(A', B', C'\) are produced by NAND gates with
+their inputs tied together \((\overline{X\cdot X} = X')\).</p><figure class="afig" data-fig="fig_q8_nand"><svg style="max-width:560px" font-family="Times New Roman,serif" viewBox="0 0 331.25 215" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><text x="18" y="12" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">A</text><path d="M18 16L18 191" stroke="#111" stroke-width="1.2" fill="none"/><text x="30" y="12" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">B</text><path d="M30 16L30 191" stroke="#111" stroke-width="1.2" fill="none"/><text x="42" y="12" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">C</text><path d="M42 16L42 191" stroke="#111" stroke-width="1.2" fill="none"/><path d="M76 20.5L85 20.5A9.5 9.5 0 0 1 85 39.5L76 39.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="96.7" cy="30" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M71 23.35L76 23.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M71 36.65L76 36.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M98.9 30L103.9 30" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 30L67 30" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 23.35L67 36.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 23.35L71 23.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 36.65L71 36.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="67" cy="30" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><circle cx="18" cy="30" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M103.9 30L108 30" stroke="#111" stroke-width="1.2" fill="none"/><path d="M108 30L108 191" stroke="#111" stroke-width="1.2" fill="none"/><text x="110.5" y="26.5" font-size="8" text-anchor="start" fill="#111">A′</text><path d="M76 42.5L85 42.5A9.5 9.5 0 0 1 85 61.5L76 61.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="96.7" cy="52" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M71 45.35L76 45.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M71 58.65L76 58.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M98.9 52L103.9 52" stroke="#111" stroke-width="1.2" fill="none"/><path d="M30 52L67 52" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 45.35L67 58.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 45.35L71 45.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 58.65L71 58.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="67" cy="52" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><circle cx="30" cy="52" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M103.9 52L120 52" stroke="#111" stroke-width="1.2" fill="none"/><path d="M120 52L120 191" stroke="#111" stroke-width="1.2" fill="none"/><text x="122.5" y="48.5" font-size="8" text-anchor="start" fill="#111">B′</text><path d="M76 64.5L85 64.5A9.5 9.5 0 0 1 85 83.5L76 83.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="96.7" cy="74" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M71 67.35L76 67.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M71 80.65L76 80.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M98.9 74L103.9 74" stroke="#111" stroke-width="1.2" fill="none"/><path d="M42 74L67 74" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 67.35L67 80.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 67.35L71 67.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M67 80.65L71 80.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="67" cy="74" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><circle cx="42" cy="74" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M103.9 74L132 74" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 74L132 191" stroke="#111" stroke-width="1.2" fill="none"/><text x="134.5" y="70.5" font-size="8" text-anchor="start" fill="#111">C′</text><path d="M158 104L167 104A9.5 9.5 0 0 1 167 123L158 123Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="178.7" cy="113.5" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M152 106.85L158 106.85" stroke="#111" stroke-width="1.2" fill="none"/><path d="M152 120.15L158 120.15" stroke="#111" stroke-width="1.2" fill="none"/><path d="M180.9 113.5L186.9 113.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 106.85L152 106.85" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="106.85" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M120 120.15L152 120.15" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="120" cy="120.15" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M158 135L167 135A9.5 9.5 0 0 1 167 154L158 154Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="178.7" cy="144.5" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M152 137.85L158 137.85" stroke="#111" stroke-width="1.2" fill="none"/><path d="M152 151.15L158 151.15" stroke="#111" stroke-width="1.2" fill="none"/><path d="M180.9 144.5L186.9 144.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M108 137.85L152 137.85" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="108" cy="137.85" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M30 151.15L152 151.15" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="30" cy="151.15" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M158 166L167 166A9.5 9.5 0 0 1 167 185L158 185Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="178.7" cy="175.5" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M152 168.85L158 168.85" stroke="#111" stroke-width="1.2" fill="none"/><path d="M152 182.15L158 182.15" stroke="#111" stroke-width="1.2" fill="none"/><path d="M180.9 175.5L186.9 175.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M108 168.85L152 168.85" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="108" cy="168.85" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M132 182.15L152 182.15" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="132" cy="182.15" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M227 130.25L236 130.25A14.25 14.25 0 0 1 236 158.75L227 158.75Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="252.45" cy="144.5" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M221 134.525L227 134.525" stroke="#111" stroke-width="1.2" fill="none"/><path d="M221 144.5L227 144.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M221 154.475L227 154.475" stroke="#111" stroke-width="1.2" fill="none"/><path d="M254.65 144.5L260.65 144.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M186.9 113.5L218 113.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M218 113.5L218 134.525" stroke="#111" stroke-width="1.2" fill="none"/><path d="M218 134.525L221 134.525" stroke="#111" stroke-width="1.2" fill="none"/><path d="M186.9 144.5L221 144.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M186.9 175.5L213 175.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M213 175.5L213 154.475" stroke="#111" stroke-width="1.2" fill="none"/><path d="M213 154.475L221 154.475" stroke="#111" stroke-width="1.2" fill="none"/><text x="263.65" y="148" font-size="10" text-anchor="start" fill="#111" font-weight="700">F</text><text x="165.625" y="207" font-size="9.5" text-anchor="middle" fill="#111">F = AB′ + A′B + A′C′  (NAND gates only)</text></svg><figcaption>NAND-only circuit for F = AB′ + A′B + A′C′</figcaption></figure>
+<p>Gates: 3 NAND inverters + 3 two-input NANDs + 1 three-input NAND.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>SOP → NAND-NAND: replace both levels of AND-OR by NAND.</li><li>NOT from NAND: tie the inputs, \((XX)'=X'\).</li><li>\(\overline{\overline{P}\,\overline{Q}} = P+Q\).</li></ul></aside></div>
+</article>
+<article class="q" id="q10">
+<div class="qhead"><span class="num">Q10</span><span class="topic">Data Structures (binary trees)</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q10"> revised</label></div>
+<div class="qbody"><p>Define a Binary Search Tree</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>A <b>binary search tree</b> is a binary tree in which, for every node,</p>
+<ul><li>every value in its <b>left</b> subtree is <b>less</b> than the node's value, and</li>
+<li>every value in its <b>right</b> subtree is <b>greater</b> than the node's value;</li>
+<li>the left and right subtrees are themselves binary search trees.</li></ul>
+<p>Example:</p><figure class="afig" data-fig="fig_q10_bst"><svg style="max-width:300px" font-family="Times New Roman,serif" viewBox="0 0 242 130" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M57 65L25 105" stroke="#111" stroke-width="1.2" fill="none"/><path d="M57 65L89 105" stroke="#111" stroke-width="1.2" fill="none"/><path d="M121 25L57 65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M121 25L185 65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M185 65L153 105" stroke="#111" stroke-width="1.2" fill="none"/><path d="M185 65L217 105" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="25" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="25" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">20</text><circle cx="57" cy="65" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="57" y="68.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">30</text><circle cx="89" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="89" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">40</text><circle cx="121" cy="25" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="121" y="28.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">50</text><circle cx="153" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="153" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">60</text><circle cx="185" cy="65" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="185" y="68.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">70</text><circle cx="217" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="217" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">80</text></svg><figcaption>A binary search tree</figcaption></figure><p>Its inorder traversal (20 30 40 50 60 70 80) is in ascending order.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Binary tree: each node has at most two children (left, right).</li><li>BST ordering: left &lt; root &lt; right at every node.</li><li>Inorder traversal of a BST gives sorted order.</li></ul></aside></div>
+</article>
+<article class="q" id="q11">
+<div class="qhead"><span class="num">Q11</span><span class="topic">Inheritance, Interfaces and Polymorphism</span><span class="marks">[4]</span>
+<label class="done"><input type="checkbox" data-id="q11"> revised</label></div>
+<div class="qbody"><p>Explain the use of super and this keyword in terms of Inheritance.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>this</b> &mdash; a reference to the <i>current object</i>.</p>
+<ul><li>Separates an instance variable from a parameter/local of the same name: <code>this.roll = roll;</code></li>
+<li>Calls another constructor of the same class: <code>this(…)</code>; or passes the current object as an argument.</li></ul>
+<p><b>super</b> &mdash; a reference to the <i>superclass part</i> of the current object.</p>
+<ul><li><code>super(…)</code> calls the superclass constructor; it must be the first statement of the subclass constructor.</li>
+<li><code>super.method()</code> calls the superclass version of a method the subclass has overridden;
+<code>super.x</code> reaches a superclass variable hidden by a subclass variable of the same name.</li></ul>
+<p>Example:</p><pre class="code">class Person {
+    protected String name;
+    Person(String name) {
+        // 'this' separates the field from the parameter
+        this.name = name;
+    }
+    void show() {
+        System.out.println("Name : " + name);
+    }
+}
+
+class Student extends Person {
+    int roll;
+    Student(String name, int roll) {
+        // calls the superclass constructor (must be first)
+        super(name);
+        // this.roll is the field, roll the parameter
+        this.roll = roll;
+    }
+    void show() {                  // overrides Person.show()
+        // calls the overridden superclass version
+        super.show();
+        System.out.println("Roll : " + this.roll);
+    }
+}</pre><p><code>new Student("Ujaan", 12).show();</code> prints</p><pre class="code">Name : Ujaan
+Roll : 12</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>this → current object; super → its superclass part.</li><li><code>super(...)</code> must be the first statement in a constructor.</li><li>Overriding: same signature in the subclass; <code>super.m()</code> reaches the hidden version.</li></ul></aside></div>
+</article>
+<article class="q" id="q12">
+<div class="qhead"><span class="num">Q12</span><span class="topic">Methods</span><span class="marks">[6]</span>
+<label class="done"><input type="checkbox" data-id="q12"> revised</label></div>
+<div class="qbody"><p>Read the program and find the output. Show dry run / working</p>
+<pre class="code">public static void main( Strings args[])throws IOException
+{
+    int x=10,y=5,z;
+    z=first(x,y);
+    System.out.println("\n z=" + z);
+}
+int first (int x, int y)
+{
+    return(x + second (y));
+}
+int second (int y)
+{
+    Return(++y);
+}</pre></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p class="note">As printed the code has slips: <code>Strings</code> should be <code>String</code>,
+<code>Return</code> should be <code>return</code>, and <code>first</code>/<code>second</code> must be
+<code>static</code> to be called from <code>main</code>. The intended program is traced.</p>
+<p><b>Dry run</b></p><table><tr><th>Call</th><th>Parameters</th><th>Work</th><th>Returns</th></tr><tr><td>main</td><td></td><td>x = 10, y = 5; z = first(10, 5)</td><td></td></tr><tr><td>first(10, 5)</td><td>x = 10, y = 5</td><td>x + second(5)</td><td>10 + 6 = 16</td></tr><tr><td>second(5)</td><td>y = 5</td><td>++y makes y = 6 (pre-increment: changed, then used)</td><td>6</td></tr><tr><td>main</td><td></td><td>z = 16; prints "\n z=" + 16</td><td></td></tr></table><p>The string begins with <code>\n</code>, so a blank line is printed first, then the value:</p><pre class="code">(blank line)
+ z=16</pre><p><span class="box">Output: a blank line, then &nbsp;z=16</span></p>
+<p>The corrected program, which was run:</p><pre class="code">class Output {
+    public static void main(String args[]) {
+        int x = 10, y = 5, z;
+        z = first(x, y);
+        System.out.println("\n z=" + z);
+    }
+    static int first(int x, int y) {
+        return (x + second(y));
+    }
+    static int second(int y) {
+        return (++y);
+    }
+}</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Primitive arguments are passed by value: <code>second</code> changes its own copy of y.</li><li>Pre-increment <code>++y</code> increments, then gives the new value.</li><li><code>\n</code> inside a string starts a new line.</li></ul></aside></div>
+</article>
+<h2 class="sec">Part II &mdash; Sec A</h2><p class="secnote">(Answer any three)</p>
+<article class="q" id="q13">
+<div class="qhead"><span class="num">Q13</span><span class="topic">Boolean Algebra (K-maps)</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q13"> revised</label></div>
+<div class="qbody"><p>The immigration rules of a country allow the issue of work-cum-stay permits to an applicant only if
+the applicant satisfies any one of the following conditions:</p>
+<ul><li>The spouse of the applicant is a permanent resident of that country, having lived there for at least 5 years.<br><b>OR</b></li>
+<li>The applicant possesses certain special skills in the &ldquo;Skill Requirement List&rdquo; of the country and is sponsored by a permanent resident of that country.</li></ul>
+<p>The inputs are:<br>A: The spouse or sponsor has permanent residence status.<br>
+B: The spouse has lived in the country for 5 or more years.<br>
+C: The applicant possesses the required special skills.<br>
+D: Sponsorship by permanent resident.</p>
+<p>Output:<br>X: Denotes eligible for permit issue. [1 indicates Yes and 0 indicates No in all]</p>
+<p>a) Draw a truth table for the inputs and outputs given above and write SOP expression for X(A,B,C,D).</p>
+<p>b) Reduce X(A,B,C,D) using Karnaugh&rsquo;s map. Now Draw Logic gate diagram for X using AND and OR gates.
+You may use gates with more than two inputs. Assume that variables and their complements are available as inputs.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Conditions.</b> First: spouse is a permanent resident (A) <i>and</i> has lived 5+ years (B) &rarr; \(AB\).
+Second: applicant has the skills (C) <i>and</i> is sponsored (D) by a permanent resident (A) &rarr; \(ACD\).
+So X = 1 when \(AB\) or \(ACD\) is 1.</p>
+<p><b>(a) Truth table</b></p><table class="tt"><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>X</th></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr><tr><td>0</td><td>0</td><td>0</td><td>1</td><td><b>0</b></td></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td><td><b>0</b></td></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td><td><b>0</b></td></tr><tr><td>0</td><td>1</td><td>0</td><td>0</td><td><b>0</b></td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td><b>0</b></td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td><b>0</b></td></tr><tr><td>0</td><td>1</td><td>1</td><td>1</td><td><b>0</b></td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td><b>0</b></td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td><td><b>0</b></td></tr><tr><td>1</td><td>0</td><td>1</td><td>1</td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>0</td><td>1</td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>1</td><td>0</td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td><b>1</b></td></tr></table><p>\(X(A,B,C,D)=\sum(11,12,13,14,15)\)</p>
+<p><span class="box">\(X = AB'CD + ABC'D' + ABC'D + ABCD' + ABCD\)</span></p>
+<p><b>(b) Karnaugh map</b></p><figure class="afig" data-fig="fig_q13_kmap"><svg style="max-width:380px" font-family="Times New Roman,serif" viewBox="0 0 306 218" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M42 14L76 44" stroke="#111" stroke-width="1" fill="none"/><text x="72" y="22" font-size="9" text-anchor="end" fill="#111">CD</text><text x="44" y="40" font-size="9" text-anchor="start" fill="#111">AB</text><text x="103" y="34" font-size="9.5" text-anchor="middle" fill="#111">C′D′</text><text x="157" y="34" font-size="9.5" text-anchor="middle" fill="#111">C′D</text><text x="211" y="34" font-size="9.5" text-anchor="middle" fill="#111">CD</text><text x="265" y="34" font-size="9.5" text-anchor="middle" fill="#111">CD′</text><text x="64" y="67.5" font-size="9.5" text-anchor="end" fill="#111">A′B′</text><text x="64" y="107.5" font-size="9.5" text-anchor="end" fill="#111">A′B</text><text x="64" y="147.5" font-size="9.5" text-anchor="end" fill="#111">AB</text><text x="64" y="187.5" font-size="9.5" text-anchor="end" fill="#111">AB′</text><rect x="76" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="69" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="130" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="69" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="184" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="69" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="238" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="69" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="76" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="109" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="130" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="109" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="184" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="109" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="238" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="109" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="76" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="130" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="184" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="238" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="76" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="189" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="130" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="189" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="184" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="189" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="238" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="189" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="82" y="130" width="204" height="28" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="193" y="133" width="36" height="62" rx="9" stroke="#111" stroke-width="1.7" fill="none" stroke-dasharray="5 2.5"/><rect x="122" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="52" font-size="7" text-anchor="end" fill="#111">0</text><rect x="176" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="52" font-size="7" text-anchor="end" fill="#111">1</text><rect x="230" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="52" font-size="7" text-anchor="end" fill="#111">3</text><rect x="284" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="52" font-size="7" text-anchor="end" fill="#111">2</text><rect x="122" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="92" font-size="7" text-anchor="end" fill="#111">4</text><rect x="176" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="92" font-size="7" text-anchor="end" fill="#111">5</text><rect x="230" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="92" font-size="7" text-anchor="end" fill="#111">7</text><rect x="284" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="92" font-size="7" text-anchor="end" fill="#111">6</text><rect x="117.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="132" font-size="7" text-anchor="end" fill="#111">12</text><rect x="171.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="132" font-size="7" text-anchor="end" fill="#111">13</text><rect x="225.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="132" font-size="7" text-anchor="end" fill="#111">15</text><rect x="279.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="132" font-size="7" text-anchor="end" fill="#111">14</text><rect x="122" y="165.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="172" font-size="7" text-anchor="end" fill="#111">8</text><rect x="176" y="165.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="172" font-size="7" text-anchor="end" fill="#111">9</text><rect x="225.8" y="165.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="172" font-size="7" text-anchor="end" fill="#111">11</text><rect x="279.8" y="165.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="172" font-size="7" text-anchor="end" fill="#111">10</text></svg><figcaption>K-map for X</figcaption></figure>
+<ul><li>Quad (m12, m13, m14, m15) = \(AB\)</li><li>Pair (m11, m15) = \(ACD\)</li></ul>
+<p><span class="box">\(X = AB + ACD\)</span></p>
+<p><b>Logic gate diagram</b></p><figure class="afig" data-fig="fig_q13_circ"><svg style="max-width:420px" font-family="Times New Roman,serif" viewBox="0 0 259.5 133" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><text x="18" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">A</text><path d="M18 16L18 109" stroke="#111" stroke-width="1.2" fill="none"/><text x="32" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">B</text><path d="M32 16L32 109" stroke="#111" stroke-width="1.2" fill="none"/><text x="46" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">C</text><path d="M46 16L46 109" stroke="#111" stroke-width="1.2" fill="none"/><text x="60" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">D</text><path d="M60 16L60 109" stroke="#111" stroke-width="1.2" fill="none"/><path d="M96 38.75L105 38.75A9.5 9.5 0 0 1 105 57.75L96 57.75Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M90 41.6L96 41.6" stroke="#111" stroke-width="1.2" fill="none"/><path d="M90 54.9L96 54.9" stroke="#111" stroke-width="1.2" fill="none"/><path d="M114.5 48.25L120.5 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 41.6L90 41.6" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="41.6" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M32 54.9L90 54.9" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="32" cy="54.9" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M96 74.5L105 74.5A14.25 14.25 0 0 1 105 103L96 103Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M90 78.775L96 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M90 88.75L96 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M90 98.725L96 98.725" stroke="#111" stroke-width="1.2" fill="none"/><path d="M119.25 88.75L125.25 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 78.775L90 78.775" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="78.775" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M46 88.75L90 88.75" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="46" cy="88.75" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M60 98.725L90 98.725" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="60" cy="98.725" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M160 59Q166 68.5 160 78Q174.4 78 181.9 68.5Q174.4 59 160 59Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M154 61.85L162.94 61.85" stroke="#111" stroke-width="1.2" fill="none"/><path d="M154 75.15L162.94 75.15" stroke="#111" stroke-width="1.2" fill="none"/><path d="M181.9 68.5L187.9 68.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M120.5 48.25L151 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M151 48.25L151 61.85" stroke="#111" stroke-width="1.2" fill="none"/><path d="M151 61.85L154 61.85" stroke="#111" stroke-width="1.2" fill="none"/><path d="M125.25 88.75L146 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M146 88.75L146 75.15" stroke="#111" stroke-width="1.2" fill="none"/><path d="M146 75.15L154 75.15" stroke="#111" stroke-width="1.2" fill="none"/><text x="190.9" y="72" font-size="10" text-anchor="start" fill="#111" font-weight="700">X</text><text x="129.75" y="125" font-size="9.5" text-anchor="middle" fill="#111">X = AB + ACD</text></svg><figcaption>X = AB + ACD with AND and OR gates</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Turn each condition into an AND term; 'any one of' → OR them.</li><li>K-map rows/columns in Gray code: 00, 01, 11, 10.</li><li>Group 1s in 1, 2, 4, 8 cells; largest groups, fewest groups.</li></ul></aside></div>
+</article>
+<article class="q" id="q14-a-i">
+<div class="qhead"><span class="num">Q14(a)(i)</span><span class="topic">Boolean Algebra (K-maps)</span><span class="marks">[4]</span>
+<label class="done"><input type="checkbox" data-id="q14-a-i"> revised</label></div>
+<div class="qbody"><p>a) Given F(A,B,C,D) = &Sigma; (1,6,7,8,9,10,14,15)</p>
+<p>i. Reduce the above expression by using 4 &ndash; variable K-Map, showing the various groups ( i.e octal, quads and pairs ).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><figure class="afig" data-fig="fig_q14a_kmap"><svg style="max-width:380px" font-family="Times New Roman,serif" viewBox="0 0 306 218" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M42 14L76 44" stroke="#111" stroke-width="1" fill="none"/><text x="72" y="22" font-size="9" text-anchor="end" fill="#111">CD</text><text x="44" y="40" font-size="9" text-anchor="start" fill="#111">AB</text><text x="103" y="34" font-size="9.5" text-anchor="middle" fill="#111">C′D′</text><text x="157" y="34" font-size="9.5" text-anchor="middle" fill="#111">C′D</text><text x="211" y="34" font-size="9.5" text-anchor="middle" fill="#111">CD</text><text x="265" y="34" font-size="9.5" text-anchor="middle" fill="#111">CD′</text><text x="64" y="67.5" font-size="9.5" text-anchor="end" fill="#111">A′B′</text><text x="64" y="107.5" font-size="9.5" text-anchor="end" fill="#111">A′B</text><text x="64" y="147.5" font-size="9.5" text-anchor="end" fill="#111">AB</text><text x="64" y="187.5" font-size="9.5" text-anchor="end" fill="#111">AB′</text><rect x="76" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="69" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="130" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="69" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="184" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="69" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="238" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="69" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="76" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="109" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="130" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="109" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="184" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="109" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="238" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="109" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="76" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="149" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="130" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="149" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="184" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="238" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="76" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="189" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="130" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="189" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="184" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="189" font-size="13" text-anchor="middle" fill="#111">0</text><rect x="238" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="189" font-size="13" text-anchor="middle" fill="#111" font-weight="700">1</text><rect x="136" y="38" width="42" height="40" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="136" y="170" width="42" height="40" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="193" y="93" width="90" height="62" rx="9" stroke="#111" stroke-width="1.7" fill="none" stroke-dasharray="5 2.5"/><rect x="70" y="176" width="48" height="16" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="250" y="176" width="48" height="16" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="122" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="52" font-size="7" text-anchor="end" fill="#111">0</text><rect x="176" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="52" font-size="7" text-anchor="end" fill="#111">1</text><rect x="230" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="52" font-size="7" text-anchor="end" fill="#111">3</text><rect x="284" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="52" font-size="7" text-anchor="end" fill="#111">2</text><rect x="122" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="92" font-size="7" text-anchor="end" fill="#111">4</text><rect x="176" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="92" font-size="7" text-anchor="end" fill="#111">5</text><rect x="230" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="92" font-size="7" text-anchor="end" fill="#111">7</text><rect x="284" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="92" font-size="7" text-anchor="end" fill="#111">6</text><rect x="117.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="132" font-size="7" text-anchor="end" fill="#111">12</text><rect x="171.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="132" font-size="7" text-anchor="end" fill="#111">13</text><rect x="225.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="132" font-size="7" text-anchor="end" fill="#111">15</text><rect x="279.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="132" font-size="7" text-anchor="end" fill="#111">14</text><rect x="122" y="165.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="172" font-size="7" text-anchor="end" fill="#111">8</text><rect x="176" y="165.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="172" font-size="7" text-anchor="end" fill="#111">9</text><rect x="225.8" y="165.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="172" font-size="7" text-anchor="end" fill="#111">11</text><rect x="279.8" y="165.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="172" font-size="7" text-anchor="end" fill="#111">10</text></svg><figcaption>K-map for Σ(1,6,7,8,9,10,14,15)</figcaption></figure>
+<ul><li>Quad (m6, m7, m14, m15) = \(BC\)</li>
+<li>Pair (m1, m9) = \(B'C'D\) &nbsp;(top and bottom rows wrap)</li>
+<li>Pair (m8, m10) = \(AB'D'\) &nbsp;(left and right columns wrap)</li></ul>
+<p>No octet is possible. <span class="box">\(F = BC + B'C'D + AB'D'\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Cell number = binary ABCD; Gray-code order 00, 01, 11, 10.</li><li>Opposite edges of the map are adjacent (wrap-around).</li><li>A quad drops 2 variables, a pair drops 1.</li></ul></aside></div>
+</article>
+<article class="q" id="q14-a-ii">
+<div class="qhead"><span class="num">Q14(a)(ii)</span><span class="topic">Computer Hardware (logic gates)</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q14-a-ii"> revised</label></div>
+<div class="qbody"><p>ii. Draw the Logic gate diagram of the reduced expression.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><figure class="afig" data-fig="fig_q14a_circ"><svg style="max-width:480px" font-family="Times New Roman,serif" viewBox="0 0 311.25 173.5" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><text x="18" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">A</text><path d="M18 16L18 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="32" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">B</text><path d="M32 16L32 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="46" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">B′</text><path d="M46 16L46 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="60" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">C</text><path d="M60 16L60 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="74" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">C′</text><path d="M74 16L74 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="88" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">D</text><path d="M88 16L88 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="102" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">D′</text><path d="M102 16L102 149.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M138 34L147 34A14.25 14.25 0 0 1 147 62.5L138 62.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M132 38.275L138 38.275" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 48.25L138 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 58.225L138 58.225" stroke="#111" stroke-width="1.2" fill="none"/><path d="M161.25 48.25L167.25 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M46 38.275L132 38.275" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="46" cy="38.275" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M74 48.25L132 48.25" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="74" cy="48.25" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M88 58.225L132 58.225" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="88" cy="58.225" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M138 79.25L147 79.25A9.5 9.5 0 0 1 147 98.25L138 98.25Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M132 82.1L138 82.1" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 95.4L138 95.4" stroke="#111" stroke-width="1.2" fill="none"/><path d="M156.5 88.75L162.5 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M32 82.1L132 82.1" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="32" cy="82.1" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M60 95.4L132 95.4" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="60" cy="95.4" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M138 115L147 115A14.25 14.25 0 0 1 147 143.5L138 143.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M132 119.275L138 119.275" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 129.25L138 129.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 139.225L138 139.225" stroke="#111" stroke-width="1.2" fill="none"/><path d="M161.25 129.25L167.25 129.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 119.275L132 119.275" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="119.275" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M46 129.25L132 129.25" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="46" cy="129.25" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M102 139.225L132 139.225" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="102" cy="139.225" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M207 74.5Q213 88.75 207 103Q221.4 103 229.85 88.75Q221.4 74.5 207 74.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M201 78.775L209.94 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M201 88.75L207 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M201 98.725L209.94 98.725" stroke="#111" stroke-width="1.2" fill="none"/><path d="M229.85 88.75L235.85 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M167.25 48.25L198 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M198 48.25L198 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M198 78.775L201 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M162.5 88.75L201 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M167.25 129.25L193 129.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M193 129.25L193 98.725" stroke="#111" stroke-width="1.2" fill="none"/><path d="M193 98.725L201 98.725" stroke="#111" stroke-width="1.2" fill="none"/><text x="238.85" y="92.25" font-size="10" text-anchor="start" fill="#111" font-weight="700">F</text><text x="155.625" y="165.5" font-size="9.5" text-anchor="middle" fill="#111">F = B′C′D + BC + AB′D′</text></svg><figcaption>F = BC + B′C′D + AB′D′ (complements taken as available inputs)</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>SOP → one AND gate per product term, one OR gate to combine them.</li></ul></aside></div>
+</article>
+<article class="q" id="q14-b-i">
+<div class="qhead"><span class="num">Q14(b)(i)</span><span class="topic">Boolean Algebra (K-maps)</span><span class="marks">[4]</span>
+<label class="done"><input type="checkbox" data-id="q14-b-i"> revised</label></div>
+<div class="qbody"><p>b) Given F(A,B,C,D) = &Pi; ( 0,2,3,4,5,11,12,13)</p>
+<p>i. Reduce the above expression by using 4 &ndash; variable K-Map, showing the various groups ( i.e octal, quads and pairs ).</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Place 0s in the maxterm cells and group the 0s. Row/column labels are sum terms.</p><figure class="afig" data-fig="fig_q14b_kmap"><svg style="max-width:380px" font-family="Times New Roman,serif" viewBox="0 0 306 218" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M42 14L76 44" stroke="#111" stroke-width="1" fill="none"/><text x="72" y="22" font-size="9" text-anchor="end" fill="#111">C+D</text><text x="44" y="40" font-size="9" text-anchor="start" fill="#111">A+B</text><text x="103" y="34" font-size="9.5" text-anchor="middle" fill="#111">C+D</text><text x="157" y="34" font-size="9.5" text-anchor="middle" fill="#111">C+D′</text><text x="211" y="34" font-size="9.5" text-anchor="middle" fill="#111">C′+D′</text><text x="265" y="34" font-size="9.5" text-anchor="middle" fill="#111">C′+D</text><text x="64" y="67.5" font-size="9.5" text-anchor="end" fill="#111">A+B</text><text x="64" y="107.5" font-size="9.5" text-anchor="end" fill="#111">A+B′</text><text x="64" y="147.5" font-size="9.5" text-anchor="end" fill="#111">A′+B′</text><text x="64" y="187.5" font-size="9.5" text-anchor="end" fill="#111">A′+B</text><rect x="76" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="69" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="130" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="69" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="184" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="69" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="238" y="44" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="69" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="76" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="109" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="130" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="109" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="184" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="109" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="238" y="84" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="109" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="76" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="130" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="149" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="184" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="149" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="238" y="124" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="149" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="76" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="103" y="189" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="130" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="157" y="189" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="184" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="211" y="189" font-size="13" text-anchor="middle" fill="#111" font-weight="700">0</text><rect x="238" y="164" width="54" height="40" rx="0" stroke="#111" stroke-width="1" fill="none"/><text x="265" y="189" font-size="13" text-anchor="middle" fill="#111">1</text><rect x="70" y="50" width="54" height="28" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="244" y="50" width="54" height="28" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="193" y="38" width="36" height="37" rx="9" stroke="#111" stroke-width="1.7" fill="none" stroke-dasharray="5 2.5"/><rect x="193" y="173" width="36" height="37" rx="9" stroke="#111" stroke-width="1.7" fill="none" stroke-dasharray="5 2.5"/><rect x="88" y="96" width="84" height="56" rx="9" stroke="#111" stroke-width="1.7" fill="none"/><rect x="122" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="52" font-size="7" text-anchor="end" fill="#111">0</text><rect x="176" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="52" font-size="7" text-anchor="end" fill="#111">1</text><rect x="230" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="52" font-size="7" text-anchor="end" fill="#111">3</text><rect x="284" y="45.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="52" font-size="7" text-anchor="end" fill="#111">2</text><rect x="122" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="92" font-size="7" text-anchor="end" fill="#111">4</text><rect x="176" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="92" font-size="7" text-anchor="end" fill="#111">5</text><rect x="230" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="92" font-size="7" text-anchor="end" fill="#111">7</text><rect x="284" y="85.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="92" font-size="7" text-anchor="end" fill="#111">6</text><rect x="117.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="132" font-size="7" text-anchor="end" fill="#111">12</text><rect x="171.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="132" font-size="7" text-anchor="end" fill="#111">13</text><rect x="225.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="132" font-size="7" text-anchor="end" fill="#111">15</text><rect x="279.8" y="125.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="132" font-size="7" text-anchor="end" fill="#111">14</text><rect x="122" y="165.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="127" y="172" font-size="7" text-anchor="end" fill="#111">8</text><rect x="176" y="165.8" width="5.8" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="181" y="172" font-size="7" text-anchor="end" fill="#111">9</text><rect x="225.8" y="165.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="235" y="172" font-size="7" text-anchor="end" fill="#111">11</text><rect x="279.8" y="165.8" width="10" height="7.6" rx="0" stroke="#111" stroke-width="0" fill="#fff"/><text x="289" y="172" font-size="7" text-anchor="end" fill="#111">10</text></svg><figcaption>POS K-map for Π(0,2,3,4,5,11,12,13)</figcaption></figure>
+<ul><li>Quad (M4, M5, M12, M13) = \((B'+C)\)</li>
+<li>Pair (M0, M2) = \((A+B+D)\) &nbsp;(left and right columns wrap)</li>
+<li>Pair (M3, M11) = \((B+C'+D')\) &nbsp;(top and bottom rows wrap)</li></ul>
+<p><span class="box">\(F = (B'+C)(A+B+D)(B+C'+D')\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>POS map: group the 0s.</li><li>In a sum term a variable that is 0 appears uncomplemented, 1 complemented.</li><li>Product of the group sums gives F.</li></ul></aside></div>
+</article>
+<article class="q" id="q14-b-ii">
+<div class="qhead"><span class="num">Q14(b)(ii)</span><span class="topic">Computer Hardware (logic gates)</span><span class="marks">[1]</span>
+<label class="done"><input type="checkbox" data-id="q14-b-ii"> revised</label></div>
+<div class="qbody"><p>ii. Draw the Logic gate diagram of the reduced expression.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><figure class="afig" data-fig="fig_q14b_circ"><svg style="max-width:480px" font-family="Times New Roman,serif" viewBox="0 0 311.25 173.5" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><text x="18" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">A</text><path d="M18 16L18 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="32" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">B</text><path d="M32 16L32 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="46" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">B′</text><path d="M46 16L46 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="60" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">C</text><path d="M60 16L60 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="74" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">C′</text><path d="M74 16L74 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="88" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">D</text><path d="M88 16L88 149.5" stroke="#111" stroke-width="1.2" fill="none"/><text x="102" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">D′</text><path d="M102 16L102 149.5" stroke="#111" stroke-width="1.2" fill="none"/><path d="M138 34Q144 48.25 138 62.5Q152.4 62.5 160.85 48.25Q152.4 34 138 34Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M132 38.275L140.94 38.275" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 48.25L138 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 58.225L140.94 58.225" stroke="#111" stroke-width="1.2" fill="none"/><path d="M160.85 48.25L166.85 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 38.275L132 38.275" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="38.275" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M32 48.25L132 48.25" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="32" cy="48.25" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M88 58.225L132 58.225" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="88" cy="58.225" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M138 74.5Q144 88.75 138 103Q152.4 103 160.85 88.75Q152.4 74.5 138 74.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M132 78.775L140.94 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 88.75L138 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 98.725L140.94 98.725" stroke="#111" stroke-width="1.2" fill="none"/><path d="M160.85 88.75L166.85 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M32 78.775L132 78.775" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="32" cy="78.775" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M74 88.75L132 88.75" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="74" cy="88.75" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M102 98.725L132 98.725" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="102" cy="98.725" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M138 119.75Q144 129.25 138 138.75Q152.4 138.75 159.9 129.25Q152.4 119.75 138 119.75Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M132 122.6L140.94 122.6" stroke="#111" stroke-width="1.2" fill="none"/><path d="M132 135.9L140.94 135.9" stroke="#111" stroke-width="1.2" fill="none"/><path d="M159.9 129.25L165.9 129.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M46 122.6L132 122.6" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="46" cy="122.6" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M60 135.9L132 135.9" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="60" cy="135.9" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M207 74.5L216 74.5A14.25 14.25 0 0 1 216 103L207 103Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M201 78.775L207 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M201 88.75L207 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M201 98.725L207 98.725" stroke="#111" stroke-width="1.2" fill="none"/><path d="M230.25 88.75L236.25 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M166.85 48.25L198 48.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M198 48.25L198 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M198 78.775L201 78.775" stroke="#111" stroke-width="1.2" fill="none"/><path d="M166.85 88.75L201 88.75" stroke="#111" stroke-width="1.2" fill="none"/><path d="M165.9 129.25L193 129.25" stroke="#111" stroke-width="1.2" fill="none"/><path d="M193 129.25L193 98.725" stroke="#111" stroke-width="1.2" fill="none"/><path d="M193 98.725L201 98.725" stroke="#111" stroke-width="1.2" fill="none"/><text x="239.25" y="92.25" font-size="10" text-anchor="start" fill="#111" font-weight="700">F</text><text x="155.625" y="165.5" font-size="9.5" text-anchor="middle" fill="#111">F = (A+B+D)(B+C′+D′)(B′+C)</text></svg><figcaption>F = (A+B+D)(B+C′+D′)(B′+C) with OR and AND gates</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>POS → one OR gate per sum term, one AND gate to combine them.</li></ul></aside></div>
+</article>
+<article class="q" id="q15-a">
+<div class="qhead"><span class="num">Q15(a)</span><span class="topic">Computer Hardware (multiplexers)</span><span class="marks">[7]</span>
+<label class="done"><input type="checkbox" data-id="q15-a"> revised</label></div>
+<div class="qbody"><p>15. a) Implement the following Boolean function with 8 X 1 multiplexer</p>
+<p style="text-align:center">F(A,B,C,D) = &Sigma; ( 0,3,5,6,8,9,14,15)</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Use A, B, C as the select lines \(S_2S_1S_0\) of the 8 : 1 MUX and feed each data input
+\(I_k\) with 0, 1, D or D&prime;. For select value k the two minterms are \(2k\) (D = 0) and \(2k+1\) (D = 1):</p><table><tr><th>A B C (select)</th><th>minterms</th><th>F when D=0</th><th>F when D=1</th><th>Input I<sub>k</sub></th></tr><tr><td>0 0 0 (I<sub>0</sub>)</td><td>0, 1</td><td>1</td><td>0</td><td>D&prime;</td></tr><tr><td>0 0 1 (I<sub>1</sub>)</td><td>2, 3</td><td>0</td><td>1</td><td>D</td></tr><tr><td>0 1 0 (I<sub>2</sub>)</td><td>4, 5</td><td>0</td><td>1</td><td>D</td></tr><tr><td>0 1 1 (I<sub>3</sub>)</td><td>6, 7</td><td>1</td><td>0</td><td>D&prime;</td></tr><tr><td>1 0 0 (I<sub>4</sub>)</td><td>8, 9</td><td>1</td><td>1</td><td>1</td></tr><tr><td>1 0 1 (I<sub>5</sub>)</td><td>10, 11</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1 1 0 (I<sub>6</sub>)</td><td>12, 13</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1 1 1 (I<sub>7</sub>)</td><td>14, 15</td><td>1</td><td>1</td><td>1</td></tr></table><p><span class="box">I<sub>0</sub>=D&prime;, I<sub>1</sub>=D, I<sub>2</sub>=D, I<sub>3</sub>=D&prime;,
+I<sub>4</sub>=1, I<sub>5</sub>=0, I<sub>6</sub>=0, I<sub>7</sub>=1; select lines A B C</span></p><figure class="afig" data-fig="fig_q15_mux"><svg style="max-width:520px" font-family="Times New Roman,serif" viewBox="0 0 300 250" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M170 20L220 34L220 176L170 190Z" stroke="#111" stroke-width="1.4" fill="none"/><text x="195" y="101" font-size="9" text-anchor="middle" fill="#111" font-weight="700">8 : 1</text><text x="195" y="113" font-size="8.5" text-anchor="middle" fill="#111" font-weight="700">MUX</text><text x="18" y="12" font-size="9" text-anchor="middle" fill="#111" font-weight="700">D</text><path d="M18 16L18 95.5556" stroke="#111" stroke-width="1.2" fill="none"/><path d="M32 18.15L44.4 24L32 29.85Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="46.6" cy="24" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M27 24L32 24" stroke="#111" stroke-width="1.2" fill="none"/><path d="M48.8 24L53.8 24" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 24L27 24" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="24" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M53.8 24L66 24" stroke="#111" stroke-width="1.2" fill="none"/><path d="M66 24L66 95.5556" stroke="#111" stroke-width="1.2" fill="none"/><text x="69" y="20" font-size="8" text-anchor="start" fill="#111">D′</text><text x="167" y="36.3889" font-size="7" text-anchor="end" fill="#111">I0</text><path d="M66 38.8889L170 38.8889" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="66" cy="38.8889" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="167" y="55.2778" font-size="7" text-anchor="end" fill="#111">I1</text><path d="M18 57.7778L170 57.7778" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="57.7778" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="167" y="74.1667" font-size="7" text-anchor="end" fill="#111">I2</text><path d="M18 76.6667L170 76.6667" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="18" cy="76.6667" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="167" y="93.0556" font-size="7" text-anchor="end" fill="#111">I3</text><path d="M66 95.5556L170 95.5556" stroke="#111" stroke-width="1.2" fill="none"/><text x="167" y="111.944" font-size="7" text-anchor="end" fill="#111">I4</text><path d="M140 114.444L170 114.444" stroke="#111" stroke-width="1.2" fill="none"/><text x="136" y="117.944" font-size="8.5" text-anchor="end" fill="#111" font-weight="700">logic 1</text><text x="167" y="130.833" font-size="7" text-anchor="end" fill="#111">I5</text><path d="M140 133.333L170 133.333" stroke="#111" stroke-width="1.2" fill="none"/><text x="136" y="136.833" font-size="8.5" text-anchor="end" fill="#111" font-weight="700">logic 0</text><text x="167" y="149.722" font-size="7" text-anchor="end" fill="#111">I6</text><path d="M140 152.222L170 152.222" stroke="#111" stroke-width="1.2" fill="none"/><text x="136" y="155.722" font-size="8.5" text-anchor="end" fill="#111" font-weight="700">logic 0</text><text x="167" y="168.611" font-size="7" text-anchor="end" fill="#111">I7</text><path d="M140 171.111L170 171.111" stroke="#111" stroke-width="1.2" fill="none"/><text x="136" y="174.611" font-size="8.5" text-anchor="end" fill="#111" font-weight="700">logic 1</text><path d="M220 105L250 105" stroke="#111" stroke-width="1.2" fill="none"/><text x="254" y="108.5" font-size="10" text-anchor="start" fill="#111" font-weight="700">F</text><path d="M182 186.64L182 212" stroke="#111" stroke-width="1.2" fill="none"/><text x="182" y="222" font-size="9" text-anchor="middle" fill="#111" font-weight="700">A</text><path d="M195 183L195 212" stroke="#111" stroke-width="1.2" fill="none"/><text x="195" y="222" font-size="9" text-anchor="middle" fill="#111" font-weight="700">B</text><path d="M208 179.36L208 212" stroke="#111" stroke-width="1.2" fill="none"/><text x="208" y="222" font-size="9" text-anchor="middle" fill="#111" font-weight="700">C</text><text x="195" y="238" font-size="8.5" text-anchor="middle" fill="#111">select lines S2 S1 S0 = A B C</text></svg><figcaption>F implemented with an 8 : 1 multiplexer</figcaption></figure>
+<p>For each select combination the MUX passes the one data line chosen, which equals F for that
+combination; e.g. ABC = 011 selects I<sub>3</sub> = D&prime;, giving F = 1 for m6 (D = 0) and 0 for m7.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A \(2^n:1\) MUX has n select lines; output = the data input whose index is the select value.</li><li>For n+1 variables: n select lines, the last variable (or its complement, 0, 1) on the data inputs.</li></ul></aside></div>
+</article>
+<article class="q" id="q15-b">
+<div class="qhead"><span class="num">Q15(b)</span><span class="topic">Boolean Algebra</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q15-b"> revised</label></div>
+<div class="qbody"><p>b) Prove that F(A,B,C) = &Pi;(2,3,4,7) = &Sigma;(0,1,5,6)</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Write the truth table of \(F=\prod(2,3,4,7)\): F is 0 exactly in rows 2, 3, 4, 7 and 1 elsewhere.</p><table class="tt"><tr><th>A</th><th>B</th><th>C</th><th>row</th><th>F = &Pi;(2,3,4,7)</th></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td><td><b>1</b></td></tr><tr><td>0</td><td>1</td><td>0</td><td>2</td><td><b>0</b></td></tr><tr><td>0</td><td>1</td><td>1</td><td>3</td><td><b>0</b></td></tr><tr><td>1</td><td>0</td><td>0</td><td>4</td><td><b>0</b></td></tr><tr><td>1</td><td>0</td><td>1</td><td>5</td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>0</td><td>6</td><td><b>1</b></td></tr><tr><td>1</td><td>1</td><td>1</td><td>7</td><td><b>0</b></td></tr></table><p>The rows where F = 1 are 0, 1, 5, 6. Since a function's minterms are exactly the rows not among its
+maxterms (the 8 rows split between them), F = m0 + m1 + m5 + m6:</p>
+<p><span class="box">\(\prod(2,3,4,7)=\sum(0,1,5,6) = A'B'C' + A'B'C + AB'C + ABC'\)</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Minterm indices and maxterm indices of a function are complementary sets of rows.</li><li>\(M_i = m_i'\).</li></ul></aside></div>
+</article>
+<article class="q" id="q16-a">
+<div class="qhead"><span class="num">Q16(a)</span><span class="topic">Computer Hardware (adders)</span><span class="marks">[4]</span>
+<label class="done"><input type="checkbox" data-id="q16-a"> revised</label></div>
+<div class="qbody"><p>16 a) Using two half adder and an OR gate construct a full adder.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>Half adder: \(S = a\oplus b\), \(C = ab\). Full adder: \(\text{SUM} = A\oplus B\oplus C\),
+\(\text{CARRY} = AB + C(A\oplus B)\).</p>
+<ul><li>Half adder 1 adds A and B: \(S_1 = A\oplus B\), \(C_1 = AB\).</li>
+<li>Half adder 2 adds \(S_1\) and C: \(\text{SUM} = A\oplus B\oplus C\), \(C_2 = C(A\oplus B)\).</li>
+<li>OR gate: \(\text{CARRY} = C_1 + C_2 = AB + C(A\oplus B)\).</li></ul><figure class="afig wide" data-fig="fig_q16a_block"><svg style="max-width:560px" font-family="Times New Roman,serif" viewBox="0 0 340 150" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="14" width="56" height="56" rx="4" stroke="#111" stroke-width="1.4" fill="none"/><text x="88" y="36" font-size="8.5" text-anchor="middle" fill="#111" font-weight="700">HALF</text><text x="88" y="47" font-size="8.5" text-anchor="middle" fill="#111" font-weight="700">ADDER 1</text><text x="65" y="30" font-size="7" text-anchor="start" fill="#111">a</text><text x="65" y="60" font-size="7" text-anchor="start" fill="#111">b</text><text x="111" y="30" font-size="7" text-anchor="end" fill="#111">s</text><text x="111" y="60" font-size="7" text-anchor="end" fill="#111">c</text><rect x="160" y="36" width="56" height="56" rx="4" stroke="#111" stroke-width="1.4" fill="none"/><text x="188" y="58" font-size="8.5" text-anchor="middle" fill="#111" font-weight="700">HALF</text><text x="188" y="69" font-size="8.5" text-anchor="middle" fill="#111" font-weight="700">ADDER 2</text><text x="165" y="52" font-size="7" text-anchor="start" fill="#111">a</text><text x="165" y="82" font-size="7" text-anchor="start" fill="#111">b</text><text x="211" y="52" font-size="7" text-anchor="end" fill="#111">s</text><text x="211" y="82" font-size="7" text-anchor="end" fill="#111">c</text><path d="M24 27L60 27" stroke="#111" stroke-width="1.2" fill="none"/><text x="18" y="30.5" font-size="10" text-anchor="end" fill="#111" font-weight="700">A</text><path d="M24 57L60 57" stroke="#111" stroke-width="1.2" fill="none"/><text x="18" y="60.5" font-size="10" text-anchor="end" fill="#111" font-weight="700">B</text><path d="M24 112L140 112" stroke="#111" stroke-width="1.2" fill="none"/><text x="18" y="115.5" font-size="10" text-anchor="end" fill="#111" font-weight="700">C</text><path d="M140 112L140 79" stroke="#111" stroke-width="1.2" fill="none"/><path d="M140 79L160 79" stroke="#111" stroke-width="1.2" fill="none"/><path d="M116 27L136 27" stroke="#111" stroke-width="1.2" fill="none"/><path d="M136 27L136 49" stroke="#111" stroke-width="1.2" fill="none"/><path d="M136 49L160 49" stroke="#111" stroke-width="1.2" fill="none"/><text x="119" y="23" font-size="7.5" text-anchor="start" fill="#111">A⊕B</text><path d="M216 49L300 49" stroke="#111" stroke-width="1.2" fill="none"/><text x="300" y="45" font-size="9" text-anchor="end" fill="#111" font-weight="700">SUM</text><path d="M255 102.5Q261 112 255 121.5Q269.4 121.5 276.9 112Q269.4 102.5 255 102.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M249 105.35L257.94 105.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M249 118.65L257.94 118.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M276.9 112L282.9 112" stroke="#111" stroke-width="1.2" fill="none"/><path d="M216 79L240 79" stroke="#111" stroke-width="1.2" fill="none"/><path d="M240 79L240 105.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M240 105.35L249 105.35" stroke="#111" stroke-width="1.2" fill="none"/><text x="219" y="75" font-size="7.5" text-anchor="start" fill="#111">C(A⊕B)</text><path d="M116 57L124 57" stroke="#111" stroke-width="1.2" fill="none"/><path d="M124 57L124 132" stroke="#111" stroke-width="1.2" fill="none"/><path d="M124 132L232 132" stroke="#111" stroke-width="1.2" fill="none"/><path d="M232 132L232 118.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M232 118.65L249 118.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="119" y="53" font-size="7.5" text-anchor="start" fill="#111">AB</text><text x="285.9" y="115.5" font-size="9" text-anchor="start" fill="#111" font-weight="700">CARRY</text></svg><figcaption>Full adder from two half adders and an OR gate</figcaption></figure>
+<p>The same circuit drawn with gates (each half adder is one XOR and one AND):</p><figure class="afig" data-fig="fig_q16a_gates"><svg style="max-width:480px" font-family="Times New Roman,serif" viewBox="0 0 238 128" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M52 16.5Q58 26 52 35.5Q66.4 35.5 73.9 26Q66.4 16.5 52 16.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M48.6 16.5Q54.6 26 48.6 35.5" stroke="#111" stroke-width="1.3" fill="none"/><path d="M42.6 19.35L51.54 19.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M42.6 32.65L51.54 32.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M73.9 26L79.9 26" stroke="#111" stroke-width="1.2" fill="none"/><path d="M106 30.5Q112 40 106 49.5Q120.4 49.5 127.9 40Q120.4 30.5 106 30.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M102.6 30.5Q108.6 40 102.6 49.5" stroke="#111" stroke-width="1.3" fill="none"/><path d="M96.6 33.35L105.54 33.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M96.6 46.65L105.54 46.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M127.9 40L133.9 40" stroke="#111" stroke-width="1.2" fill="none"/><path d="M106 68.5L115 68.5A9.5 9.5 0 0 1 115 87.5L106 87.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M100 71.35L106 71.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M100 84.65L106 84.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M124.5 78L130.5 78" stroke="#111" stroke-width="1.2" fill="none"/><path d="M52 94.5L61 94.5A9.5 9.5 0 0 1 61 113.5L52 113.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M46 97.35L52 97.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M46 110.65L52 110.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M70.5 104L76.5 104" stroke="#111" stroke-width="1.2" fill="none"/><path d="M160 82.5Q166 92 160 101.5Q174.4 101.5 181.9 92Q174.4 82.5 160 82.5Z" stroke="#111" stroke-width="1.4" fill="none"/><path d="M154 85.35L162.94 85.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M154 98.65L162.94 98.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M181.9 92L187.9 92" stroke="#111" stroke-width="1.2" fill="none"/><text x="14" y="11" font-size="9" text-anchor="middle" fill="#111" font-weight="700">A</text><path d="M14 15L14 97.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M14 19.35L42.6 19.35" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="14" cy="19.35" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M14 97.35L46 97.35" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="14" cy="97.35" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="24" y="11" font-size="9" text-anchor="middle" fill="#111" font-weight="700">B</text><path d="M24 15L24 110.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M24 32.65L42.6 32.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="24" cy="32.65" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M24 110.65L46 110.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="24" cy="110.65" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="34" y="11" font-size="9" text-anchor="middle" fill="#111" font-weight="700">C</text><path d="M34 15L34 84.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M34 46.65L96.6 46.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="34" cy="46.65" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M34 84.65L100 84.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="34" cy="84.65" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M79.9 26L87.9 26" stroke="#111" stroke-width="1.2" fill="none"/><path d="M87.9 26L87.9 33.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M87.9 33.35L96.6 33.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M79.9 26L87.9 26" stroke="#111" stroke-width="1.2" fill="none"/><path d="M87.9 26L87.9 71.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M87.9 71.35L100 71.35" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="87.9" cy="26" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><path d="M130.5 78L144 78" stroke="#111" stroke-width="1.2" fill="none"/><path d="M144 78L144 85.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M144 85.35L154 85.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M76.5 104L144 104" stroke="#111" stroke-width="1.2" fill="none"/><path d="M144 104L144 98.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M144 98.65L154 98.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="136.9" y="43.2" font-size="8.5" text-anchor="start" fill="#111" font-weight="700">SUM</text><text x="190.9" y="95.2" font-size="8.5" text-anchor="start" fill="#111" font-weight="700">CARRY</text></svg><figcaption>Gate level: 2 XOR, 2 AND, 1 OR</figcaption></figure></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Half adder: SUM = A⊕B, CARRY = AB.</li><li>Full adder: SUM = A⊕B⊕C, CARRY = AB + C(A⊕B) (= AB + BC + CA).</li></ul></aside></div>
+</article>
+<article class="q" id="q16-b">
+<div class="qhead"><span class="num">Q16(b)</span><span class="topic">Computer Hardware (universal gates)</span><span class="marks">[6]</span>
+<label class="done"><input type="checkbox" data-id="q16-b"> revised</label></div>
+<div class="qbody"><p>b) Show how NAND gates can be used to simulate function of NOT, AND &amp; OR gates.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>NOT:</b> tie both inputs together: \(\overline{A\cdot A} = A'\).</p><figure class="afig wide" data-fig="fig_q16b_not"><svg style="max-width:300px" font-family="Times New Roman,serif" viewBox="0 0 170 60" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M60 20.5L69 20.5A9.5 9.5 0 0 1 69 39.5L60 39.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="80.7" cy="30" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M54 23.35L60 23.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M54 36.65L60 36.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M82.9 30L88.9 30" stroke="#111" stroke-width="1.2" fill="none"/><path d="M18 30L48 30" stroke="#111" stroke-width="1.2" fill="none"/><path d="M48 23.35L48 36.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M48 23.35L54 23.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M48 36.65L54 36.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="48" cy="30" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="14" y="33" font-size="9" text-anchor="end" fill="#111" font-weight="700">A</text><text x="91.9" y="33.5" font-size="9" text-anchor="start" fill="#111" font-weight="700">(A·A)′ = A′</text></svg><figcaption>NOT from one NAND</figcaption></figure>
+<p><b>AND:</b> NAND followed by a NAND inverter: \(\overline{\overline{AB}} = AB\).</p><figure class="afig wide" data-fig="fig_q16b_and"><svg style="max-width:380px" font-family="Times New Roman,serif" viewBox="0 0 226 78" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M46 24.5L55 24.5A9.5 9.5 0 0 1 55 43.5L46 43.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="66.7" cy="34" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M40 27.35L46 27.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M40 40.65L46 40.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M68.9 34L74.9 34" stroke="#111" stroke-width="1.2" fill="none"/><path d="M128 24.5L137 24.5A9.5 9.5 0 0 1 137 43.5L128 43.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="148.7" cy="34" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M122 27.35L128 27.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M122 40.65L128 40.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M150.9 34L156.9 34" stroke="#111" stroke-width="1.2" fill="none"/><text x="38" y="30.55" font-size="9" text-anchor="end" fill="#111">A</text><text x="38" y="43.85" font-size="9" text-anchor="end" fill="#111">B</text><text x="76.9" y="29" font-size="7.5" text-anchor="start" fill="#111">(A·B)′</text><path d="M74.9 34L122 27.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M74.9 34L122 40.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="159.9" y="37.2" font-size="9" text-anchor="start" fill="#111" font-weight="700">A·B</text></svg><figcaption>AND from two NANDs</figcaption></figure>
+<p><b>OR:</b> invert each input with a NAND, then NAND them: \(\overline{A'\cdot B'} = A'' + B'' = A+B\) (De Morgan).</p><figure class="afig wide" data-fig="fig_q16b_or"><svg style="max-width:380px" font-family="Times New Roman,serif" viewBox="0 0 238 92" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M44 16.5L53 16.5A9.5 9.5 0 0 1 53 35.5L44 35.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="64.7" cy="26" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M38 19.35L44 19.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M38 32.65L44 32.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M66.9 26L72.9 26" stroke="#111" stroke-width="1.2" fill="none"/><path d="M44 56.5L53 56.5A9.5 9.5 0 0 1 53 75.5L44 75.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="64.7" cy="66" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M38 59.35L44 59.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M38 72.65L44 72.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M66.9 66L72.9 66" stroke="#111" stroke-width="1.2" fill="none"/><path d="M150 36.5L159 36.5A9.5 9.5 0 0 1 159 55.5L150 55.5Z" stroke="#111" stroke-width="1.4" fill="none"/><circle cx="170.7" cy="46" r="2.2" stroke="#111" stroke-width="1.4" fill="none"/><path d="M144 39.35L150 39.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M144 52.65L150 52.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M172.9 46L178.9 46" stroke="#111" stroke-width="1.2" fill="none"/><text x="18" y="22.55" font-size="9" text-anchor="end" fill="#111" font-weight="700">A</text><path d="M22 19.35L38 19.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M22 19.35L22 32.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M22 32.65L38 32.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="22" cy="19.35" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="74.9" y="21" font-size="7.5" text-anchor="start" fill="#111">A′</text><text x="18" y="62.55" font-size="9" text-anchor="end" fill="#111" font-weight="700">B</text><path d="M22 59.35L38 59.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M22 59.35L22 72.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M22 72.65L38 72.65" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="22" cy="59.35" r="1.6" stroke="#111" stroke-width="0" fill="#111"/><text x="74.9" y="61" font-size="7.5" text-anchor="start" fill="#111">B′</text><path d="M72.9 26L138 26" stroke="#111" stroke-width="1.2" fill="none"/><path d="M138 26L138 39.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M138 39.35L144 39.35" stroke="#111" stroke-width="1.2" fill="none"/><path d="M72.9 66L138 66" stroke="#111" stroke-width="1.2" fill="none"/><path d="M138 66L138 52.65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M138 52.65L144 52.65" stroke="#111" stroke-width="1.2" fill="none"/><text x="181.9" y="49.2" font-size="9" text-anchor="start" fill="#111" font-weight="700">A+B</text></svg><figcaption>OR from three NANDs</figcaption></figure>
+<p>Since NOT, AND and OR can all be built from NAND alone, NAND is a <b>universal gate</b>.</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>NAND: \((AB)'\).</li><li>De Morgan: \((A'B')' = A+B\).</li><li>Universal gate: every Boolean function can be built from it alone.</li></ul></aside></div>
+</article>
+<h2 class="sec">Part II &mdash; Sec B</h2><p class="secnote">(Answer any two)</p>
+<article class="q" id="q17">
+<div class="qhead"><span class="num">Q17</span><span class="topic">Objects and classes</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q17"> revised</label></div>
+<div class="qbody"><p>Two different timings are added as :-<br>
+Time1 - 6hrs &nbsp;35 mins<br>Time2 &nbsp;3hrs &nbsp;45 mins<br>Sum &nbsp;&nbsp;10hrs &nbsp;20 mins</p>
+<p>To find the solution of above question a class <b>time</b> is declared:</p>
+<p><b>Data members:</b><br>hrs,min : integer to store hours and minuties</p>
+<p><b>Methods :</b><br>
+time( ) : Consturctor to assign 0 to hrs and min<br>
+void gettime( int h, int m ) : to assign h to hrs and m to min.<br>
+void printTime( ) : to display values of hrs and min<br>
+time sumtime (time t1,time t2 ) : to add the timings given in the time objects t1 , t2 and returns them.</p>
+<p>Write a main function to ask the user to input the values for two timings. Invoke appropriate functions
+to calculate sum of time. Print the given time and added time.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Logic:</b> convert both times to minutes, add, then split back: hours = total / 60,
+minutes = total % 60 (35 + 45 = 80 min = 1 h 20 min carries one hour).</p><pre class="code">import java.util.Scanner;
+
+class time {
+    int hrs, min;                       // hours and minutes
+
+    // constructor: 0 to hrs and min
+    time() {
+        hrs = 0;
+        min = 0;
+    }
+
+    // assigns h to hrs and m to min
+    void gettime(int h, int m) {
+        hrs = h;
+        min = m;
+    }
+
+    void printTime() {                  // displays hrs and min
+        System.out.println(hrs + " hrs " + min + " mins");
+    }
+
+    // adds t1 and t2, returns the sum
+    time sumtime(time t1, time t2) {
+        time t = new time();
+        // everything in minutes
+        int total = (t1.hrs + t2.hrs) * 60 + t1.min + t2.min;
+        t.hrs = total / 60;             // carry whole hours over
+        t.min = total % 60;
+        return t;
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        time t1 = new time(), t2 = new time(), t3 = new time();
+        System.out.print("Enter hours and minutes of Time1: ");
+        t1.gettime(sc.nextInt(), sc.nextInt());
+        System.out.print("Enter hours and minutes of Time2: ");
+        t2.gettime(sc.nextInt(), sc.nextInt());
+        t3 = t3.sumtime(t1, t2);
+        System.out.print("\nTime1 : "); t1.printTime();
+        System.out.print("Time2 : ");   t2.printTime();
+        System.out.print("Sum   : ");   t3.printTime();
+    }
+}</pre><p><b>Sample input</b></p><pre class="code">6 35
+3 45</pre><p><b>Output</b> (the typed input is not echoed)</p><pre class="code">Enter hours and minutes of Time1: Enter hours and minutes of Time2: 
+Time1 : 6 hrs 35 mins
+Time2 : 3 hrs 45 mins
+Sum   : 10 hrs 20 mins</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>A method can take objects as parameters and return a new object.</li><li>Normalise with / 60 and % 60.</li><li>Scanner: <code>nextInt()</code> reads the next integer token.</li></ul></aside></div>
+</article>
+<article class="q" id="q19">
+<div class="qhead"><span class="num">Q19</span><span class="topic">Recursion</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q19"> revised</label></div>
+<div class="qbody"><p>Class <b>checker</b> has been defined to check whether a number is palindrome or not. The details of the class are given below:</p>
+<p><b>Data members:</b><br>num : long integer variable to store number<br>rev : long integer variable to store reverse of number</p>
+<p>Methods :<br>Checker ( long z ) : constructor to assign &lsquo;z&rsquo; to num<br>
+Long ReverseNum(long q): to reverse the number stored in num using Recursive Technique and store in &lsquo;rev&rsquo;. Return the reverse number.<br>
+void display( ) : to invoke recursive function and decide whether num is a palindrome number or not.
+Print the number along with suitable message in both cases.</p>
+<p>Do not write the main function.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Recursion:</b> each call moves the last digit of q onto the end of rev
+(\(rev = rev\times10 + q\%10\)) and recurses on \(q/10\); the base case \(q = 0\) returns rev.
+A number is a palindrome when it equals its reverse.</p><pre class="code">class Checker {
+    long num;                   // the number
+    long rev;                   // its reverse
+
+    Checker(long z) {           // constructor
+        num = z;
+        rev = 0;
+    }
+
+    // recursive: moves the last digit of q onto rev
+    long ReverseNum(long q) {
+        if (q == 0)             // base case: no digits left
+            return rev;
+        rev = rev * 10 + q % 10;
+        return ReverseNum(q / 10);
+    }
+
+    void display() {
+        rev = 0;
+        long r = ReverseNum(num);
+        if (r == num)
+            System.out.println(num + " is a palindrome number");
+        else
+            System.out.println(num + " is not a palindrome number");
+    }
+}</pre><p class="note">The question prints the class name as <i>checker</i> and the constructor as <i>Checker</i>, and the return
+type as <i>Long</i>; Java needs the constructor name to match the class, so <code>Checker</code> and the
+primitive <code>long</code> are used.</p><p>Tested with 12321, 12345 and 7 (main not required by the question):</p><p><b>Output</b></p><pre class="code">12321 is a palindrome number
+12345 is not a palindrome number
+7 is a palindrome number</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Every recursive method needs a base case.</li><li>Last digit: <code>q % 10</code>; drop it: <code>q / 10</code>.</li><li>Reset rev before reversing again.</li></ul></aside></div>
+</article>
+<h2 class="sec">Part II &mdash; Sec C</h2><p class="secnote">(Answer any two)</p>
+<article class="q" id="q20">
+<div class="qhead"><span class="num">Q20</span><span class="topic">Inheritance, Interfaces and Polymorphism</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q20"> revised</label></div>
+<div class="qbody"><p>Define class basepro and derived class dervpro to find the product of two numbers details of both the classes are given below:</p>
+<p>Class name : basepro<br>Data members<br>n1,n2 : float variables whose product is to be determined.<br>
+Methods<br>void enter( ) : to input values of n1 and n2<br>void show( ) : to display values of n1 and n2</p>
+<p>Class name : dervpro<br>Data members<br>result : float variable to store product.<br>Methods<br>
+void prod( ) : to accept values of n1 and n2 and to calculate their product using the concept of inheritance.<br>
+void disp( ) : to display values of n1 and n2 and their product.</p>
+<p>The main function need not to be written.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>n1 and n2 are declared <code>protected</code> so the subclass can use them; dervpro reuses
+<code>enter()</code> and <code>show()</code> through inheritance.</p><pre class="code">import java.util.Scanner;
+
+class basepro {
+    protected float n1, n2;           // the two numbers
+
+    void enter() {                    // inputs n1 and n2
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+        n1 = sc.nextFloat();
+        n2 = sc.nextFloat();
+    }
+
+    void show() {                     // displays n1 and n2
+        System.out.println("n1 = " + n1 + ", n2 = " + n2);
+    }
+}
+
+class dervpro extends basepro {
+    float result;                     // product
+
+    void prod() {
+        enter();                      // inherited from basepro
+        // n1, n2 are protected: visible here
+        result = n1 * n2;
+    }
+
+    void disp() {
+        // inherited display of n1 and n2
+        show();
+        System.out.println("Product = " + result);
+    }
+}</pre><p>Test: <code>dervpro d = new dervpro(); d.prod(); d.disp();</code></p><p><b>Sample input</b></p><pre class="code">2.5 4</pre><p><b>Output</b> (the typed input is not echoed)</p><pre class="code">Enter two numbers: n1 = 2.5, n2 = 4.0
+Product = 10.0</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li><code>class B extends A</code>: B inherits A's non-private members.</li><li><code>protected</code>: visible in subclasses.</li><li>Inherited methods are called directly (or as <code>super.m()</code>).</li></ul></aside></div>
+</article>
+<article class="q" id="q21">
+<div class="qhead"><span class="num">Q21</span><span class="topic">Data Structures (dequeue)</span><span class="marks">[10]</span>
+<label class="done"><input type="checkbox" data-id="q21"> revised</label></div>
+<div class="qbody"><p>Some declarations in the memory are made in such a way that can store numbers having a decimal point
+also and a number can be stored either at the front or at the back depending upon the availability of space.
+There may be at the most hundred numbers that can be stored. A class someprocess is defined to perform such
+kind of process as given above. The details of the class someprocess are as follows:</p>
+<p><b>Class name</b> : someprocess<br><b>Data members</b><br>
+line [ ] : double type array to hold numbers maximum size 100.<br>
+capacity : integer as the maximum storage capacity of the Line [ ].<br>
+front : integer to point to the index of front of the queue.<br>
+rear : integer to point to the index of rear of the quque.<br>
+num : double type variable to store a number.<br>
+<b>Methods</b><br>
+someprocess( ) : constructor to assign 100 to capacity,-1 to front and rear.<br>
+int IsEmpty( ) : returns 1 if line is empty otherwise returns 0<br>
+void InsertRear( ) : accepts num if line is empty and inserts at the rear of line, otherwise output &ldquo;line is full&rdquo;.<br>
+void InsertFront( ) : accepts num if line is empty and inserts at the front of line, otherwise output &ldquo;line is full&rdquo;.<br>
+double DeleteFront( ) : removes the number from the front of line if the line is not empty otherwise output message &ldquo;line is empty&rdquo; and returns -999.99.<br>
+double DeleteRear( ) : removes the number from the rear of line if the line is not empty otherwise output message &ldquo;line is empty&rdquo; and returns -999.99.<br>
+void LineDisplay( ) : to display the elements of line if line is not empty, otherwise display message &ldquo;line is empty&rdquo;.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>This is a <b>double-ended queue (dequeue)</b> in an array. front = rear = &minus;1 means empty.
+A number can go in at the rear while rear &lt; capacity&minus;1, and at the front while front &gt; 0
+(or when the line is empty).</p>
+<p class="note">&ldquo;accepts num if line is empty&rdquo; is evidently meant as &ldquo;if there is space&rdquo; (if line is not full),
+which is what the methods below do.</p><pre class="code">import java.util.Scanner;
+
+class someprocess {
+    double line[] = new double[100];
+    int capacity, front, rear;
+    double num;
+    static Scanner sc = new Scanner(System.in);
+
+    someprocess() {
+        capacity = 100;
+        // -1 marks an empty line
+        front = rear = -1;
+    }
+
+    int IsEmpty() {
+        return (front == -1) ? 1 : 0;
+    }
+
+    void InsertRear() {
+        // no room at the rear end
+        if (rear == capacity - 1) {
+            System.out.println("line is full");
+            return;
+        }
+        System.out.print("Enter number: ");
+        num = sc.nextDouble();
+        if (front == -1)                      // first element
+            front = 0;
+        line[++rear] = num;
+    }
+
+    void InsertFront() {
+        // no room before the front element
+        if (front == 0) {
+            System.out.println("line is full");
+            return;
+        }
+        System.out.print("Enter number: ");
+        num = sc.nextDouble();
+        // empty line: first element
+        if (front == -1) {
+            front = rear = 0;
+            line[0] = num;
+        } else
+            line[--front] = num;
+    }
+
+    double DeleteFront() {
+        if (IsEmpty() == 1) {
+            System.out.println("line is empty");
+            return -999.99;
+        }
+        num = line[front];
+        // last element removed
+        if (front == rear)
+            front = rear = -1;
+        else
+            front++;
+        return num;
+    }
+
+    double DeleteRear() {
+        if (IsEmpty() == 1) {
+            System.out.println("line is empty");
+            return -999.99;
+        }
+        num = line[rear];
+        if (front == rear)
+            front = rear = -1;
+        else
+            rear--;
+        return num;
+    }
+
+    void LineDisplay() {
+        if (IsEmpty() == 1) {
+            System.out.println("line is empty");
+            return;
+        }
+        for (int i = front; i &lt;= rear; i++)
+            System.out.print(line[i] + "  ");
+        System.out.println();
+    }
+}</pre><p>Test sequence: display, DeleteFront on empty, InsertRear 2.5, InsertRear 4.0, InsertFront (front = 0, so full at the front), display, DeleteFront, InsertFront 1.5, display, DeleteRear twice, IsEmpty, display.</p><p><b>Sample input</b></p><pre class="code">2.5
+4.0
+1.5</pre><p><b>Output</b> (the typed input is not echoed)</p><pre class="code">line is empty
+line is empty
+-999.99
+Enter number: Enter number: line is full
+2.5  4.0  
+Deleted from front: 2.5
+Enter number: 1.5  4.0  
+Deleted from rear: 4.0
+Deleted from rear: 1.5
+IsEmpty = 1
+line is empty</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Dequeue: insertion and deletion at both ends.</li><li>Linear array dequeue: front insertion needs front &gt; 0; rear insertion needs rear &lt; size−1.</li><li>Reset front = rear = −1 when the last element is removed.</li></ul></aside></div>
+</article>
+<article class="q" id="q22-b">
+<div class="qhead"><span class="num">Q22(b)</span><span class="topic">Complexity and Big O notation</span><span class="marks">[2]</span>
+<label class="done"><input type="checkbox" data-id="q22-b"> revised</label></div>
+<div class="qbody"><p>b) What is a Big O Notation ? Give the notation for a quadratic time.</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p><b>Big O notation</b> expresses the upper bound of an algorithm's running time (or space) as a function of
+the input size n, keeping only the dominant term and ignoring constant factors: \(f(n)=O(g(n))\) if
+\(f(n)\le c\,g(n)\) for some constant c and all large n. It describes how the time grows as n grows.</p>
+<p>Quadratic time: <span class="box">\(O(n^2)\)</span> &mdash; e.g. two nested loops each running n times (bubble sort).</p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Keep the dominant term, drop constants: \(3n^2+5n+7 = O(n^2)\).</li><li>Common orders: \(O(1) &lt; O(\log n) &lt; O(n) &lt; O(n\log n) &lt; O(n^2)\).</li></ul></aside></div>
+</article>
+<article class="q" id="q22-c">
+<div class="qhead"><span class="num">Q22(c)</span><span class="topic">Data Structures (binary trees)</span><span class="marks">[3]</span>
+<label class="done"><input type="checkbox" data-id="q22-c"> revised</label></div>
+<div class="qbody"><p>c) For the given Binary Tree in fig:1 write the<br>
+1. Postorder Sequence.<br>2. Inorder Sequence.<br>3. Preorder Sequence.</p><figure class="qfig" data-fig="fig_q22_tree"><svg style="max-width:360px" font-family="Times New Roman,serif" viewBox="0 0 338 170" preserveAspectRatio="xMidYMid meet" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M25 105L57 145" stroke="#111" stroke-width="1.2" fill="none"/><path d="M89 65L25 105" stroke="#111" stroke-width="1.2" fill="none"/><path d="M89 65L121 105" stroke="#111" stroke-width="1.2" fill="none"/><path d="M153 25L89 65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M153 25L249 65" stroke="#111" stroke-width="1.2" fill="none"/><path d="M217 105L185 145" stroke="#111" stroke-width="1.2" fill="none"/><path d="M249 65L217 105" stroke="#111" stroke-width="1.2" fill="none"/><path d="M249 65L281 105" stroke="#111" stroke-width="1.2" fill="none"/><path d="M281 105L313 145" stroke="#111" stroke-width="1.2" fill="none"/><circle cx="25" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="25" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">C</text><circle cx="57" cy="145" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="57" y="148.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">D</text><circle cx="89" cy="65" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="89" y="68.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">A</text><circle cx="121" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="121" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">B</text><circle cx="153" cy="25" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="153" y="28.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">R</text><circle cx="185" cy="145" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="185" y="148.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">8</text><circle cx="217" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="217" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">5</text><circle cx="249" cy="65" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="249" y="68.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">3</text><circle cx="281" cy="105" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="281" y="108.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">6</text><circle cx="313" cy="145" r="11" stroke="#111" stroke-width="1.4" fill="#fff"/><text x="313" y="148.2" font-size="9.5" text-anchor="middle" fill="#111" font-weight="700">9</text></svg><figcaption>FIG : 1</figcaption></figure></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p>From the figure: R has children A (left) and 3 (right); A has C (left) and B (right); C has only a right
+child D; 3 has 5 (left) and 6 (right); 5 has a left child 8; 6 has a right child 9.</p>
+<p>1. Postorder (Left, Right, Root): <span class="box">D C B A 8 5 9 6 3 R</span></p>
+<p>2. Inorder (Left, Root, Right): <span class="box">C D A B R 8 5 3 6 9</span></p>
+<p>3. Preorder (Root, Left, Right): <span class="box">R A C D B 3 5 8 6 9</span></p></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Preorder: root, left, right. Inorder: left, root, right. Postorder: left, right, root.</li><li>A missing child is simply skipped.</li></ul></aside></div>
+</article>
+<details class="excl"><summary>Not in the ISC 2027 syllabus (3)</summary>
+<div class="xq"><div class="qhead"><span class="num">Q9</span>
+<span class="marks">[2]</span></div><div class="qbody"><p>What are the differences between Quick sort and Merge sort.</p></div>
+<p class="why">Why left out: Quick sort and merge sort are not in the ISC 2027 syllabus, which lists only bubble, selection and insertion sort (Unit 10, Arrays).</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q18</span>
+<span class="marks">[10]</span></div><div class="qbody"><p>It is assumed that the text files &ldquo;test1.txt&rdquo; is already created with names and &ldquo;test2.txt&rdquo;
+contains pan numbers of various persons. Fields present in &ldquo;test1.txt&rdquo; are person&rsquo;s code and name only.
+Fields present in &ldquo;test2.txt&rdquo; are person&rsquo;s code and pan only. The pan number is beginning with a capital
+alphabet followed by numbers without space. Note that the number of records in both the files are same and
+person&rsquo;s code is unique.</p>
+<p>Write a program to merge the files &ldquo;test1.txt and &ldquo;test2.txt&rdquo; into a new file &ldquo; pan.txt&rdquo;
+in such a way that name of person and its pan number should be stored as one string having only one space between name and pan numbers.</p></div>
+<p class="why">Why left out: Data file handling (text files, FileReader/FileWriter) is a Class XI topic in the ISC 2027 syllabus (Class XI Unit 11(b)); the Class XII syllabus (Unit 5(c)) covers only Scanner/Printer input-output and tokens.</p></div>
+<div class="xq"><div class="qhead"><span class="num">Q22(a)</span>
+<span class="marks">[5]</span></div><div class="qbody"><p>22 a) Write a program to create a small balanced binary tree ( till level 2) with integer elements.</p></div>
+<p class="why">Why left out: Binary trees are only 'Conceptual' in the ISC 2027 syllabus (Unit 13(b)); writing a program to build a tree is not required.</p></div>
+</details>
+</main>
+</body></html>

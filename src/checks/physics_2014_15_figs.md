@@ -1,0 +1,15 @@
+# physics_2014_15_figs — what was checked (rendered with preview.py and looked at)
+- fig_q1b4_cd: C–1Ω–A–3Ω–D and C–3Ω–B–1Ω–D, cell 10 V 0.5 Ω with the long (+) plate on the C side as in the scan.
+- fig_q1b6_wire / fig_a1b6_force: wire with I upward, P at distance a to the right, v directed away from the wire; answer adds B into page at P (right-hand grip) and F up, parallel to I (cross product checked in the script).
+- fig_q4a_net / fig_a4a_net_labelled: A–R–C; C–T, T–B, T–M (vertical), C–M, M–B, C–D, D–B — 8 resistors as printed; R_AB = 5R/3 confirmed by nodal analysis in the check.
+- fig_q4b_circuits: (a) cell + resistor, (b) capacitor + cell, (c) a.c. source E = E0 sin ωt + resistor, as printed.
+- fig_a4b_graphs: (a) constant E/R; (b) momentary pulse decaying to zero; (c) sinusoid in phase.
+- fig_q6b_rod / fig_a6b_rod: B into page, resistor on the left, rod PQ on the right moving right; answer: induced current Q→P in the rod, round through the resistor, magnetic force BIl to the left, applied force to the right (checked by cross products).
+- fig_a2a_dipole_torque: forces qE along ±E on +q/−q, θ between p and E, arm = vertical separation 2l sin θ (perpendicular to the lines of action).
+- fig_a3a_triangle: −2q at apex, +q at the base corners; p1, p2 from −2q to each +q, 60° apart; resultant √3 qa along the bisector towards the base.
+- fig_a3b_solenoid: length l, area A, B along the axis inside.
+- fig_a7b_phasor: (review fix) 'V_C − V_L' label moved left of the axis so it no longer crosses the dashed construction line. I reference; V_R along I; V_L up, V_C down drawn to scale (20 : 31.4 : 106.1); E lies below I at 75° — current leads.
+- fig_a9a_spherical: convex surface towards the rarer medium, C in the denser medium, real image I beyond C; i between incident ray and outward normal AN, r between refracted ray and inward normal AC; α, β, γ at O, I, C. Angles deliberately opened out (caption says schematic).
+- fig_a10a_lens_mirror: to scale 8 px/cm: lens at 0, O at −20, F1/F2 at ±10, I1 at +20 = C of mirror, mirror pole at +30, Fm at +25. Rays: object→I1 (inverted), I1→mirror→I2 at C (erect), I2→lens→I3 at O (inverted, same size).
+- fig_a12a_bohr: Coulomb force on the electron towards the nucleus, v tangential.
+- fig_a14a_fwr: centre-tapped secondary, D1 and D2 cathodes joined at X, load between X and tap T; current in load X→T in both half-cycles; input sine and full-wave rectified output.

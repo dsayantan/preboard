@@ -1,0 +1,19 @@
+# physics_2015_16 — figures checked (rendered with preview.py and looked at)
+- fig_q1a2_network: matches printed network (a–10Ω–b–20Ω–c; b–50Ω–e; d–40Ω–e–80Ω–f); all six labels and values.
+- fig_q1b7_wire: long wire, current I upward (as printed arrow), +Q at P distance a, v pointing away from the wire.
+- fig_a1b7_force: B at P into page (right-hand grip, current up, P to the right); F = Qv×B points up, parallel to I (checked with numpy cross product in the check script).
+- fig_a1b9_xc: Xc ∝ 1/f hyperbola, axes labelled, no intercepts.
+- fig_a2a_dipole: (i) p ⟂ E with +qE on +q, −qE on −q forming a clockwise couple; (ii) p ∥ E, forces collinear.
+- fig_a3a_gauss: coaxial cylinder round the line charge; E radial on curved surface; dA on caps along the axis (E ⟂ dA); r and l marked.
+- fig_q4b_bridge: AB = 6+6 Ω series, BC = 1Ω‖1Ω, AD = xΩ + 6Ω, DC = 2Ω‖2Ω, cell between A and C — matches printed figure.
+- fig_a5b_hysteresis: descending branch through +Br and −Hc, ascending through −Br and +Hc; arrows anticlockwise round the loop; branches meet at saturation.
+- fig_q6b_rod: B into page (crosses), resistor on the left, rod PQ on the right, v to the right — as printed.
+- fig_a7a_phasor: I lags V by 90° (drawn clockwise of V for anticlockwise rotation).
+- fig_a9b_slit: slit width a, first minima at ±θ, sinc² intensity on screen (schematic angle).
+- fig_a10a_refraction: convex surface toward the object, C on the denser side; angles computed from the drawn points: α=17.4°, γ=43.0°, β=18.8°, i=α+γ, r=γ−β; refracted ray lies between the produced incident ray and the normal (bends toward the normal). Caption states angles opened out.
+- fig_a10b_lensmirror: to scale 6 px/cm: O 12 cm from lens (f 10), mirror 10 cm beyond; rays converge to I at 60 cm = mirror's centre of curvature (R = 50 cm), mirror arc centred on I so rays strike it normally.
+- fig_a11b_micro: computed from lens formula (fo 2, u 2.4 → v 12; fe 5, ue 4.17, final image at D = 25 cm); parallel ray through Fo, central rays undeviated, back-extensions meet at A″; heights on a separate scale.
+- fig_q12a_graph / fig_a12a_graph: line from (0, −4 eV) through A (10×10¹⁴ Hz, 0) to B (30×10¹⁴ Hz, 8 eV) — same as printed; annotations ν0, −φ.
+- fig_a13a_bohr: electron velocity tangent (anticlockwise motion), force towards nucleus, r marked.
+- fig_a15a_fwr: centre-tap transformer; D1 and D2 anodes at S1/S2, cathodes joined; RL from cathode node (+) to tap (−); current through RL same direction both halves; output humps labelled D1, D2 alternately.
+- REVIEW: fig_a5b_hysteresis — coercivity label moved off the descending branch.

@@ -1,0 +1,178 @@
+"""Chemistry pre-board 2014-15, Practical.  Transcribed from the page images."""
+from kit import Q, SEC
+
+PAPER = dict(
+    subject="chemistry",
+    year="2014-15",
+    slug="2014-15-practical",
+    practical=True,
+    paper="Chemistry Practical",
+    source="PreBoard-PYQ/2014-15/Chemistry Practicals.pdf",
+    marks=20, time="3 hours",
+    intro=r"""<p>ALL ANSWERS MUST BE WRITTEN IN THE ANSWER BOOKLET PROVIDED SEPARATELY</p>
+<p><b>Question 1</b> is an <b>oxidation-reduction titration</b> in which sufficient working details are given.
+All essential working must be shown.</p>
+<p><b>Question 2</b> is an exercise dealing with <b>identification of organic compounds.</b> Credit will be given for
+precise observations recorded and for well-drawn deductions.</p>
+<p><b>Question 3</b> is an exercise in <b>qualitative analysis</b></p>
+<p>Read the questions carefully and follow the given instructions. Attempt all questions.</p>
+<p>All working, including rough work, should be done on the same sheet as the rest of the answer.</p>
+<p>The intended marks for questions or parts of questions are given in brackets [ ].</p>
+<p>This paper consists of three printed pages</p>""",
+    items=[
+        Q("1", 8, r"""<p>You are provided with two solutions as follows:</p>
+<p>(a) <b>C-10</b> is a solution prepared by dissolving 1.15 gms. of potassium manganate (VII), \(\ce{KMnO4}\) per litre.</p>
+<p>(b) <b>C-11</b> is a solution prepared by dissolving 17.2 gms. of impure sample of hydrated ammonium iron (II) sulphate
+crystals, \(\ce{(NH4)2SO4.FeSO4.6H2O}\) per litre.</p>
+<p><b>PROCEDURE:</b> Rinse and fill the burette with the solution <b>C-10</b> of potassium manganate (VII). Pipette out
+20 ml or 25 ml of ammonium iron(II) sulphate solution <b>C-11</b> into a clean conical flask. To this, add 20 ml of
+<b>C-12</b>, solution of dilute \(\ce{H2SO4}\) specially provided for titration. Titrate this solution by running
+<b>C-10</b> from the burette till one drop of this solution gives a permanent light pink colour to solution <b>C-11</b> in
+the conical flask. Ensure that the pink colour obtained does not disappear on shaking the content of the conical flask.</p>
+<p>Repeat the above procedure of titration to get at least two concordant readings.</p>
+<p>Tabulate your readings. State (i) The capacity of the pipette used. (ii) The titre value you intend to use in your
+calculations.</p>
+<p>Show the titre value to your visiting examiner.</p>
+<p>The equation for the above reaction is as follows:</p>
+\[\ce{2KMnO4 + 3H2SO4 -> K2SO4 + 2MnSO4 + 3H2O + 5[O]}\]
+\[\ce{10FeSO4 + 5H2SO4 + 5[O] -> 5Fe2(SO4)3 + 5H2O}\]
+<p>[Relative atomic masses K = 39, Fe = 56, N = 14, S = 32, H = 1, O = 16, Mn = 55]</p>
+<p><b>Calculate the following:</b> (i) The <b>molarity</b> of potassium manganate (VII) solution C-10. (ii) The
+<b>molarity</b> of hydrated ammonium iron (II) sulphate solution C-11. (iii) The <b>concentration</b> of hydrated ammonium
+iron (II) sulphate in gms/litre (iv) The <b>percentage purity</b> of hydrated ammonium iron (II) sulphate in the impure
+sample.</p>""",
+          a=r"""<p class="note">The burette readings below are <b>sample readings</b>, generated for a sample of about 92% purity
+and read to the burette least count (0.05 mL, recorded to two decimal places). The calculation is the part to learn.</p>
+<p><b>Pipette used:</b> 20.0 mL of C-11. No indicator: \(\ce{KMnO4}\) is self-indicating (colourless → permanent light pink).
+No warming — the \(\ce{Fe^2+}\) reaction is fast at room temperature.</p>
+<div class="tbl"><table>
+<tr><th>S. No.</th><th>Initial burette reading (mL)</th><th>Final burette reading (mL)</th><th>Volume of C-10 used (mL)</th></tr>
+<tr><td>1 (rough)</td><td>0.00</td><td>22.50</td><td>22.50</td></tr>
+<tr><td>2</td><td>0.00</td><td>22.20</td><td>22.20</td></tr>
+<tr><td>3</td><td>1.00</td><td>23.20</td><td>22.20</td></tr></table></div>
+<p>(i) Capacity of pipette = <b>20.0 mL</b> &nbsp; (ii) Titre value (concordant) = <b>22.20 mL</b></p>
+<p class="step">Adding the two equations:</p>
+\[\ce{2KMnO4 + 10FeSO4 + 8H2SO4 -> K2SO4 + 2MnSO4 + 5Fe2(SO4)3 + 8H2O}\]
+\[\ce{MnO4- + 5Fe^2+ + 8H+ -> Mn^2+ + 5Fe^3+ + 4H2O}\]
+<p class="step"><b>1 mol \(\ce{MnO4-}\) ≡ 5 mol \(\ce{Fe^2+}\)</b>.</p>
+<p class="step"><b>(i)</b> \(M(\ce{KMnO4}) = 158\) g mol⁻¹: \(M_1 = \dfrac{1.15}{158} = 0.007278\ \text{M}\)</p>
+<p class="step"><b>(ii)</b></p>
+\[\frac{M_1V_1}{M_2V_2} = \frac{1}{5}\;\Rightarrow\; M_2 = \frac{5\times0.007278\times22.20}{20.0} = 0.04040\ \text{M}\]
+<p class="step"><b>(iii)</b> \(M(\ce{(NH4)2SO4.FeSO4.6H2O}) = 2(18) + 96 + 56 + 96 + 6(18) = 392\) g mol⁻¹</p>
+\[\text{concentration} = 0.04040\times392 = 15.84\ \text{g L}^{-1}\]
+<p class="step"><b>(iv)</b> \(\%\ \text{purity} = \dfrac{15.84}{17.2}\times100 = 92.1\%\)</p>
+<p><span class="box">M(C-10) = 0.007278 M; M(C-11) = 0.04040 M; 15.84 g L⁻¹; purity ≈ 92.1%</span></p>""",
+          topic="Titrations (KMnO₄ / ammonium iron(II) sulphate)",
+          recall=r"""<ul><li>MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O: mole ratio 1 : 5.</li>
+<li>Dilute \(\ce{H2SO4}\) (not HCl, which \(\ce{KMnO4}\) oxidises) prevents hydrolysis of \(\ce{Fe^2+}\) and supplies \(\ce{H+}\).</li>
+<li>Mohr's salt \(M_r\) = 392; % purity = found ÷ taken × 100.</li></ul>"""),
+        Q("2(a)", "2½", r"""<p>[Question 2 carries 5 marks for (a) and (b) together; shown here as 2½ each.] You are provided with two
+organic compounds <b>C-13</b> and <b>C-14.</b></p>
+<p>Perform the experiments given below on each of the two compounds. Record the changes taking place at every step of
+the experiment.</p>
+<p>Note the smell of the substance formed, if significant, the colour of the solution obtained, the colour of the
+precipitate produced and any other observation you may have. State the identity of each compound on the basis of the
+experiments and the observation changes.</p>
+<p>(a) <b>Substance C-13</b></p>
+<p>(i) Take about 2ml of <b>C-13</b> in a test tube and to this add two drops of alcoholic alpha-napthol solution
+followed by conc sulphuric acid along the side of the test tube carefully.</p>
+<p>(ii) Take about 2ml <b>C-13</b> in a test tube add about 1ml of Fehling's solution. Warm the contents in a water bath
+for about five minutes.</p>
+<p>(iii) Take about 1–2ml of <b>C-13</b> in a test-tube to this add 0.5gm of solid lead acetate boil the contents in a
+water bath and add 5ml of \(\ce{NH4OH}\) solution. Heat the mixture again to boiling in the water bath.</p>""",
+          a=r"""<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td>(i) Molisch's test: C-13 + alcoholic α-naphthol, conc. \(\ce{H2SO4}\) poured down the side</td>
+<td>Violet (purple) ring at the junction of the two layers</td><td>Carbohydrate present</td></tr>
+<tr><td>(ii) Fehling's test: C-13 + Fehling's solution, warm on water bath</td><td>Blue colour discharged; brick-red
+precipitate</td><td>Reducing sugar (free aldehyde/α-hydroxy ketone group)</td></tr>
+<tr><td>(iii) C-13 + solid lead acetate, boil; add \(\ce{NH4OH}\), boil again</td><td>A coloured (pinkish /
+orange-red) precipitate on boiling</td><td>Reducing sugar (supports the carbohydrate)</td></tr></table></div>
+\[\ce{RCHO + 2Cu^2+ + 5OH- -> RCOO- + Cu2O v + 3H2O}\quad(\ce{Cu2O}\text{ brick red})\]
+<p><span class="box">C-13 is a carbohydrate — a reducing sugar, glucose (\(\ce{C6H12O6}\))</span></p>
+<p class="note">ISC 2027 asks only that the substance be identified as a <i>carbohydrate</i>; glucose is the carbohydrate
+set in the syllabus. The decisive tests are (i) Molisch and (ii) Fehling. The colour of the lead acetate/ammonia
+precipitate in (iii) is described differently in different manuals and could not be confirmed against a standard
+source, so the identification does not rest on it. A standard confirmable test in its place: Tollens' reagent, warm on
+a water bath — silver mirror (reducing sugar); a protein (milk powder) would instead give the biuret violet colour with
+NaOH + dilute \(\ce{CuSO4}\).</p>""",
+          topic="Characteristic tests of carbohydrates",
+          recall=r"""<ul><li>Molisch's test (α-naphthol + conc. \(\ce{H2SO4}\)): violet ring — all carbohydrates.</li>
+<li>Fehling's / Tollens' / Benedict's: positive for reducing sugars (glucose, fructose, maltose, lactose); sucrose negative.</li>
+<li>Carbohydrate vs protein: Molisch violet ring (carbohydrate) vs biuret violet (protein).</li></ul>"""),
+        Q("2(b)", "2½", r"""<p>(b) <b>Substance C-14</b></p>
+<p>(i) Take 2 ml of <b>C-14</b> in a test tube. Add few crystals of iodine and dissolve. Now add NaOH solution with
+costant shaking until the brown colour disappears. Heat gently in a water bath and cool.</p>
+<p>(ii) Take 2 ml of <b>C-14</b> in a test tube and add 0.5 ml of caustic soda solution followed by 2–3 drops of freshly
+prepared sodium nitroprusside solution. Allow it to stand for some time. Warm the contents gently in a water bath and
+cool.</p>
+<p>(iii) Take about 2ml of saturated solution of \(\ce{NaHSO3}\) in a test tube. To this add a few drops of <b>C-14</b></p>""",
+          a=r"""<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td>(i) Iodoform test: C-14 + \(\ce{I2}\) + NaOH, warm, cool</td><td>Yellow crystalline precipitate with a
+characteristic "antiseptic" smell (iodoform)</td><td>CH₃CO– (or CH₃CH(OH)–) group present</td></tr>
+<tr><td>(ii) C-14 + NaOH + sodium nitroprusside</td><td>Red / wine-red colouration</td><td>Methyl ketone — acetone</td></tr>
+<tr><td>(iii) Saturated \(\ce{NaHSO3}\) + C-14, shake</td><td>White crystalline precipitate; warmth</td>
+<td>Carbonyl compound (aldehyde or methyl ketone)</td></tr></table></div>
+\[\ce{CH3COCH3 + 3I2 + 4NaOH -> CHI3 v + CH3COONa + 3NaI + 3H2O}\]
+\[\ce{CH3COCH3 + NaHSO3 -> (CH3)2C(OH)SO3Na}\]
+<p><span class="box">C-14 is acetone (propanone), \(\ce{CH3COCH3}\) — ketonic group</span></p>""",
+          topic="Identification of organic compounds (ketonic group)",
+          recall=r"""<ul><li>Iodoform: yellow \(\ce{CHI3}\) from CH₃CO– compounds.</li>
+<li>Nitroprusside + NaOH: red colour with acetone.</li><li>Bisulphite adduct: aldehydes and methyl ketones.</li></ul>"""),
+        Q("3", 7, r"""<p>Analyse qualitatively the substance <b>C-15</b> which contains two anions and two cations. Identify these ions.</p>
+<p>While testing for anions you must mention: (i) how the solution / soda extract was prepared; (ii) how the gases were
+identified; and (iii) the confirmatory test for each anion.</p>
+<p><b>Show the results to the examiner</b></p>
+<p>(b) While testing for cations you must state: (i) how the original solution for group analysis was prepared; (ii) the
+formal group analysis with pertinent group reagents; and (iii) the confirmatory test for each cation.</p>
+<p><b>Show the results to the examiner</b></p>""",
+          a=r"""<p class="note">The unknown is not stated on the paper. The analysis is worked for a <b>sample</b> mixture of
+zinc acetate and barium bromide (anions \(\ce{CH3COO-}\), \(\ce{Br-}\); cations \(\ce{Zn^2+}\), \(\ce{Ba^2+}\)) — all within
+the ISC 2027 list. (ISC 2027 sets a single salt, one anion and one cation, but the scheme is identical.)</p>
+<h4>(a) Anions</h4>
+<p><b>(i) Sodium carbonate extract (S.E.):</b> mixture boiled with about three times its mass of solid \(\ce{Na2CO3}\) and
+distilled water for 10 minutes, then filtered. The cations are removed as carbonates; the filtrate holds the anions as
+sodium salts.</p>
+<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td>Mixture + dil. \(\ce{H2SO4}\), warm</td><td>Smell of vinegar</td><td>\(\ce{CH3COO-}\) may be present (acetic acid vapour)</td></tr>
+<tr><td>Mixture + conc. \(\ce{H2SO4}\), warm</td><td>Reddish-brown fumes, intensified by \(\ce{MnO2}\); turn starch paper yellow-orange</td>
+<td>\(\ce{Br2}\) vapour — \(\ce{Br-}\) may be present</td></tr>
+<tr><td><b>C.T. for \(\ce{CH3COO-}\):</b> S.E. neutralised with dil. \(\ce{HNO3}\), + neutral \(\ce{FeCl3}\)</td>
+<td>Deep red colour; on boiling, a reddish-brown precipitate</td><td><b>\(\ce{CH3COO-}\) confirmed</b></td></tr>
+<tr><td><b>C.T. for \(\ce{Br-}\):</b> S.E. + dil. \(\ce{HNO3}\) + \(\ce{AgNO3}\)</td><td>Pale yellow precipitate, sparingly soluble in
+\(\ce{NH4OH}\)</td><td><b>\(\ce{Br-}\) confirmed</b></td></tr>
+<tr><td>Layer test: S.E. + dil. HCl + \(\ce{CCl4}\) + chlorine water, shake</td><td>Orange-brown \(\ce{CCl4}\) layer</td><td>supports \(\ce{Br-}\)</td></tr></table></div>
+\[\ce{2CH3COO- + H2SO4 -> 2CH3COOH ^ + SO4^2-}\]
+\[\ce{2Br- + 2H2SO4 -> Br2 ^ + SO2 + SO4^2- + 2H2O}\]
+\[\ce{2Br- + MnO2 + 4H+ -> Br2 + Mn^2+ + 2H2O}\]
+\[\ce{3CH3COO- + Fe^3+ -> (CH3COO)3Fe}\ (\text{red})\]
+\[\ce{Ag+ + Br- -> AgBr v}\ (\text{pale yellow})\]
+<p><span class="box">Anions: \(\ce{CH3COO-}\) and \(\ce{Br-}\)</span></p>
+<h4>(b) Cations</h4>
+<p><b>(i) Original solution (O.S.):</b> the mixture dissolves in distilled water (a few drops of dil. HCl may be added).</p>
+<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td><b>Group zero:</b> mixture + NaOH, heat</td><td>No smell of ammonia</td><td>\(\ce{NH4+}\) absent</td></tr>
+<tr><td><b>Group I:</b> O.S. + dil. HCl</td><td>No precipitate</td><td>\(\ce{Pb^2+}\) absent</td></tr>
+<tr><td><b>Group II:</b> + \(\ce{H2S}\) (acid medium)</td><td>No precipitate</td><td>\(\ce{Cu^2+}\), \(\ce{Pb^2+}\) absent</td></tr>
+<tr><td><b>Group III:</b> boil off \(\ce{H2S}\), boil with conc. \(\ce{HNO3}\); add solid \(\ce{NH4Cl}\), then \(\ce{NH4OH}\) in excess</td>
+<td>No precipitate</td><td>\(\ce{Al^3+}\), \(\ce{Fe^3+}\) absent</td></tr>
+<tr><td><b>Group IV:</b> same solution + \(\ce{H2S}\)</td><td>Dirty-white precipitate</td><td>\(\ce{Zn^2+}\) present</td></tr>
+<tr><td><b>C.T. for \(\ce{Zn^2+}\):</b> ppt dissolved in dil. HCl, \(\ce{H2S}\) boiled off; + NaOH dropwise, then excess</td>
+<td>White ppt, soluble in excess NaOH; with \(\ce{H2S}\) the clear solution gives white ZnS again</td><td><b>\(\ce{Zn^2+}\) confirmed</b></td></tr>
+<tr><td><b>Group V:</b> filtrate of IV, boiled to remove \(\ce{H2S}\), + \(\ce{(NH4)2CO3}\)</td><td>White precipitate</td><td>Group V (\(\ce{Ba^2+}\)/\(\ce{Sr^2+}\)/\(\ce{Ca^2+}\))</td></tr>
+<tr><td>White ppt dissolved in hot dil. acetic acid; + \(\ce{K2CrO4}\)</td><td>Yellow precipitate</td><td><b>\(\ce{Ba^2+}\) confirmed</b> (flame test: apple-green)</td></tr>
+<tr><td><b>Group VI:</b> filtrate + \(\ce{Na2HPO4}\)</td><td>No precipitate</td><td>\(\ce{Mg^2+}\) absent</td></tr></table></div>
+\[\ce{Zn^2+ + H2S -> ZnS v + 2H+}\]
+\[\ce{Zn(OH)2 + 2OH- -> ZnO2^2- + 2H2O}\]
+\[\ce{Ba^2+ + CO3^2- -> BaCO3 v}\]
+\[\ce{Ba^2+ + CrO4^2- -> BaCrO4 v}\ (\text{yellow})\]
+<p><span class="box">Cations: \(\ce{Zn^2+}\) and \(\ce{Ba^2+}\) — the mixture contains zinc acetate and barium bromide</span></p>""",
+          topic="Qualitative analysis",
+          recall=r"""<ul><li>Acetate: vinegar smell with dil. \(\ce{H2SO4}\); red with neutral \(\ce{FeCl3}\).</li>
+<li>Bromide: red-brown \(\ce{Br2}\) with conc. \(\ce{H2SO4}\)/\(\ce{MnO2}\); pale yellow AgBr.</li>
+<li>Group IV (\(\ce{H2S}\) in ammoniacal medium): ZnS white; Group V (\(\ce{(NH4)2CO3}\)): Ba/Sr/Ca carbonates.</li>
+<li>\(\ce{Ba^2+}\): yellow \(\ce{BaCrO4}\) with \(\ce{K2CrO4}\) in acetic acid.</li></ul>"""),
+    ])

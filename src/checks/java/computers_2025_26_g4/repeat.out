@@ -1,0 +1,9 @@
+10 20 30 
+Overflow! Insertion not possible.
+popped 10
+20 30 
+popped 20
+popped 30
+Underflow! Deletion not possible.
+popped -9999
+50 

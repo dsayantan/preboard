@@ -1,0 +1,11 @@
+# Figures — computers_2016_17_p1 (src/figs/computers_2016_17_figs.py), each rendered and inspected
+- fig_q1d_gate: XNOR symbol (XOR body + bubble). fig_q1d_basic: NOTs on wired A, B buses; AND(A,B), AND(A',B'), OR → X = AB + A'B'.
+- fig_q4a_kmap / circuit: B' octet (top+bottom rows), C'D column quad, AC quad = kmapsolve; AND-OR diagram with B' direct.
+- fig_q4b_kmap / circuit: (A+B') row quad, (B+C'+D') pair 3/11 (wrap), (A'+C+D') pair 9/13; OR-AND diagram.
+- fig_q5a_kmap / circuit: POS of I: G octet, (E+F) row, (E+H) wrap quad; = EG + FGH over 16 rows. (Output-label replacement fixed so input F is not renamed.)
+- fig_q5b_decoder: 3x8 decoder (x MSB); F1←D0,D5,D7; F2←D2,D3,D5; F3←D1,D6,D7; gate pins placed between output lines so no input lead overlaps a D line (an overlap in the first draft made D1 look connected to F1 — fixed).
+- fig_q6b_circuit (qfig): redrawn from the 300-dpi image (Mano full-adder analysis circuit): AND(A,B), OR(A,B), AND(A+B,C), OR→F2, NOT F2, OR(A+B,C), AND(F2',·), AND(AB,C), OR→F1. fig_q6b_labelled: gate outputs written on; F1 = sum, F2 = carry checked over 8 rows.
+- fig_q6c_encoder: A3←D8,D9; A2←D4..D7; A1←D2,D3,D6,D7; A0←D1,D3,D5,D7,D9; each D0..D9 checked to encode its number.
+- fig_q6d_mux (qfig): block as printed (a+b → I0, ab → I1, select P, output F(P,x,y)). fig_q6d_gates: OR(a,b)·P' + AND(a,b)·P → OR; P' via wired NOT.
+- fig_q12a_tree (qfig): read off the page image: A(B(C(E(-,I), F(-,J)), D(G, H(K,L))), M); I and J are right children (lines go down-right).
+- fig_q12b_list: head → 2.5 → 4.0 → 1.25 → 3.75 → null, data/ptr fields, temp pointer.

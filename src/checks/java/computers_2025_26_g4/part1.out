@@ -1,0 +1,12 @@
+Q1vi -32
+Q1vii true false true
+call findPos(f=0, l=7)
+  m=2 arr[m]=12
+call findPos(f=3, l=7)
+  m=4 arr[m]=25
+call findPos(f=5, l=7)
+  m=5 arr[m]=31
+  returned k=5
+  returned k=6
+Q2iii 7
+Q2iv 0 1 1 2 4 7 13 24

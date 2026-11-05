@@ -1,0 +1,12 @@
+# Figures — computers_2015_16_p1 (src/figs/computers_2015_16_figs.py), each rendered and inspected
+- fig_q12a_kmap: Gray-code headings, cell numbers; groups drawn = kmapsolve cover (C' octet, A'B, A'D' wrap, BD' wrap) = printed result.
+- fig_q12a_circuit: AND-OR for C' + A'B + A'D' + BD'; every gate input wired, C' straight to OR.
+- fig_q12b_kmap: POS map of the 7 maxterms; (B+C) top/bottom wrap, (B+D) four corners, (A+C+D') pair M1/M5.
+- fig_q12b_circuit: OR-AND for (B+C)(B+D)(A+C+D'), output X.
+- fig_q13a_block / fig_q13a_mux4 (reviewer: AND→OR output wires re-laned [1,0,0,1] so no output wire crosses another; S1/S0 leads now end on the sloping block edge): gate-level 4:1 MUX; each AND gets one data input + the right S1/S0 (or complement, via wired NOT) — checked gate by gate; select table matches.
+- fig_q13b_nornor: three first-level NORs (A,D'), (B',A), (D',C) into a 3-input NOR — equality checked over 16 rows.
+- fig_q13c_xnor_nor: 4 NOR gates, G1=(A+B)', G2=(A+G1)', G3=(B+G1)', X=(G2+G3)'; checked = XNOR over 4 rows.
+- fig_q14b_encoder: A2←D4..D7, A1←D2,D3,D6,D7, A0←D1,D3,D5,D7 (dots only at real joins); checked each Dn encodes n.
+- fig_q14c_circuit (qfig): redrawn from the 300-dpi page: OR(B,C,D'), OR(D',C,A), OR(D,C'), AND of the three; C crosses the D line without a dot as on the paper. fig_q14c_labelled adds gate outputs.
+- fig_q18_list: Start → 22→33→44→55→66, link fields F1..F5, F5 null (matches the printed picture).
+- fig_q19_tree: read off the page image: 2(7(2, 6(5,11)), 5(-, 9(4,-))); traversals recomputed in the check.
