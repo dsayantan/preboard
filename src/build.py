@@ -82,6 +82,14 @@ def build_index(papers):
         tot = sum(sum(1 for i in P["items"] if i["kind"] == "q" and not i["excluded"]) for P in ps)
         cards.append(f'<a class="card" href="{s}/index.html"><h2>{name}</h2>'
                      f'<p>{len(ps)} papers · {tot} solved questions</p></a>')
+    # JEE Main mock tests (src/build_jee.py): a card and one line, only once jee/index.html exists.
+    jee_line = ""
+    if os.path.exists(os.path.join(kit.ROOT, "jee", "index.html")):
+        nt = len([f for f in os.listdir(os.path.join(kit.ROOT, "jee")) if re.fullmatch(r"test-\d+\.html", f)])
+        cards.append('<a class="card" href="jee/index.html"><h2>JEE Main mock tests</h2>'
+                     f'<p>{nt} of 3 tests ready · 75 questions · 3 hours</p></a>')
+        jee_line = (' The <a href="jee/index.html">JEE Main mock tests</a> rework these questions into '
+                    'timed computer-based tests, +4/−1, with worked solutions after you submit.')
     body = ('<header class="top"><h1>ISC Pre-Board Revision</h1>'
             '<p class="meta">Heritage School Class XII pre-board papers (2013-14 to 2016-17, 2024-25 and 2025-26), '
             'filtered to the ISC 2027 syllabus and solved question by question — '
@@ -89,7 +97,7 @@ def build_index(papers):
             f'<main><div class="cards">{"".join(cards)}</div>'
             '<p class="foot">Each question carries its marks and topic; the answer is hidden until you ask for it, '
             'with a <em>Concepts to recall</em> panel beside it. Tick <em>revised</em> to track progress '
-            '(kept in this browser only).</p></main>')
+            '(kept in this browser only).' + jee_line + '</p></main>')
     open(os.path.join(kit.ROOT, "index.html"), "w").write(kit.page("ISC Pre-Board Revision", body, 0))
 
 

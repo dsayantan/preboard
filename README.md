@@ -29,3 +29,10 @@ python3 src/preview.py <figs_module> # render figures to PNG for checking
 
 Each paper is one data module in `src/data/`, its figures in `src/figs/`, and the scripts that
 recompute its numerical answers / run its Java programs in `src/checks/`.
+
+## JEE Main mock tests
+
+`jee/` holds three full JEE Main–pattern mock tests (Physics, Chemistry, Mathematics; 20 MCQ + 5
+integer questions each; +4/−1; 300 marks; 3 hours), every question adapted from a pre-board
+question on this site and linked back to it. Questions in `src/jee/`, brief `src/JEE-BRIEF.md`;
+build with `python3 src/build_jee.py`, verify with `python3 src/checks/verify_jee_ui.py`.
