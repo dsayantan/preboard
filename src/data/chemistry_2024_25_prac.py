@@ -1,0 +1,221 @@
+"""Chemistry pre-board 2024-25, Practical.  Transcribed from the page images."""
+from kit import Q, SEC
+
+PAPER = dict(
+    subject="chemistry",
+    year="2024-25",
+    slug="2024-25-practical",
+    practical=True,
+    paper="Chemistry Practical",
+    source="PreBoard-PYQ/2024-25/SET-1/Chemistry Practical.pdf",
+    marks=30, time="3 hours",
+    intro=r"""<p><b>The Heritage School &mdash; Pre-Board Examinations, 2024&ndash;2025. Class XII. Chemistry Practical.</b>
+Full Marks &ndash; 30. Time &ndash; 3 Hrs.</p>
+<p>ALL ANSWERS MUST BE WRITTEN IN THE ANSWER BOOKLET PROVIDED SEPARATELY</p>
+<p><b>Question 1</b> is an oxidation-reduction titration in which sufficient working details are given. All essential
+working must be shown.</p>
+<p><b>Question 2</b> is an exercise dealing with identification of organic compounds. Credit will be given for precise
+observations recorded and for well-drawn deductions.</p>
+<p><b>Question 3</b> is an exercise in qualitative analysis.</p>
+<p>Read the questions carefully and follow the given instructions. Attempt all questions. All working, including rough
+work, should be done on the same sheet as the rest of the answer. The intended marks for questions or parts of
+questions are given in brackets [ ].</p>
+<p>Project &ndash; 10 marks. Practical file &ndash; 5 marks. <span class="note">[These 15 marks are assessed outside
+the written paper.]</span></p>
+<p>This Question Paper Consists Of Three Printed Pages.</p>""",
+    items=[
+        Q("1", 7, r"""<p>You are provided with two solutions as follows:</p>
+<ul><li><b>C-10</b> is a solution containing 1.05 gms of potassium manganate (VII), \(\ce{KMnO4}\) per litre.</li>
+<li><b>C-11</b> is a solution prepared by dissolving 14.5 gms of hydrated ammonium iron (II) sulphate crystals,
+\(\ce{(NH4)2SO4.FeSO4.6H2O}\) per litre.</li></ul>
+<p><b>PROCEDURE:</b> Rinse and fill the burette with the given solution C-10 (\(\ce{KMnO4}\)). Pipette out 20 ml or 25 ml
+of C-11 (hydrated ammonium iron (II) sulphate solution) and transfer into a clean conical flask. To this, add 20 ml of
+C-12 (dilute sulphuric acid) specially provided for titration.</p>
+<p>Titrate the solution in the conical flask with C-10 (\(\ce{KMnO4}\)) slowly till one drop of this gives a light
+permanent pink colour to the solution C-11 in the flask. The pink colour should not disappear on shaking the contents
+in the conical flask.</p>
+<p>Repeat the above procedure to get at least <b>two</b> concordant readings.</p>
+<p>Tabulate your readings.</p>
+<p>State:<br>(a) The capacity of the pipette used.<br>(b) The titre value you intend to use in your calculations.</p>
+<p><b>Show the titre value to the Visiting Examiner.</b></p>
+<p>The equations for the above reactions are as follows:</p>
+\[\ce{2KMnO4 + 8H2SO4 + 10(NH4)2SO4.FeSO4.6H2O ->}\]
+\[\ce{K2SO4 + 2MnSO4 + 10(NH4)2SO4 + 5Fe2(SO4)3 + 68H2O}\]
+<p>The ionic equation for the reaction is:</p>
+\[\ce{2MnO4- + 10Fe^2+ + 16H+ -> 2Mn^2+ + 10Fe^3+ + 8H2O}\]
+<p>Relative atomic masses: K = 39 &nbsp; Fe = 56 &nbsp; Mn = 55 &nbsp; S = 32 &nbsp; N = 14 &nbsp; H = 1 &nbsp; O = 16</p>
+<p><b>Calculate the following:</b><br>
+(i) The <b>molarity</b> of the solution of potassium manganate(VII) <b>C-10</b>.<br>
+(ii) The <b>molarity</b> of hydrated ammonium iron(II) sulphate solution <b>C-11</b>.<br>
+(iii) The <b>strength</b> of hydrated ammonium iron(II) sulphate solution <b>C-11</b>.<br>
+(iv) The <b>percentage purity</b> of the sample of hydrated ammonium iron (II) sulphate solution.</p>
+<p>&bull; <b>Note:</b> <i>Molarity must be calculated up to at least 4 decimal places.</i></p>""",
+          a=r"""<p class="note">The burette readings below are <b>sample readings</b>, generated for a sample of about 95%
+purity and read to the burette least count (0.1 mL graduations, recorded to two decimal places). Use your own titre in
+the examination; the method of calculation is what to learn.</p>
+<p><b>Pipette used:</b> 20.0 mL of C-11. No indicator is added: \(\ce{KMnO4}\) is self-indicating (colourless &rarr;
+first permanent light pink). The reading is taken at the <b>upper</b> meniscus, since \(\ce{KMnO4}\) is deeply
+coloured. No warming is needed for \(\ce{Fe^2+}\).</p>
+<div class="tbl"><table>
+<tr><th>S. No.</th><th>(A) Initial burette reading (mL)</th><th>(B) Final burette reading (mL)</th><th>(B &minus; A) Volume of C-10 (mL)</th></tr>
+<tr><td>1 (rough)</td><td>0.00</td><td>21.40</td><td>21.40</td></tr>
+<tr><td>2</td><td>0.00</td><td>21.10</td><td>21.10</td></tr>
+<tr><td>3</td><td>0.50</td><td>21.60</td><td>21.10</td></tr></table></div>
+<p>(a) Capacity of pipette = <b>20 mL</b> &nbsp;&nbsp; (b) Titre value (concordant) = <b>21.10 mL</b></p>
+<p class="step">From the ionic equation, 2 mol \(\ce{MnO4-}\) &equiv; 10 mol \(\ce{Fe^2+}\), i.e.
+<b>1 mol \(\ce{KMnO4}\) &equiv; 5 mol Mohr's salt</b>.</p>
+<p class="step"><b>(i)</b> \(M_r(\ce{KMnO4}) = 39 + 55 + 4(16) = 158\) g mol<sup>&minus;1</sup></p>
+\[M_1 = \frac{1.05\ \text{g L}^{-1}}{158\ \text{g mol}^{-1}} = 0.006646\ \text{M}\]
+<p class="step"><b>(ii)</b></p>
+\[\frac{M_1V_1}{M_2V_2} = \frac{1}{5}\;\Rightarrow\;M_2 = \frac{5\,M_1V_1}{V_2} = \frac{5\times0.006646\times21.10}{20} = 0.035058\ \text{M}\]
+<p class="step"><b>(iii)</b> \(M_r(\ce{(NH4)2SO4.FeSO4.6H2O}) = 2(18) + 96 + 56 + 96 + 6(18) = 392\) g mol<sup>&minus;1</sup></p>
+\[\text{strength} = 0.035058\times392 = 13.74\ \text{g L}^{-1}\]
+<p class="step"><b>(iv)</b></p>
+\[\%\ \text{purity} = \frac{13.74}{14.5}\times100 = 94.8\%\]
+<p><span class="box">(i) 0.006646 M; (ii) 0.035058 M; (iii) 13.74 g L<sup>&minus;1</sup>; (iv) 94.8% (with the sample
+titre 21.10 mL)</span></p>
+<p class="note">With your own titre V mL (20 mL pipette): \(M_2 = 0.0016615\,V\), strength \(= 0.6513\,V\) g
+L<sup>&minus;1</sup>, purity \(= 4.492\,V\)%. A titre above 22.26 mL would mean more than 100% "purity" &mdash; a sign of
+an over-shot end point.</p>""",
+          topic="Titrations (KMnO₄ / ammonium iron(II) sulphate)",
+          recall=r"""<ul><li>\(\ce{MnO4-}\) gains 5e<sup>&minus;</sup>, each \(\ce{Fe^2+}\) loses 1e<sup>&minus;</sup>: mole ratio
+\(\ce{KMnO4}\) : Mohr's salt = 1 : 5.</li>
+<li>\(\dfrac{M_1V_1}{n_1} = \dfrac{M_2V_2}{n_2}\) with \(n\) the coefficients; concentration = M &times; M<sub>r</sub>.</li>
+<li>Dilute \(\ce{H2SO4}\) (not HCl) supplies \(\ce{H+}\) and stops hydrolysis of \(\ce{Fe^2+}\).</li>
+<li>Mohr's salt M<sub>r</sub> = 392; \(\ce{KMnO4}\) = 158. Concordant = two identical titres; no averaging.</li></ul>"""),
+        Q("2(a)", 2, r"""<p>[Question 2 carries 4 marks for (a) and (b) together; shown here as 2 each.] You are provided with
+two organic compounds <b>C-13</b> and <b>C-14</b>.</p>
+<p>Perform the experiments given below on each of the two compounds. Record the changes taking place at every step of
+the experiment.</p>
+<p>Note the smell of the substance formed, if significant, the colour of the solution obtained, the colour of the
+precipitate produced and any other observations you may have. State the identity of each compound on the basis of the
+experiments and the observational changes.</p>
+<p><b>PROCEDURE:</b></p>
+<p><b>(a) Substance C-13</b></p>
+<p>(i) Take 1ml of <b>C-13</b> in a test tube and add 1ml of concentrated hydrochloric acid to it. Now add a few drops of
+neutral ferric chloride solution and dilute the contents with water.</p>
+<p>(ii) Take 1ml of <b>C-13</b> in a test tube and add 5ml of bromine water. Shake the contents of the test tube.</p>
+<p>(iii) Take 1ml of <b>C-13</b> in a dry test tube and add a pinch of solid sodium nitrite to it followed by 3-4 drops of
+concentrated \(\ce{H2SO4}\). Shake the contents of the test tube. Note the colour. Add 3-4 drops of water to this followed
+by aqueous sodium hydroxide solution till it becomes alkaline.</p>""",
+          a=r"""<p>C-13 is a colourless/pale brown oily liquid, sparingly soluble in water.</p>
+<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td>(i) C-13 + conc. HCl; + neutral \(\ce{FeCl3}\); dilute with water</td><td>The oil dissolves in conc. HCl
+(heat evolved); with \(\ce{FeCl3}\) a green colouration develops, deepening (dark green) on standing; no violet
+colour</td><td>Basic compound forming a soluble hydrochloride; oxidised by \(\ce{Fe^3+}\) &mdash; aromatic amine
+(aniline). Not a phenol (no violet colour).</td></tr>
+<tr><td>(ii) C-13 + bromine water, shake</td><td>Bromine water decolourised; white precipitate at once</td>
+<td>Strongly activated aromatic ring &mdash; 2,4,6-tribromoaniline formed</td></tr>
+<tr><td>(iii) C-13 + solid \(\ce{NaNO2}\) + conc. \(\ce{H2SO4}\) (dry tube); then a little water, then NaOH to
+alkaline</td><td>Brown fumes; a dark reddish-brown colour. On adding water and then NaOH till alkaline, a <b>red (orange-red)
+dye</b> forms &mdash; no deep blue/green colour at any stage.</td><td>Diazotisation followed by coupling &rarr; an azo
+dye: a <b>primary aromatic amine</b>. (Phenol would give Liebermann's colours instead &mdash; deep green/blue, red on
+dilution, blue/green again in alkali.)</td></tr></table></div>
+\[\ce{C6H5NH2 + HCl -> C6H5NH3+Cl-}\]
+\[\ce{C6H5NH2 + 3Br2 -> C6H2Br3NH2 v + 3HBr}\]
+\[\ce{C6H5NH2 + HNO2 + H+ -> C6H5N2+ + 2H2O}\]
+<p><span class="box">C-13 is aniline (aminobenzene), \(\ce{C6H5NH2}\) &mdash; amino group</span></p>
+<p class="note">Tests (ii) and (iii) are, word for word, steps of the school laboratory manual's aniline experiment,
+which records a brilliant red dye in (iii); test (i) is the aniline test set in ISC 2019 Paper 2. Phenol also gives a
+white precipitate with bromine water, so it is (i) (no violet colour) and (iii) (red dye in alkali, not blue/green)
+that rule phenol out. (The carbylamine test is not performed in the ISC practical.)</p>""",
+          topic="Identification of organic compounds (amino group)",
+          recall=r"""<ul><li>Aniline: oily, sparingly soluble in water, dissolves in HCl (anilinium chloride).</li>
+<li>Bromine water: white ppt (2,4,6-tribromoaniline) &mdash; phenol gives a white ppt too, so pair it with a test
+that separates them (\(\ce{FeCl3}\): violet for phenol).</li>
+<li>Oxidising agents (\(\ce{FeCl3}\)/HCl, \(\ce{K2Cr2O7}\)/dil. \(\ce{H2SO4}\), bleaching powder) give green /
+violet / black colours with aniline.</li></ul>"""),
+        Q("2(b)", 2, r"""<p><b>(b) Substance C-14</b></p>
+<p>(i) Take 2ml of <b>C-14</b> solution and add 2ml of Fehling's solution and heat strongly.</p>
+<p>(ii) Take 2ml of <b>C-14</b> solution and add 2ml of Tollen's reagent and heat strongly.</p>
+<p>(iii) Take 2ml of <b>C-14</b> solution and add few drops of caustic soda (NaOH) solution and heat to boil.</p>""",
+          a=r"""<p>C-14 is a colourless, odourless aqueous solution (of a white crystalline solid).</p>
+<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td>(i) C-14 + Fehling's solution (A + B), heat strongly</td><td>Deep blue colour discharged; brick-red
+precipitate</td><td>Reducing compound (free &ndash;CHO group): reducing sugar or aldehyde</td></tr>
+<tr><td>(ii) C-14 + Tollens' reagent, heat</td><td>Silver mirror on the inner wall of the test tube (or a grey-black
+precipitate)</td><td>Reducing compound &mdash; confirms the &ndash;CHO group</td></tr>
+<tr><td>(iii) C-14 + a few drops of NaOH, boil</td><td>Yellow colour, deepening to <b>brown</b> (caramel-like
+smell)</td><td>Reducing sugar (glucose decomposes/resinifies in hot alkali); formaldehyde would stay colourless</td></tr>
+</table></div>
+\[\ce{C6H12O6 + 2Cu^2+ + 5OH- -> C6H11O7^- + Cu2O v + 3H2O}\]
+\[\ce{C6H12O6 + 2[Ag(NH3)2]+ + 3OH- -> C6H11O7^- + 2Ag v + 4NH3 + 2H2O}\]
+<p>(\(\ce{C6H11O7-}\) = gluconate ion: the &ndash;CHO of glucose is oxidised to &ndash;COO<sup>&minus;</sup>.)</p>
+<p><span class="box">C-14 is a carbohydrate &mdash; a reducing sugar, glucose \(\ce{C6H12O6}\)</span></p>
+<p class="note">The three tests are, word for word, the school laboratory manual's <b>glucose</b> experiment
+("heat strongly", "C-14 solution"), so glucose is the intended compound. Fehling's and Tollens' alone cannot separate
+glucose from formaldehyde; test (iii) does: glucose turns yellow then brown with hot alkali, whereas formaldehyde (no
+\(\alpha\)-H, so no aldol resin) gives no colour and has a sharp pungent smell. If your sample is pungent and
+stays colourless in (iii), report formaldehyde (aldehyde group) instead. ISC asks for the identification as
+"carbohydrate" &mdash; name the class, then the sugar.</p>""",
+          topic="Characteristic tests of carbohydrates (glucose)",
+          recall=r"""<ul><li>Fehling's (brick-red \(\ce{Cu2O}\)) and Tollens' (silver mirror): free &ndash;CHO &mdash;
+reducing sugars and aldehydes; sucrose and ketones (except fructose, in alkali) do not.</li>
+<li>Glucose + hot NaOH: yellow &rarr; brown; HCHO: no colour (no \(\alpha\)-H).</li>
+<li>Carbohydrate confirmations: Molisch (violet ring with \(\alpha\)-naphthol / conc. \(\ce{H2SO4}\)).</li></ul>"""),
+        Q("3", 4, r"""<p>Analyse qualitatively the substance <b>C-15</b> which contains one anion and one cation. Identify these
+ions.</p>
+<p>(a) While testing for anion you must mention:<br>(i) How the gases were identified.<br>(ii) The confirmatory test for
+anion.<br>Show the results as required, to the Visiting Examiner.</p>
+<p>(b) While testing for cation you must mention:<br>(i) How the original solution for group analysis was prepared.<br>
+(ii) The formal group analysis with pertinent group reagents.<br>(iii) The confirmatory test for cation.<br>Show the
+results as required, to the Visiting Examiner.</p>
+<p>Note: Use of qualitative analysis booklet/table is not allowed.</p>""",
+          a=r"""<p class="note">The salt is not named on the paper. The analysis below is worked for a <b>sample</b> salt,
+lead(II) nitrate, \(\ce{Pb(NO3)2}\) &mdash; both ions are in the ISC 2027 list. The scheme (dilute-acid group &rarr;
+concentrated-acid group &rarr; special group, then Group 0 to VI) is the same for any salt.</p>
+<p>Preliminary: white crystalline salt, soluble in water; on heating in a dry tube it decrepitates and gives brown
+\(\ce{NO2}\) fumes, leaving a residue yellow when cold.</p>
+<h4>(a) Anion</h4>
+<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td>Salt + dil. \(\ce{H2SO4}\), warm</td><td>No gas evolved</td><td>\(\ce{CO3^2-}\), \(\ce{NO2-}\), \(\ce{S^2-}\),
+\(\ce{SO3^2-}\) absent</td></tr>
+<tr><td>Salt + conc. \(\ce{H2SO4}\), warm; add a paper pellet (or Cu turnings)</td><td>Light brown fumes, much
+intensified (reddish-brown) with paper/Cu; the gas turns moist starch&ndash;iodide paper blue</td><td>\(\ce{NO2}\) &mdash; \(\ce{NO3-}\) may be present</td></tr>
+<tr><td><b>Sodium carbonate extract</b>: salt boiled with solid \(\ce{Na2CO3}\) (about 1 : 3) and distilled water for
+10 min, filtered</td><td>White residue (\(\ce{PbCO3}\)); clear filtrate</td><td>Filtrate (S.E.) holds the anion as
+\(\ce{NaNO3}\)</td></tr>
+<tr><td><b>C.T. for \(\ce{NO3-}\) (brown ring test):</b> S.E. acidified with dil. \(\ce{H2SO4}\), freshly prepared
+\(\ce{FeSO4}\) added, conc. \(\ce{H2SO4}\) poured slowly down the side</td><td>Brown ring at the junction of the two
+layers</td><td><b>\(\ce{NO3-}\) confirmed</b></td></tr></table></div>
+\[\ce{2NO3- + H2SO4 -> 2HNO3 + SO4^2-};\quad \ce{4HNO3 -> 4NO2 ^ + O2 + 2H2O}\]
+\[\ce{Cu + 4HNO3 -> Cu(NO3)2 + 2NO2 ^ + 2H2O}\]
+\[\ce{6FeSO4 + 3H2SO4 + 2HNO3 -> 3Fe2(SO4)3 + 2NO + 4H2O}\]
+\[\ce{FeSO4 + NO + 5H2O -> [Fe(H2O)5NO]SO4}\ (\text{brown ring})\]
+<p><span class="box">Anion: nitrate, \(\ce{NO3-}\)</span></p>
+<h4>(b) Cation</h4>
+<p><b>(i) Original solution (O.S.):</b> the salt dissolved in distilled water (warm if needed) to a clear
+solution.</p>
+<div class="tbl"><table>
+<tr><th>Experiment</th><th>Observation</th><th>Inference</th></tr>
+<tr><td><b>Group zero:</b> salt + NaOH solution, heat</td><td>No smell of ammonia; red litmus unchanged</td>
+<td>\(\ce{NH4+}\) absent</td></tr>
+<tr><td><b>Group I:</b> O.S. + dil. HCl</td><td>White precipitate</td><td>\(\ce{Pb^2+}\) present (Group I)</td></tr>
+<tr><td>White ppt + hot water, boil</td><td>Ppt dissolves; on cooling, white needle-shaped crystals reappear</td>
+<td>\(\ce{PbCl2}\) (soluble in hot water)</td></tr>
+<tr><td><b>C.T. for \(\ce{Pb^2+}\):</b> (1) hot solution + \(\ce{K2CrO4}\)</td><td>Yellow precipitate</td>
+<td>\(\ce{PbCrO4}\)</td></tr>
+<tr><td>(2) hot solution + KI</td><td>Yellow precipitate, soluble in hot water, golden spangles on cooling</td>
+<td><b>\(\ce{Pb^2+}\) confirmed</b></td></tr></table></div>
+\[\ce{Pb^2+ + 2Cl- -> PbCl2 v}\ (\text{white})\]
+\[\ce{Pb^2+ + CrO4^2- -> PbCrO4 v}\ (\text{yellow})\]
+\[\ce{Pb^2+ + 2I- -> PbI2 v}\ (\text{yellow})\]
+<p class="note">(ii) Formal group analysis: because Group I gives a precipitate and the salt has only one cation, the
+analysis stops there once \(\ce{Pb^2+}\) is confirmed. (If Group I had given no precipitate, the filtrate would be
+taken through Group II (\(\ce{H2S}\) in dil. HCl), Group III (after boiling off \(\ce{H2S}\) and boiling with conc.
+\(\ce{HNO3}\): solid \(\ce{NH4Cl}\) then \(\ce{NH4OH}\)), Group IV (\(\ce{H2S}\) in ammoniacal solution), Group V
+(\(\ce{(NH4)2CO3}\) with \(\ce{NH4Cl}\)/\(\ce{NH4OH}\)) and Group VI (\(\ce{Na2HPO4}\)).) Lead is only partly
+precipitated as \(\ce{PbCl2}\) in Group I, so in a full analysis it would also appear in Group II as black PbS.</p>
+<p><span class="box">Cation: lead(II), \(\ce{Pb^2+}\) &mdash; the salt is lead(II) nitrate, \(\ce{Pb(NO3)2}\)</span></p>""",
+          topic="Qualitative analysis",
+          recall=r"""<ul><li>Order of anion tests: dil. \(\ce{H2SO4}\) (\(\ce{CO3^2-}\), \(\ce{NO2-}\), \(\ce{S^2-}\),
+\(\ce{SO3^2-}\)) &rarr; conc. \(\ce{H2SO4}\) (\(\ce{Cl-}\), \(\ce{Br-}\), \(\ce{I-}\), \(\ce{NO3-}\),
+\(\ce{CH3COO-}\)) &rarr; special (\(\ce{SO4^2-}\), \(\ce{PO4^3-}\), \(\ce{C2O4^2-}\)).</li>
+<li>Wet tests use the sodium carbonate extract.</li>
+<li>Group reagents: 0 NaOH/heat; I dil. HCl; II \(\ce{H2S}\)/dil. HCl; III \(\ce{NH4Cl + NH4OH}\); IV \(\ce{H2S}\)/
+\(\ce{NH4OH}\); V \(\ce{(NH4)2CO3}\); VI \(\ce{Na2HPO4}\).</li>
+<li>\(\ce{Pb^2+}\): \(\ce{PbCl2}\) soluble in hot water; yellow \(\ce{PbCrO4}\), \(\ce{PbI2}\).</li></ul>"""),
+    ])

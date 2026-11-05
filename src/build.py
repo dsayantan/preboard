@@ -83,7 +83,7 @@ def build_index(papers):
         cards.append(f'<a class="card" href="{s}/index.html"><h2>{name}</h2>'
                      f'<p>{len(ps)} papers · {tot} solved questions</p></a>')
     body = ('<header class="top"><h1>ISC Pre-Board Revision</h1>'
-            '<p class="meta">Heritage School Class XII pre-board papers (2013-14 to 2016-17 and 2025-26), '
+            '<p class="meta">Heritage School Class XII pre-board papers (2013-14 to 2016-17, 2024-25 and 2025-26), '
             'filtered to the ISC 2027 syllabus and solved question by question — '
             'with the diagrams the questions show and the diagrams the answers need.</p></header>'
             f'<main><div class="cards">{"".join(cards)}</div>'

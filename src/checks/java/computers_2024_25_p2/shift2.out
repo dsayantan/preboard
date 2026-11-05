@@ -1,0 +1,14 @@
+M = 4
+N = 3
+Enter the elements in the matrix:
+Input matrix
+   100    90    79
+    45    64    32
+    47    89   200
+    89    12    30
+Formed matrix after shifting
+    79   100    90
+    32    45    64
+   200    47    89
+    30    89    12
+Second Smallest Element : 30 (Row: 3 and Column: 0)

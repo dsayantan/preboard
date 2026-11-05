@@ -1,6 +1,6 @@
 # ISC Pre-Board Revision
 
-Heritage School Class XII pre-board papers (2013-14 to 2016-17 and 2025-26) for Physics, Chemistry,
+Heritage School Class XII pre-board papers (2013-14 to 2016-17, 2024-25 and 2025-26) for Physics, Chemistry,
 Mathematics and Computer Science, transcribed, filtered to the **ISC 2027 syllabus** and solved
 question by question, with diagrams.
 

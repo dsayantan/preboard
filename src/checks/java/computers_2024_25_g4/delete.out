@@ -1,0 +1,5 @@
+Red -> Green -> Blue -> Pink -> null
+Green -> Blue -> Pink -> null
+Blue -> Pink -> null
+Only node removed: set start = null
+List is empty

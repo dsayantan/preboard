@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Science Pre-Board 2024-25 Practical</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/contrib/mhchem.min.js"></script>
+<script defer src="../assets/katex/contrib/auto-render.min.js"></script>
+<script defer src="../assets/site.js"></script>
+</head><body>
+<header class="top"><a class="crumb" href="../index.html">Pre-Board Revision</a> ›
+<a class="crumb" href="index.html">Computer Science</a>
+<h1>Computer Science · Pre-Board 2024-25 · Practical</h1>
+<p class="meta">Paper 2 (Practical) · Maximum marks 30 · Time 3 hours</p>
+<p class="meta">3 questions in the ISC 2027 syllabus, answered below ·
+0 outside it (listed at the end, unanswered)</p>
+<div class="tools"><button data-act="show">Show all answers</button>
+<button data-act="hide">Hide all answers</button>
+<span class="prog" data-key="pbrev-computers-2024-25-paper-2"></span></div></header>
+<main data-key="pbrev-computers-2024-25-paper-2">
+<details class="intro"><summary>Instructions as printed</summary><p><b>THE HERITAGE SCHOOL — PRE BOARD EXAMINATION 2024-25 — COMPUTER SCIENCE PRACTICAL PAPER - 2</b></p>
+<p>(Maximum Marks: 30) &nbsp; Time allowed: 3 Hours<br>
+(Candidates are allowed additional 15 minutes for only reading the paper.)<br>(They must NOT start writing during this time.)</p>
+<p>The total time to be spent on the Planning Session and the Examination Session is Three hours. After completing the
+Planning Session, the candidate may begin with the Examination Session. A maximum of 90 minutes is permitted for the
+Planning Session. However, if candidates finish earlier, they are to be permitted to begin the Examination Session.
+This paper consists of three problems from which candidates are required to attempt any one problem.</p>
+<p><b>Candidates are expected to do the following:</b></p>
+<p><b>A. Planning Session:</b></p>
+<ol><li>Write an algorithm for the selected problem. (Algorithm should be expressed clearly using any standard scheme
+such as pseudo code or in steps which are simple enough to be obviously computable.) [3 marks]</li>
+<li>Write a program in JAVA language. The program should follow the algorithm and should be logically and syntactically
+correct. Document the program using mnemonic names /comments, identifying, and clearly describing the choice of data
+types and meaning of variables. [7 marks]</li></ol>
+<p><b>B. Examination Session:</b></p>
+<ol><li>Code / Type the program on the computer and get a printout (hard copy). Typically, this should be a program
+that compiles and runs correctly. [2 marks]</li>
+<li>Test run the program on the computer using the given sample data and get a printout of the output in the format
+specified in the problem. [3 marks]</li></ol>
+<p><b>[Project - 15 marks]</b></p>
+<p>This question paper consists of 4 printed pages.</p>
+<p class="note">Each problem is worth the 15 marks of the planning and examination sessions; the other 15 are for the
+project.</p></details>
+<h2 class="sec">Problems</h2><p class="secnote">This paper consists of three problems from which candidates are required to attempt any one problem.</p>
+<article class="q" id="q1">
+<div class="qhead"><span class="num">Q1</span><span class="topic">Methods — number problems (prime, reverse)</span><span class="marks">[15]</span>
+<label class="done"><input type="checkbox" data-id="q1"> revised</label></div>
+<div class="qbody"><p><b>QUESTION 1</b></p>
+<p>A Prime-Adam integer is a positive integer (without leading zeros) which is a prime as well as an Adam number.</p>
+<p><b>Prime number:</b> A number which has only two factors, i.e. 1 and the number itself.<br>Example: 2, 3, 5, 7 ... etc.</p>
+<p><b>Adam number:</b> The square of a number and the square of its reverse are reverse to each other.<br>
+Example: If n = 13 and reverse of 'n' = 31, then,<br>(13)<sup>2</sup> = 169<br>(31)<sup>2</sup> = 961 which is reverse of 169<br>
+thus 13, is an Adam number.</p>
+<p>Accept two positive integers m and n, where m is less than n as user input. Display all Prime-Adam integers that are
+in the range between m and n (both inclusive) and output them along with the frequency, in the format given below:</p>
+<p>Test your program with the following data and some random data:</p>
+<p><b>Example 1</b><br>INPUT:<br>m = 5<br>n = 100<br>OUTPUT:<br>THE PRIME-ADAM INTEGERS ARE:<br>11 13 31<br>
+FREQUENCY OF PRIME-ADAM INTEGERS IS: 3</p>
+<p><b>Example 2</b><br>INPUT:<br>m = 100<br>n = 200<br>OUTPUT:<br>THE PRIME-ADAM INTEGERS ARE:<br>101 103 113<br>
+FREQUENCY OF PRIME-ADAM INTEGERS IS: 3</p>
+<p><b>Example 3</b><br>INPUT:<br>m = 50<br>n = 70<br>OUTPUT:<br>THE PRIME-ADAM INTEGERS ARE:<br>NIL<br>
+FREQUENCY OF PRIME-ADAM INTEGERS IS: 0</p>
+<p><b>Example 4</b><br>INPUT:<br>m = 700<br>n = 450<br>OUTPUT:<br>INVALID INPUT</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p class="note">Answer as the practical expects it: the algorithm, then the documented Java program,
+then the output for the paper's examples and for further inputs — every output below is from an actual run of this
+program (JDK 11). The input given to each run is shown above its output.</p><p><b>Idea.</b> Test each i from m to n: i must be prime (no divisor from 2 to √i) and Adam
+(reverse(i²) = (reverse(i))², e.g. 12: 144 reversed is 441 = 21²). The squares are held in <code>long</code> so
+that large ranges do not overflow. m ≥ n (or a non-positive limit) is invalid.</p>
+<p><b>Algorithm</b></p>
+<ol><li>Start. Input m and n.</li>
+<li>If m ≤ 0 or n ≤ 0 or m ≥ n, print “INVALID INPUT” and stop.</li>
+<li>freq ← 0, list ← "".</li>
+<li>For i = m to n: if isPrime(i) and isAdam(i), append i to list and freq ← freq + 1.</li>
+<li>Print “THE PRIME-ADAM INTEGERS ARE:”; print “NIL” if freq = 0, else print list.</li>
+<li>Print “FREQUENCY OF PRIME-ADAM INTEGERS IS: ” freq. Stop.</li></ol>
+<p><i>isPrime(x)</i>: if x &lt; 2 return false; for d = 2 while d × d ≤ x: if x mod d = 0 return false; return true.<br>
+<i>reverse(x)</i>: r ← 0; while x &gt; 0: r ← r × 10 + x mod 10, x ← x div 10; return r.<br>
+<i>isAdam(x)</i>: return reverse(x × x) = reverse(x) × reverse(x).</p>
+<p><b>Program</b></p><pre class="code">import java.util.Scanner;
+
+public class PrimeAdam
+{
+    // true if n has exactly two factors, 1 and n
+    static boolean isPrime(int n)
+    {
+        if (n &lt; 2)
+            return false;
+        for (int i = 2; i * i &lt;= n; i++)
+            if (n % i == 0)
+                return false;
+        return true;
+    }
+
+    // the digits of n in reverse order
+    static long reverse(long n)
+    {
+        long r = 0;
+        while (n &gt; 0)
+        {
+            r = r * 10 + n % 10;
+            n = n / 10;
+        }
+        return r;
+    }
+
+    // Adam: square of the reverse of n = reverse of the square of n
+    static boolean isAdam(int n)
+    {
+        long sq = (long) n * n;
+        long rn = reverse(n);
+        long sqr = rn * rn;
+        return sqr == reverse(sq);
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();                        // lower limit
+        int n = sc.nextInt();                        // upper limit
+        // m must be less than n
+        if (m &lt;= 0 || n &lt;= 0 || m &gt;= n)
+        {
+            System.out.println("INVALID INPUT");
+            return;
+        }
+        // number of Prime-Adam integers found
+        int freq = 0;
+        // the integers found, space separated
+        String list = "";
+        for (int i = m; i &lt;= n; i++)
+        {
+            if (isPrime(i) &amp;&amp; isAdam(i))
+            {
+                list = list + i + " ";
+                freq++;
+            }
+        }
+        System.out.println("THE PRIME-ADAM INTEGERS ARE:");
+        if (freq == 0)
+            System.out.println("NIL");
+        else
+            System.out.println(list.trim());
+        System.out.println("FREQUENCY OF PRIME-ADAM INTEGERS IS: "
+                           + freq);
+    }
+}</pre><p><b>Output — the paper's four examples</b></p><p><b>Input</b></p><pre class="code">5
+100</pre><p><b>Output</b></p><pre class="code">THE PRIME-ADAM INTEGERS ARE:
+11 13 31
+FREQUENCY OF PRIME-ADAM INTEGERS IS: 3</pre><p><b>Input</b></p><pre class="code">100
+200</pre><p><b>Output</b></p><pre class="code">THE PRIME-ADAM INTEGERS ARE:
+101 103 113
+FREQUENCY OF PRIME-ADAM INTEGERS IS: 3</pre><p><b>Input</b></p><pre class="code">50
+70</pre><p><b>Output</b></p><pre class="code">THE PRIME-ADAM INTEGERS ARE:
+NIL
+FREQUENCY OF PRIME-ADAM INTEGERS IS: 0</pre><p><b>Input</b></p><pre class="code">700
+450</pre><p><b>Output</b></p><pre class="code">INVALID INPUT</pre><p><b>Output — random data</b> (m = 1, n = 1000)</p><p><b>Input</b></p><pre class="code">1
+1000</pre><p><b>Output</b></p><pre class="code">THE PRIME-ADAM INTEGERS ARE:
+2 3 11 13 31 101 103 113 211 311
+FREQUENCY OF PRIME-ADAM INTEGERS IS: 10</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Prime test: try divisors 2 … √n only.</li><li>Reverse a number: r = r·10 + n%10, n = n/10.</li><li>Validate the input before any processing; print NIL when nothing is found.</li></ul></aside></div>
+</article>
+<article class="q" id="q2">
+<div class="qhead"><span class="num">Q2</span><span class="topic">Arrays — two-dimensional arrays</span><span class="marks">[15]</span>
+<label class="done"><input type="checkbox" data-id="q2"> revised</label></div>
+<div class="qbody"><p><b>QUESTION 2</b></p>
+<p>Write a program to declare a matrix A[][] of order MXN where M is the number of rows and N is the number of columns
+such that M and N must be greater than 2 and less than 10. Allow the user to input integers into this matrix. Display
+the appropriate error message for an invalid input.</p>
+<p>Perform the following tasks on the matrix.</p>
+<p>(a) Display the input matrix<br>
+(b) Shift each column one step right so that the first column becomes the second column, the second column become the
+third column and so on.<br>
+(c) Display the shifted matrix along with the second smallest element and its location in the modified matrix.</p>
+<p>Test your program for the following data and some random data.</p>
+<p><b>Example 1:</b><br>INPUT: M=3<br>N=4<br>Enter the elements in the matrix:</p><div class="tbl"><table><tr><td>100</td><td>90</td><td>79</td><td>56</td></tr><tr><td>45</td><td>64</td><td>32</td><td>99</td></tr><tr><td>47</td><td>89</td><td>200</td><td>15</td></tr></table></div><p>OUTPUT:<br>Formed matrix after shifting</p><div class="tbl"><table><tr><td>56</td><td>100</td><td>90</td><td>79</td></tr><tr><td>99</td><td>45</td><td>64</td><td>32</td></tr><tr><td>15</td><td>47</td><td>89</td><td>200</td></tr></table></div><p>Second Smallest Element : 32 (Row: 1 and Column: 3)</p>
+<p><b>Example 2:</b><br>INPUT: M=4<br>N=3<br>Enter the elements in the matrix:</p><div class="tbl"><table><tr><td>100</td><td>90</td><td>79</td></tr><tr><td>45</td><td>64</td><td>32</td></tr><tr><td>47</td><td>89</td><td>200</td></tr><tr><td>89</td><td>12</td><td>30</td></tr></table></div><p>OUTPUT:<br>Formed matrix after shifting</p><div class="tbl"><table><tr><td>79</td><td>100</td><td>90</td></tr><tr><td>32</td><td>45</td><td>64</td></tr><tr><td>200</td><td>47</td><td>89</td></tr><tr><td>30</td><td>89</td><td>12</td></tr></table></div><p>Second Smallest Element : 30 (Row: 3 and Column: 0)</p>
+<p><b>Example 3:</b><br>INPUT: M=2<br>N=3<br>OUTPUT: Size is out of Range. Invalid Entry</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p class="note">Answer as the practical expects it: the algorithm, then the documented Java program,
+then the output for the paper's examples and for further inputs — every output below is from an actual run of this
+program (JDK 11). The input given to each run is shown above its output.</p><p><b>Idea.</b> Shifting every column one step right is a right rotation of each row: the last
+element of a row is saved, the others move one place right, and the saved element goes into column 0 (as in both
+examples, the last column comes round to the first). The second smallest element is the smallest value greater than
+the minimum (a repeated minimum is not counted twice); its first position in the shifted matrix, row by row, is
+reported with 0-based row and column numbers as in the examples.</p>
+<p><b>Algorithm</b></p>
+<ol><li>Start. Input M and N. If M ≤ 2 or M ≥ 10 or N ≤ 2 or N ≥ 10, print “Size is out of Range. Invalid Entry”
+and stop.</li>
+<li>Input the M × N elements into A[][]; display A.</li>
+<li>For each row i: last ← A[i][N−1]; for j = N−1 down to 1: A[i][j] ← A[i][j−1]; A[i][0] ← last.</li>
+<li>Display A with the heading “Formed matrix after shifting”.</li>
+<li>min ← the smallest element of A.</li>
+<li>sec ← the smallest element of A that is greater than min, scanning row by row; record its row r and column c.</li>
+<li>If no element exceeds min, report that there is no second smallest element; otherwise print
+“Second Smallest Element : sec (Row: r and Column: c)”. Stop.</li></ol>
+<p><b>Program</b></p><pre class="code">import java.util.Scanner;
+
+public class ShiftMatrix
+{
+    int A[][];      // the matrix
+    int M, N;       // rows and columns
+
+    ShiftMatrix(int m, int n)
+    {
+        M = m;
+        N = n;
+        A = new int[M][N];
+    }
+
+    void input(Scanner sc)
+    {
+        System.out.println("Enter the elements in the matrix:");
+        for (int i = 0; i &lt; M; i++)
+            for (int j = 0; j &lt; N; j++)
+                A[i][j] = sc.nextInt();
+    }
+
+    void display(String msg)
+    {
+        System.out.println(msg);
+        for (int i = 0; i &lt; M; i++)
+        {
+            for (int j = 0; j &lt; N; j++)
+                System.out.printf("%6d", A[i][j]);
+            System.out.println();
+        }
+    }
+
+    // each column moves one step right; the last comes round to the first
+    void shift()
+    {
+        for (int i = 0; i &lt; M; i++)
+        {
+            int last = A[i][N - 1];
+            for (int j = N - 1; j &gt; 0; j--)
+                A[i][j] = A[i][j - 1];
+            A[i][0] = last;
+        }
+    }
+
+    /* second smallest DISTINCT value and its location (first occurrence,
+       scanning row by row) in the shifted matrix */
+    void secondSmallest()
+    {
+        int min = A[0][0];
+        for (int i = 0; i &lt; M; i++)
+            for (int j = 0; j &lt; N; j++)
+                if (A[i][j] &lt; min)
+                    min = A[i][j];
+        boolean found = false;
+        int sec = 0, r = -1, c = -1;
+        for (int i = 0; i &lt; M; i++)
+            for (int j = 0; j &lt; N; j++)
+                if (A[i][j] &gt; min &amp;&amp; (!found || A[i][j] &lt; sec))
+                {
+                    sec = A[i][j];
+                    r = i;
+                    c = j;
+                    found = true;
+                }
+        if (!found)
+            System.out.println("No second smallest element: "
+                               + "all elements are equal");
+        else
+            System.out.println("Second Smallest Element : " + sec
+                               + " (Row: " + r + " and Column: " + c
+                               + ")");
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("M = ");
+        int m = sc.nextInt();
+        System.out.println(m);
+        System.out.print("N = ");
+        int n = sc.nextInt();
+        System.out.println(n);
+        if (m &lt;= 2 || m &gt;= 10 || n &lt;= 2 || n &gt;= 10)
+        {
+            System.out.println("Size is out of Range. Invalid Entry");
+            return;
+        }
+        ShiftMatrix ob = new ShiftMatrix(m, n);
+        ob.input(sc);
+        ob.display("Input matrix");
+        ob.shift();
+        ob.display("Formed matrix after shifting");
+        ob.secondSmallest();
+    }
+}</pre><p><b>Output — the paper's three examples</b></p><p><b>Input</b></p><pre class="code">3
+4
+100 90 79 56
+45 64 32 99
+47 89 200 15</pre><p><b>Output</b></p><pre class="code">M = 3
+N = 4
+Enter the elements in the matrix:
+Input matrix
+   100    90    79    56
+    45    64    32    99
+    47    89   200    15
+Formed matrix after shifting
+    56   100    90    79
+    99    45    64    32
+    15    47    89   200
+Second Smallest Element : 32 (Row: 1 and Column: 3)</pre><p><b>Input</b></p><pre class="code">4
+3
+100 90 79
+45 64 32
+47 89 200
+89 12 30</pre><p><b>Output</b></p><pre class="code">M = 4
+N = 3
+Enter the elements in the matrix:
+Input matrix
+   100    90    79
+    45    64    32
+    47    89   200
+    89    12    30
+Formed matrix after shifting
+    79   100    90
+    32    45    64
+   200    47    89
+    30    89    12
+Second Smallest Element : 30 (Row: 3 and Column: 0)</pre><p><b>Input</b></p><pre class="code">2
+3</pre><p><b>Output</b></p><pre class="code">M = 2
+N = 3
+Size is out of Range. Invalid Entry</pre><p><b>Output — random data</b> (minimum 1 appears twice; the second smallest, 3, also twice — its first position is reported)</p><p><b>Input</b></p><pre class="code">3
+3
+9 5 1
+7 1 3
+6 8 3</pre><p><b>Output</b></p><pre class="code">M = 3
+N = 3
+Enter the elements in the matrix:
+Input matrix
+     9     5     1
+     7     1     3
+     6     8     3
+Formed matrix after shifting
+     1     9     5
+     3     7     1
+     3     6     8
+Second Smallest Element : 3 (Row: 1 and Column: 0)</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li>Right rotation of a row: save the last element, shift the rest right (from the end backwards), put the saved one at index 0.</li><li>Second smallest = smallest of the elements greater than the minimum.</li><li>Rows and columns are numbered from 0, as in the sample output.</li></ul></aside></div>
+</article>
+<article class="q" id="q3">
+<div class="qhead"><span class="num">Q3</span><span class="topic">Strings</span><span class="marks">[15]</span>
+<label class="done"><input type="checkbox" data-id="q3"> revised</label></div>
+<div class="qbody"><p><b>QUESTION 3</b></p>
+<p>Most cell phone keypads look like the following arrangement (the letters are above the respective number)</p><div class="tbl"><table><tr><td>1</td><td>ABC<br>2</td><td>DEF<br>3</td></tr><tr><td>GHI<br>4</td><td>JKL<br>5</td><td>MNO<br>6</td></tr><tr><td>PQRS<br>7</td><td>TUV<br>8</td><td>WXYZ<br>9</td></tr><tr><td></td><td>[SPACE]<br>0</td><td></td></tr></table></div><p>For sending a message we generally need to press the individual keypad a number of times as per our requirement.
+The task is to find out the frequency of each number being pressed to form a message. For this problem, accept a
+sentence containing white spaces and print the frequency of each number being pressed to get each letter in each word.</p>
+<p>Test your program with the sample data and some random data:</p>
+<p><b>Example 1:</b><br>INPUT: DEAR ALL<br>OUTPUT:</p><pre class="code">DEAR
+Number 3  is pressed 3 times
+Number 2 is pressed 1 time
+Number 7 is pressed 3 times
+White Space
+Number 0 is pressed 1 time.
+ALL
+Number 2 is pressed 1 time
+Number 5 is pressed 6 times</pre><p><b>Example 2:</b><br>INPUT : THANK YOU<br>OUTPUT:</p><pre class="code">THANK
+Number 8 is pressed 1 time
+Number 4 is pressed 2 times
+Number 2 is pressed 1 time
+Number 6 is pressed 2 times
+Number 5 is pressed 2 times
+White Space
+Number 0 is pressed 1 time.
+YOU
+Number 9 is pressed 3 times
+Number 6 is pressed 3 times
+Number 8 is pressed 2 times</pre><p><b>Example 3:</b> INPUT : GOOD-LUCK<br>OUTPUT: Invalid Entry</p></div>
+<button class="reveal" aria-expanded="false">Show answer</button>
+<div class="ans" hidden><div class="anstext"><h4>Answer</h4><p class="note">Answer as the practical expects it: the algorithm, then the documented Java program,
+then the output for the paper's examples and for further inputs — every output below is from an actual run of this
+program (JDK 11). The input given to each run is shown above its output.</p><p><b>Idea.</b> A letter on key d needs as many presses as its position on that key (A = 1 press of
+2, B = 2, C = 3; S = 4 presses of 7). For each word the presses are added per key, and the keys are listed in the
+order in which they are first used in that word (this reproduces both sample outputs: in ALL the two Ls add 3 + 3 =
+6 presses of key 5). Between two words the program prints “White Space” and one press of key 0. The sentence may
+contain only letters and single spaces; anything else (such as the hyphen in GOOD-LUCK) is invalid. Lower-case input
+is converted to capitals.</p>
+<p><b>Algorithm</b></p>
+<ol><li>Start. Input the sentence s; s ← s trimmed and in upper case.</li>
+<li>If s is empty, or contains a character that is neither a letter nor a space, or two consecutive spaces, print
+“Invalid Entry” and stop.</li>
+<li>Split s into words at the spaces.</li>
+<li>For each word w (index i): if i &gt; 0 print “White Space” and “Number 0 is pressed 1 time.”; print w.</li>
+<li>&nbsp;&nbsp;Set count[0…9] ← 0 and an empty list order. For each letter ch of w: d ← the key carrying ch;
+if count[d] = 0 add d to order; count[d] ← count[d] + (position of ch on key d).</li>
+<li>&nbsp;&nbsp;For each d in order print “Number d is pressed count[d] time(s)”.</li>
+<li>Stop.</li></ol>
+<p><b>Program</b></p><pre class="code">import java.util.Scanner;
+
+public class Keypad
+{
+    // letters on keys 2 to 9; KEYS[d - 2] holds the letters on key d
+    static final String KEYS[] = {"ABC", "DEF", "GHI", "JKL",
+                                  "MNO", "PQRS", "TUV", "WXYZ"};
+
+    // the key that carries letter ch
+    static int key(char ch)
+    {
+        for (int d = 0; d &lt; KEYS.length; d++)
+            if (KEYS[d].indexOf(ch) &gt;= 0)
+                return d + 2;
+        return -1;
+    }
+
+    // presses needed for ch: its position on its key, counting from 1
+    static int presses(char ch)
+    {
+        return KEYS[key(ch) - 2].indexOf(ch) + 1;
+    }
+
+    static String times(int n)
+    {
+        return n == 1 ? "1 time" : n + " times";
+    }
+
+    /* prints, for one word, every key used and the total presses on it,
+       keys listed in the order they are first used */
+    static void word(String w)
+    {
+        System.out.println(w);
+        int count[] = new int[10];      // presses per key 0..9
+        int order[] = new int[10];      // keys in order of first use
+        int k = 0;
+        for (int i = 0; i &lt; w.length(); i++)
+        {
+            char ch = w.charAt(i);
+            int d = key(ch);
+            if (count[d] == 0)
+                order[k++] = d;
+            count[d] += presses(ch);
+        }
+        for (int i = 0; i &lt; k; i++)
+            System.out.println("Number " + order[i] + " is pressed "
+                               + times(count[order[i]]));
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().trim().toUpperCase();
+        // only letters and single spaces between words are allowed
+        boolean ok = s.length() &gt; 0;
+        for (int i = 0; i &lt; s.length() &amp;&amp; ok; i++)
+        {
+            char ch = s.charAt(i);
+            if (!(Character.isLetter(ch) || ch == ' '))
+                ok = false;
+            if (ch == ' ' &amp;&amp; s.charAt(i + 1) == ' ')
+                ok = false;
+        }
+        if (!ok)
+        {
+            System.out.println("Invalid Entry");
+            return;
+        }
+        String w[] = s.split(" ");
+        for (int i = 0; i &lt; w.length; i++)
+        {
+            if (i &gt; 0)
+            {
+                System.out.println("White Space");
+                System.out.println("Number 0 is pressed 1 time.");
+            }
+            word(w[i]);
+        }
+    }
+}</pre><p><b>Output — the paper's three examples</b></p><p><b>Input</b></p><pre class="code">DEAR ALL</pre><p><b>Output</b></p><pre class="code">DEAR
+Number 3 is pressed 3 times
+Number 2 is pressed 1 time
+Number 7 is pressed 3 times
+White Space
+Number 0 is pressed 1 time.
+ALL
+Number 2 is pressed 1 time
+Number 5 is pressed 6 times</pre><p><b>Input</b></p><pre class="code">THANK YOU</pre><p><b>Output</b></p><pre class="code">THANK
+Number 8 is pressed 1 time
+Number 4 is pressed 2 times
+Number 2 is pressed 1 time
+Number 6 is pressed 2 times
+Number 5 is pressed 2 times
+White Space
+Number 0 is pressed 1 time.
+YOU
+Number 9 is pressed 3 times
+Number 6 is pressed 3 times
+Number 8 is pressed 2 times</pre><p><b>Input</b></p><pre class="code">GOOD-LUCK</pre><p><b>Output</b></p><pre class="code">Invalid Entry</pre><p><b>Output — random data</b> (lower-case input)</p><p><b>Input</b></p><pre class="code">see you soon</pre><p><b>Output</b></p><pre class="code">SEE
+Number 7 is pressed 4 times
+Number 3 is pressed 4 times
+White Space
+Number 0 is pressed 1 time.
+YOU
+Number 9 is pressed 3 times
+Number 6 is pressed 3 times
+Number 8 is pressed 2 times
+White Space
+Number 0 is pressed 1 time.
+SOON
+Number 7 is pressed 4 times
+Number 6 is pressed 8 times</pre></div><aside class="recall"><h4>Concepts to recall</h4><ul><li><code>KEYS[d-2].indexOf(ch) + 1</code> gives the presses for ch on key d.</li><li>Use a count array indexed by key, plus an order array to keep first-use order.</li><li>Validate characters before processing; <code>split(&quot; &quot;)</code> separates the words.</li></ul></aside></div>
+</article>
+</main>
+</body></html>
